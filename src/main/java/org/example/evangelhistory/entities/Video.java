@@ -19,7 +19,7 @@ public class Video {
     private String videoId;
 
     @ManyToMany
-    @JoinTable(name = "@video_hero",
+    @JoinTable(name = "video_hero",
             joinColumns = @JoinColumn (name = "video_id"),
             inverseJoinColumns = @JoinColumn (name = "hero_id"))
     private Set<Hero> heroes;
