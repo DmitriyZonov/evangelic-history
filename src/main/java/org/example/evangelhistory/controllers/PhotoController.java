@@ -1,4 +1,4 @@
-package org.example.evangelhistory.controllers;
+/*package org.example.evangelhistory.controllers;
 
 import lombok.RequiredArgsConstructor;
 import org.example.evangelhistory.entities.Photo;
@@ -44,4 +44,4 @@ public class PhotoController {
             return ResponseEntity.internalServerError().build();
         }
     }
-}
+} */

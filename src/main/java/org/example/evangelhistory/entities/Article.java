@@ -1,10 +1,10 @@
 package org.example.evangelhistory.entities;
 
-import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
+import javax.persistence.*;
 import java.time.LocalDateTime;
 
 
@@ -13,7 +13,8 @@ import java.time.LocalDateTime;
 @Setter
 @RequiredArgsConstructor
 public class Article implements Comparable<Article>{
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
 
     @Column(nullable = false, unique = true, length = 150)

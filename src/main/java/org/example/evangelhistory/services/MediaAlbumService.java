@@ -1,6 +1,5 @@
 package org.example.evangelhistory.services;
 
-import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.example.evangelhistory.entities.MediaAlbum;
 import org.example.evangelhistory.entities.Photo;
@@ -36,7 +35,6 @@ public class MediaAlbumService {
         return albumRepo.save(album);
     }
 
-    @Transactional
     public void deleteAlbum(Long id) {
         albumRepo.deleteById(id);
     }

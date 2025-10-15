@@ -1,10 +1,10 @@
 package org.example.evangelhistory.entities;
 
-import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
+import javax.persistence.*;
 import java.util.Set;
 
 @Entity
@@ -12,10 +12,11 @@ import java.util.Set;
 @Setter
 @RequiredArgsConstructor
 public class Hero {
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String fullName;
-    @Column (length = 10000)
+    @Column(length = 10000)
     private String biography;
 
     @ManyToMany (mappedBy = "heroes")

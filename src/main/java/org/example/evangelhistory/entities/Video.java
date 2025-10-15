@@ -1,10 +1,11 @@
 package org.example.evangelhistory.entities;
 
-import jakarta.persistence.*;
+
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
+import javax.persistence.*;
 import java.util.Set;
 
 @Entity
@@ -12,7 +13,8 @@ import java.util.Set;
 @Setter
 @RequiredArgsConstructor
 public class Video {
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String title;
     private String platform;

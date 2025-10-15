@@ -1,8 +1,8 @@
 package org.example.evangelhistory.entities;
 
-import jakarta.persistence.*;
 import lombok.*;
 
+import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
@@ -16,7 +16,7 @@ import java.time.LocalDateTime;
 @Builder
 public class Photo {
     @Id
-    @GeneratedValue (strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "photo_id")
     private Long id;
     @Column(nullable = false)

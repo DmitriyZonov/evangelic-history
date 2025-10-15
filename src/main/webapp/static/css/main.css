@@ -1,0 +1,44 @@
+.menu {
+    background: #0F0F0C;
+    width: 1281px;
+    height: 109px;
+    flex-shrink: 0;
+}
+.menu_logo {
+    width: 108px;
+    height: 108px;
+    flex-shrink: 0;
+    aspect-ratio: 108.04/108.04;
+    background: url('../img/logo.png') #0f0f0c 50% / cover no-repeat;
+    bottom: 1px;
+    left: 12px;
+    right: 1161px;
+}
+.banner {
+    width: 1320px;
+    height: 1270px;
+    flex-shrink: 0;
+    border-color: rgba(249,254,216,0.5);
+    top: 57px;
+    left:-24px;
+    right:-16px;
+}
+.group22 {
+    width: 1320px;
+    height: 1270px;
+    flex-shrink: 0;
+    border-color: #F9FED8;
+}
+.group21 {
+    width: 1320px;
+    height: 1270px;
+    flex-shrink: 0;
+    border-color: #F9FED8;
+}
+.site-cover1 {
+    width: 1285px;
+    height: 688px;
+    flex-shrink: 0;
+    aspect-ratio: 1285/688;
+    background: url('../img/site_cover1.png') lightgray 50% / cover no-repeat;
+}
