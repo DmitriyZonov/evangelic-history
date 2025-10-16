@@ -1,6 +1,6 @@
 .menu {
     background: #0F0F0C;
-    width: 1281px;
+    width: 1277px;
     height: 109px;
     flex-shrink: 0;
 }
@@ -8,37 +8,407 @@
     width: 108px;
     height: 108px;
     flex-shrink: 0;
-    aspect-ratio: 108.04/108.04;
+    aspect-ratio: 108/108;
     background: url('../img/logo.png') #0f0f0c 50% / cover no-repeat;
     bottom: 1px;
     left: 12px;
     right: 1161px;
 }
 .banner {
+    position: absolute;
     width: 1320px;
     height: 1270px;
     flex-shrink: 0;
     border-color: rgba(249,254,216,0.5);
-    top: 57px;
-    left:-24px;
-    right:-16px;
+    z-index: 0;
+
 }
 .group22 {
+    position: relative;
     width: 1320px;
     height: 1270px;
     flex-shrink: 0;
     border-color: #F9FED8;
+    z-index: 1;
 }
 .group21 {
+    position: relative;
     width: 1320px;
     height: 1270px;
     flex-shrink: 0;
     border-color: #F9FED8;
+    z-index: 2;
 }
 .site-cover1 {
-    width: 1285px;
+    width: 1277px;
     height: 688px;
     flex-shrink: 0;
     aspect-ratio: 1285/688;
     background: url('../img/site_cover1.png') lightgray 50% / cover no-repeat;
+    z-index: 3;
+}
+.group21-banner {
+    position: relative;
+    top: -688px;
+    width: 1320px;
+    height: 1270px;
+    flex-shrink: 0;
+    border-color: #F9FED8;
+    z-index: 3;
+}
+.torn-edge1 {
+    width: 1320px;
+    height: 880px;
+    position: relative;
+    top: -45px;
+    flex-shrink: 0;
+    aspect-ratio: 1016/880;
+    background-image: url('../img/torn_edge1.png');
+    background-repeat: no-repeat;
+    z-index: 3;
+}
+.torn-edge2 {
+    width: 1320px;
+    height: 880px;
+    position: relative;
+    top:-1882px;
+    left: 1px;
+    flex-shrink: 0;
+    aspect-ratio: 1016/880;
+    background-image: url('../img/torn_edge2.png');
+    background-repeat: no-repeat;
+    z-index: 3;
+}
+.vector2 {
+    width: 1022px;
+    height: 257px;
+    position: relative;
+    bottom: 409px;
+    flex-shrink: 0;
+    fill: #F9FED8;
+    stroke-width: 1px;
+    stroke: #F9FED8;
+    z-index: 3;
+}
+.main-title {
+    width: 1000px;
+    height: 114px;
+    flex-shrink: 0;
+    position: relative;
+    left: 150px;
+    top:190px;
+    color: #FFF;
+    text-shadow: 5px 10px 10px #000;
+    text-align: center;
+    font-family: "Playfair Display";
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+}
+.main-title1 {
+    width: 609px;
+    height: 208px;
+    position: relative;
+    left: 370px;
+    top:95px;
+    flex-shrink: 0;
+    color: #FFF;
+    text-shadow: 5px 10px 10px #000;
+    text-align: center;
+    font-family: "Andantino script";
+    font-size: 96px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+.rectangle5 {
+    width: 1277px;
+    height: 1373px;
+    position: absolute;
+    top: 129px;
+    z-index: 0;
+    flex-shrink: 0;
+    background-color: #F9FED8;
+}
+.about-main {
+    display: flex;
+    width: 1198px;
+    height: 556px;
+    flex-shrink: 0;
+    position: relative;
+    top: 650px;
+    left: 48px;
+    z-index: 1;
+}
+.group5 {
+    width: 605px;
+    height: 386px;
+    position: relative;
+    flex-shrink: 0;
+    z-index: 2;
+}
+.group23 {
+    width: 510px;
+    height: 267px;
+    position: relative;
+    top: 36px;
+    left: 80px;
+    flex-shrink: 0;
+    z-index: 2;
+}
+.rectangle12 {
+    width: 291px;
+    height: 181px;
+    flex-shrink: 0;
+    border-radius: 15px;
+    background: #8D0B19;
+    z-index: 3;
+}
+.text-about-rectangle12 {
+    display: flex;
+    width: 223px;
+    height: 22px;
+    position: relative;
+    top: 35px;
+    left: 17px;
+    flex-direction: column;
+    flex-shrink: 0;
+    color: #FFF;
+    text-align: center;
+    font-family: "Novelist";
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px; /* 125% */
+    text-transform: uppercase;
+}
+.text-about-rectangle12-2 {
+    display: flex;
+    width: 258px;
+    height: 43px;
+    position: relative;
+    top: 57px;
+    left: 17px;
+    flex-direction: column;
+    flex-shrink: 0;
+    color: #F9FED8;
+    text-align: left;
+    font-family: "Gabriola";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 100% */
+}
+.rectangle13 {
+    width: 291px;
+    height: 181px;
+    position: relative;
+    left: 314px;
+    bottom: 362px;
+    flex-shrink: 0;
+    border-radius: 15px;
+    background: #8D0B19;
+    z-index: 3;
+}
+.text-about-rectangle13 {
+    display: flex;
+    width: 213px;
+    height: 51px;
+    position: relative;
+    top: 25px;
+    left: 17px;
+    flex-direction: column;
+    flex-shrink: 0;
+    color: #FFF;
+    text-align: left;
+    font-family: Novelist;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 30px; /* 93.75% */
+    text-transform: uppercase;
+}
+.text-about-rectangle13-2 {
+    display: flex;
+    width: 246px;
+    height: 99px;
+    position: relative;
+    top: 35px;
+    left: 17px;
+    flex-direction: column;
+    flex-shrink: 0;
+    color: #F9FED8;
+    text-align: left;
+    font-family: Gabriola;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 100% */
+}
+.rectangle15 {
+    width: 291px;
+    height: 181px;
+    position: relative;
+    top: 24px;
+    flex-shrink: 0;
+    border-radius: 15px;
+    background: #8D0B19;
+    z-index: 3;
+}
+.text-about-rectangle15 {
+    display: flex;
+    width: 250px;
+    height: 48px;
+    position: relative;
+    top: 24px;
+    left: 18px;
+    flex-direction: column;
+    justify-content: left;
+    flex-shrink: 0;
+    color: #FFF;
+    text-align: justify;
+    font-family: Novelist;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 30px; /* 93.75% */
+    text-transform: uppercase;
+}
+.text-about-rectangle15-2 {
+    display: flex;
+    width: 251px;
+    height: 99px;
+    position: relative;
+    top: 35px;
+    left: 18px;
+    flex-direction: column;
+    justify-content: left;
+    flex-shrink: 0;
+    color: #F9FED8;
+    text-align: justify;
+    font-family: Gabriola;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 100% */
+}
+.rectangle14 {
+    width: 291px;
+    height: 181px;
+    position: relative;
+    bottom:338px;
+    left: 314px;
+    flex-shrink: 0;
+    border-radius: 15px;
+    background: #8D0B19;
+    z-index: 3;
+}
+.rectangle16 {
+    width: 238px;
+    height: 59px;
+    position: relative;
+    top: 496px;
+    right: 622px;
+    flex-shrink: 0;
+    border-radius: 45px;
+    background: #5A062A;
+
+}
+.text-about-group23 {
+    display: flex;
+    width: 506px;
+    height: 153px;
+    position: relative;
+    top: 5px;
+    flex-direction: column;
+    text-align: left;
+    flex-shrink: 0;
+    color: #1E1E1E;
+    font-family: Novelist;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px; /* 83.333% */
+    text-transform: uppercase;
+}
+.text-about-group23-2 {
+    display: flex;
+    width: 502px;
+    height: 110px;
+    position: relative;
+    flex-direction: column;
+    justify-content: left;
+    flex-shrink: 0;
+    color: #1E1E1E;
+    text-align: justify;
+    font-family: Gabriola;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 30px; /* 93.75% */
+}
+.text-about-rectangle16{
+    width: 144px;
+    height: 19px;
+    flex-shrink: 0;
+    color: #F9FED8;
+    position: relative;
+    top: 14px;
+    left: 49px;
+    text-align: center;
+    font-family: Novelist;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+}
+.video-archive-background {
+    width: 1277px;
+    height: 1373px;
+    flex-shrink: 0;
+    fill: #5A062A;
+    z-index: 0;
+    position: relative;
+    top:1235px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@font-face {
+    font-family: "Andantino script";
+    src: url('../fonts/andantinoscript.ttf');
+    font-style: normal;
+    font-weight: normal;
+}
+@font-face {
+    font-family: "Novelist";
+    src: url('../fonts/Novelist_free.otf');
+    font-style: normal;
+    font-weight: normal;
+}
+@font-face {
+    font-family: "Gabriola";
+    src: url('../fonts/gabriola.ttf');
+    font-style: normal;
+    font-weight: normal;
 }
