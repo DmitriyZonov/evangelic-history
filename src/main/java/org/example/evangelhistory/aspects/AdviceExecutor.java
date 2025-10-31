@@ -13,10 +13,11 @@ import org.springframework.stereotype.Component;
 @Order(1)
 @Slf4j
 public class AdviceExecutor {
-    @After("PointCutSearcher.getAllClients()")
+   @After("PointCutSearcher.getAllClients()")
     public void methodByNameAdvice(JoinPoint joinPoint) {
         log.info("Method: " + joinPoint.toShortString() + " is done his work");
     }
+
     @Before("PointCutSearcher.allControllers()")
     public void methodsByPackage(JoinPoint joinPoint) {
         log.info("Starting controller " + joinPoint.toShortString());

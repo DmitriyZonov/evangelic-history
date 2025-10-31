@@ -1,4 +1,4 @@
-package org.example.evangelhistory.controllers;
+/* package org.example.evangelhistory.controllers;
 
 import lombok.RequiredArgsConstructor;
 import org.example.evangelhistory.entities.MediaAlbum;
@@ -47,3 +47,4 @@ public class MediaAlbumController {
         return ResponseEntity.noContent().build();
     }
 }
+*/

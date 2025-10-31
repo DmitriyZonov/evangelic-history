@@ -1,4 +1,4 @@
-package org.example.evangelhistory.controllers;
+/* package org.example.evangelhistory.controllers;
 
 import lombok.extern.slf4j.Slf4j;
 import org.example.evangelhistory.entities.Video;
@@ -19,3 +19,4 @@ public class VideoController {
         return service.getAllVideos();
     }
 }
+*/

@@ -8,12 +8,12 @@
         <version>2.2.6.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.javarush</groupId>
-    <artifactId>bike-service</artifactId>
+    <groupId>org.example</groupId>
+    <artifactId>evangelic-history</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>war</packaging>
-    <name>bike-service</name>
-    <description>bike-service</description>
+    <name>evangelic-history</name>
+    <description>evangelic-history</description>
     <properties>
         <logstash.host>logstashcsm.example.ru</logstash.host>
         <java.version>11</java.version>
@@ -102,10 +102,6 @@
             <artifactId>annotations</artifactId>
             <version>RELEASE</version>
             <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-security</artifactId>
         </dependency>
         <dependency>
             <groupId>org.mockito</groupId>

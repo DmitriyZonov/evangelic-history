@@ -1,0 +1,134 @@
+body {
+    background-color: #F9FED8;
+}
+.background-1 {
+    position: absolute;
+    width: 1278px;
+    height: 700px;
+    margin-left: 50%;
+    transform: translate(-50%,0);
+    flex-shrink: 0;
+    border-color: rgba(249,254,216,0.5);
+    background-color: #5A062A;
+    z-index: -1;
+}
+.torn-edge1 {
+    width: 1278px;
+    height: 297px;
+    position: absolute;
+    top: 434px;
+    flex-shrink: 0;
+    aspect-ratio: 1016/880;
+    background-image: url('../img/page_elements/torn_edges/torn_edge1.png');
+    background-repeat: no-repeat;
+    z-index: 3;
+}
+.vector1 {
+    width: 1022px;
+    height: 257px;
+    position: absolute;
+    top:466px;
+    flex-shrink: 0;
+    fill: #F9FED8;
+    stroke-width: 1px;
+    stroke: #F9FED8;
+    z-index: 3;
+}
+.background-2 {
+    position: absolute;
+    width: 1278px;
+    height: 855px;
+    top: 703px;
+    margin-left: 50%;
+    transform: translate(-50%,0);
+    flex-shrink: 0;
+    border-color: rgba(249,254,216,0.5);
+    background-color: blueviolet;
+    z-index: -1;
+}
+.background-3 {
+    width: 1278px;
+    height: 1373px;
+    margin-left: 50%;
+    transform: translate(-50%,0);
+    flex-shrink: 0;
+    fill: #5A062A;
+    z-index: -1;
+    position: absolute;
+    top: 1327px;
+}
+.torn-edge2 {
+    width: 1280px;
+    height: 298px;
+    position: absolute;
+    flex-shrink: 0;
+    top: -20px;
+    left: 1px;
+    aspect-ratio: 1016/880;
+    background-image: url('../img/page_elements/torn_edges/torn_edge2.png');
+    z-index: 0;
+}
+.video-archive {
+    width: 1005px;
+    height: 638px;
+    position: absolute;
+    top: 250px;
+    margin-left: 50%;
+    transform: translate(-50%, 0);
+    flex-shrink: 0;
+    z-index: 1;
+}
+.background-4 {
+    width: 1278px;
+    height: 832px;
+    position: absolute;
+    top: 2468px;
+    margin-left: 50%;
+    transform: translate(-50%,0);
+    flex-shrink: 0;
+    background-color: #F9FED8;
+    z-index: -1;
+}
+.vector2 {
+    width: 1022px;
+    height: 257px;
+    position: absolute;
+    top: -218px;
+    z-index: -1;
+    flex-shrink: 0;
+    fill: #F9FED8;
+    stroke-width: 1px;
+    stroke: #F9FED8;
+}
+.torn-edge3 {
+    width: 1278px;
+    height: 304px;
+    flex-shrink: 0;
+    transform: rotate(3deg);
+    aspect-ratio: 1016/880;
+    z-index: 1;
+    position: absolute;
+    top: -243px;
+    left:-27px;
+    background-image: url('../img/page_elements/torn_edges/torn_edge3.png');
+    background-repeat: no-repeat;
+}
+.upbtn {
+    z-index: 9999;
+    width: 58px;
+    height: 58px;
+    color: #FFF;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    cursor: pointer;
+    border-radius:50%;
+    transition: all .7s ease-in-out;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url('../img/page_elements/up_button.svg');
+    background-color: transparent;
+}
+.upbtn:hover {
+    transform: scale(1.2)!important;
+}

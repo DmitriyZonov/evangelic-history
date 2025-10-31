@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+      lang="en">
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../../../favicon.ico">
+
+    <title data-th-text="#{title.event}"></title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../css/editor.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link th:href="@{/../static/css/to main button.css}" rel="stylesheet">
+    <link th:href="@{/../static/css/background.css}" rel="stylesheet">
+    <link th:href="@{/../static/css/fonts.css}" rel="stylesheet">
+    <link th:href="@{/../static/css/header.css}" rel="stylesheet">
+    <link th:href="@{/../static/css/footer.css}" rel="stylesheet">
+    <link th:href="@{/../static/css/events.css}" rel="stylesheet">
+</head>
+<body>
+<div class="menu">
+    <div class="menu_logo"></div>
+    <div class="to-main">
+        <a th:href="@{/index}" class="to-main-btn" data-th-text="#{header.to_main}"></a>
+    </div>
+    <div class="group2">
+        <a th:href="@{/about}" class="menu-button-about" data-th-text="#{header.about_us}"></a>
+        <a th:href="@{/history}" class="menu-button-history" data-th-text="#{header.history}"></a>
+        <a th:href="@{/biography}" class="menu-button-biography" data-th-text="#{header.biography}"></a>
+        <a th:href="@{/gallery}" class="menu-button-gallery" data-th-text="#{header.gallery}"></a>
+        <a th:href="@{/events}" class="menu-button-events" data-th-text="#{header.event}"></a>
+    </div>
+</div>
+<div class="background-1-events">
+    <div class="events-about">
+        <div class="events-title" data-th-text="#{events.title}"></div>
+        <div class="events-title-small">
+            <text>Анонсы и фотоотчёты лекций,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</text>
+            <text>выставок и встреч проекта </text>
+        </div>
+        <div class="events-title-photo"></div>
+        <div class="events-title-description">
+            <text>Мы рассказываем о том, как вера, патриотизм и жертвенность стали частью национальной истории.</text>
+        </div>
+        <div class="about-project-btn">
+            <a class="about-project-btn-text" th:href="@{/about}" data-th-text="#{title.about_us}"></a>
+        </div>
+    </div>
+</div>
+<div class="background-2">
+    <div class="events-our-project">
+        <div class="events-our-project-title" data-th-text="#{events.our_project_title}"></div>
+        <div class="events-our-project-square-1">
+            <div class="events-our-project-square-number"> <text>4</text></div>
+            <div class="events-our-project-square-text-1"><text>города</text></div>
+        </div>
+        <div class="events-our-project-square-2">
+            <div class="events-our-project-square-number"> <text>120</text></div>
+            <div class="events-our-project-square-text-2"><text>выставочных дней</text></div>
+        </div>
+        <div class="events-our-project-square-3">
+            <div class="events-our-project-square-number"> <text>25</text></div>
+            <div class="events-our-project-square-text-2"><text>стендов с историей</text></div>
+        </div>
+        <div class="events-our-project-square-4">
+            <div class="events-our-project-square-number"> <text>5</text></div>
+            <div class="events-our-project-square-text-1"><text>лекций</text></div>
+        </div>
+        <div class="events-our-project-square-5">
+            <div class="events-our-project-square-number"> <text>1</text></div>
+            <div class="events-our-project-square-text-1"><text>сайт</text></div>
+        </div>
+        <div class="events-our-project-square-6">
+            <div class="events-our-project-square-number"> <text>30+</text></div>
+            <div class="events-our-project-square-text-3"><text>постов в социальных сетях</text></div>
+        </div>
+    </div>
+</div>
+<div class="xpandable-background-3">
+    <div class="events-background-4">
+    </div>
+</div>
+</body>
+<footer class="footer">
+    <div class="footer-logo"></div>
+    <div class="footer-buttons-group">
+        <a th:href="@{/}" class="footer-button-main-page" data-th-text="#{footer.main}"></a>
+        <a th:href="@{/about}" class="footer-button-about" data-th-text="#{footer.about_us}"></a>
+        <a th:href="@{/history}" class="footer-button-history" data-th-text="#{footer.history}"></a>
+        <a th:href="@{/biography}" class="footer-button-biography" data-th-text="#{footer.biography}"></a>
+        <a th:href="@{/gallery}" class="footer-button-gallery" data-th-text="#{footer.gallery}"></a>
+        <a th:href="@{/event}" class="footer-button-events" data-th-text="#{footer.event}"></a>
+        <a th:href="@{/privacy_policy}" class="footer-button-confidential" data-th-text="#{footer.privacy}"></a>
+    </div>
+    <a th:href="#{footer.rutube_link}" class="footer-button-rutube"></a>
+    <a th:href="#{footer.vk_link}" class="footer-button-vk"></a>
+    <div class="footer-button-phone"></div>
+    <div class="marking" data-th-text="#{footer.marking}"></div>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script th:src="@{/../static/js/button-up.js}"></script>
+</footer>
+</html>

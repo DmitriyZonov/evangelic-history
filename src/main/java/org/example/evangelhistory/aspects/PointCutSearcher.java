@@ -9,9 +9,9 @@ import org.springframework.stereotype.Component;
 @Component
 @EnableAspectJAutoProxy
 public class PointCutSearcher {
-    @Pointcut("execution(public * com..ClientService.getAllClients(*))")
+    @Pointcut("execution(public * org..ClientService.getAllClients(*))")
     public void getAllClients(){}
 
-    @Pointcut("within(com..*Controller)")
+    @Pointcut("within(org..*Controller)")
     public void allControllers(){}
 }
