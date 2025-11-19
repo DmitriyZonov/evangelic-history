@@ -15,9 +15,9 @@ public class HomeController {
     public String toAboutUsPage() {
         return "about";
     }
-    @GetMapping("/biography")
+    @GetMapping("/biographies")
     public String toBiographyPage() {
-        return "biography";
+        return "biographies";
     }
     @GetMapping("/history")
     public String toHistoryPage() {

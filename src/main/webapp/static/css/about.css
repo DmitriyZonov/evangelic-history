@@ -2,10 +2,10 @@
     width: 1046px;
     height: 443px;
     flex-shrink: 0;
-    position: absolute;
-    margin-top: 290px;
+    position: relative;
     margin-left: 50%;
-    transform: translate(-50%,-40%);
+    top: 50px;
+    transform: translate(-50%, 0);
     z-index: 1;
 }
 .title-title {
@@ -47,14 +47,25 @@
     width: 1046px;
     height: 157px;
     z-index: 2;
-    top: 107px;
+    top: 120px;
 }
 .title-list {
     width: 549px;
     height: 160px;
-    top: 283px;
+    top: 300px;
     margin-left: 50%;
     transform: translate(-50%, 0);
+}
+.background-2-field {
+    position: relative;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    width: 1278px;
+    height: 855px;
+    margin-left: 50%;
+    transform: translate(-50%,0);
+    z-index: -1;
 }
 .engraving {
     width: 1081px;
@@ -62,10 +73,8 @@
     flex-shrink: 0;
     border-radius: 47px;
     background: url("../img/page_elements/engraving_about_project.png") lightgray 50% / cover no-repeat;
-    position: absolute;
-    margin-left: 50%;
-    transform: translate(-50%, 0);
-    top:-113px;
+    position: relative;
+    top: -150px;
     z-index: 2;
 }
 .epigram {
@@ -75,9 +84,8 @@
     flex-direction: column;
     justify-content: center;
     flex-shrink: 0;
-    position: absolute;
-    left: 120px;
-    bottom: 180px;
+    position: relative;
+    top: -10px;
     color: #000;
     text-align: justify;
     font-family: "Andantino script";
@@ -95,12 +103,12 @@
     position: absolute;
 }
 .quotes_open {
-    left: 78px;
-    bottom:316px;
+    left: 110px;
+    bottom:360px;
 }
 .quotes_close {
-    left: 507px;
-    bottom: 131px;
+    left: 535px;
+    bottom: 170px;
     transform: rotate(180deg);
 }
 .img-2nd-level {
@@ -109,20 +117,61 @@
     flex-shrink: 0;
     border-radius: 34px;
     background: url(../img/page_elements/stub_img.jpg) lightgray -1.722px -86.227px / 101.438% 124.669% no-repeat;
-    position: absolute;
-    right: 118px;
-    bottom: 182px;
+    position: relative;
+    top: -100px;
     z-index: 3;
 }
 .team {
-    width: 1140px;
-    height: 710px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    width: 1200px;
+    height: 740px;
     flex-shrink: 0;
-    position: absolute;
+    position: relative;
     margin-left: 50%;
     transform: translate(-50%, 0);
-    top: 220px;
     z-index: 1;
+}
+.team-photo-field {
+    display: flex;
+    flex-flow: column nowrap;
+    width: 554px;
+    height: 740px;
+    justify-content: space-around;
+}
+.team-photo1, .team-photo2, .team-photo3 {
+    width: 223px;
+    height: 280px;
+    flex-shrink: 0;
+    position: relative;
+    border-radius: 15px;
+    filter: grayscale(100%);
+    z-index: 5;
+}
+.team-photo1 {
+    background: url("../img/page_elements/lazarev_gs.jpg") lightgray 50% / cover no-repeat;
+    left: 20px;
+    top: 50px;
+ }
+.team-photo2 {
+    background: url("../img/page_elements/trifonova_mg.jpg") lightgray 50% / cover no-repeat;
+    align-self: flex-end;
+    right: 20px;
+    top: -50px;
+}
+.team-photo3 {
+    background: url("../img/page_elements/trifonov_rs.jpg") lightgray 50% / cover no-repeat;
+    top: -150px;
+    left: 20px;
+}
+.team-title-description-achieves-field {
+    height: 740px;
+    width: 586px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-evenly;
+    align-items: center;
 }
 .team-title {
     display: flex;
@@ -131,10 +180,9 @@
     flex-direction: column;
     justify-content: center;
     flex-shrink: 0;
-    position: absolute;
-    right: 158px;
+    position: relative;
     color: #FFF;
-    text-align: justify;
+    text-align: center;
     font-family: Novelist;
     font-size: 64px;
     font-style: normal;
@@ -143,28 +191,6 @@
     text-transform: uppercase;
     z-index: 3;
 }
-.team-photo1, .team-photo2, .team-photo3 {
-    width: 223px;
-    height: 280px;
-    flex-shrink: 0;
-    position: absolute;
-    border-radius: 15px;
-    filter: grayscale(100%);
-    z-index: 5;
-}
-.team-photo1 {
-     background: url("../img/page_elements/lazarev_gs.jpg") lightgray 50% / cover no-repeat;
-     top: 51px;
- }
-.team-photo2 {
-    background: url("../img/page_elements/trifonova_mg.jpg") lightgray 50% / cover no-repeat;
-    top: 256px;
-    left: 275px;
-}
-.team-photo3 {
-    background: url("../img/page_elements/trifonov_rs.jpg") lightgray 50% / cover no-repeat;
-    bottom: 25px;
-}
 .team-description {
     display: flex;
     width: 586px;
@@ -172,9 +198,7 @@
     flex-direction: column;
     justify-content: center;
     flex-shrink: 0;
-    position: absolute;
-    top: 128px;
-    right: 0;
+    position: relative;
     color: #FFF;
     text-align: justify;
     font-family: Gabriola;
@@ -183,15 +207,28 @@
     font-weight: 400;
     line-height: 30px; /* 93.75% */
 }
-.team-achieve-number1, .team-achieve-number2, .team-achieve-number3, .team-achieve-number4 {
+.team-achieves {
+    height: 165px;
+    width: 586px;
     display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+.team-achieve-field {
+    display: flex;
+    position: relative;
+    height: 165px;
+    width: 142px;
+    align-items: center;
+    justify-content: flex-start;
+    flex-flow: column nowrap;
+}
+.team-achieve-number {
     height: 63px;
-    flex-direction: column;
-    justify-content: center;
-    flex-shrink: 0;
+    width: 142px;
     color: #F9FED8;
-    position: absolute;
-    bottom: 91px;
+    position: relative;
+    top: 5px;
     text-align: center;
     font-family: Gabriola;
     font-size: 64px;
@@ -199,53 +236,18 @@
     font-weight: 400;
     line-height: 40px; /* 62.5% */
 }
-.team-achieve-number1 {
-    width: 57px;
-    right: 510px;
-}
-.team-achieve-number2 {
-    width: 83px;
-    right: 346px;
-}
-.team-achieve-number3 {
-    width: 101px;
-    right: 185px;
-}
-.team-achieve-number4 {
-    width: 72px;
-    right: 33px;
-}
 
-.team-achieve-description-1, .team-achieve-description-2, .team-achieve-description-3, .team-achieve-description-4 {
-    display: flex;
+.team-achieve-description {
     height: 63px;
-    flex-direction: column;
-    justify-content: center;
-    flex-shrink: 0;
-    position: absolute;
-    bottom: 0;
+    width: 142px;
+    position: relative;
     color: #FFF;
+    text-align: center;
     font-family: Gabriola;
     font-size: 18px;
     font-style: normal;
     font-weight: 400;
     line-height: 20px; /* 111.111% */
-}
-.team-achieve-description-1 {
-    width: 123px;
-    right: 469px;
-}
-.team-achieve-description-2 {
-    width: 113px;
-    right: 331px;
-}
-.team-achieve-description-3 {
-    width: 142px;
-    right: 164px;
-}
-.team-achieve-description-4 {
-    width: 139px;
-    right: 0;
 }
 .bibliography {
     width: 980px;

@@ -1,11 +1,10 @@
 .footer{
+    position: relative;
     width: 100%;
     height: 342px;
-    margin-left: 50%;
-    transform: translate(-50%,0);
-    flex-shrink: 0;
+    bottom: 0;
     background-color: #0F0F0C;
-
+    z-index: 0;
 }
 .footer-logo {
     width: 192px;

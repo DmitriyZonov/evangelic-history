@@ -28,12 +28,13 @@
 </head>
 
 <body>
+<div class="wrapper">
 <div class="menu">
     <div class="menu_logo"></div>
     <div class="group2">
         <a th:href="@{/about}" class="menu-button-about" data-th-text="#{header.about_us}"></a>
         <a th:href="@{/history}" class="menu-button-history" data-th-text="#{header.history}"></a>
-        <a th:href="@{/biography}" class="menu-button-biography" data-th-text="#{header.biography}"></a>
+        <a th:href="@{/biographies}" class="menu-button-biography" data-th-text="#{header.biography}"></a>
         <a th:href="@{/gallery}" class="menu-button-gallery" data-th-text="#{header.gallery}"></a>
         <a th:href="@{/events}" class="menu-button-events" data-th-text="#{header.event}"></a>
     </div>
@@ -48,69 +49,61 @@
         </div>
     </div>
     <div class="torn-edge1"></div>
-    <div class="vector1">
-        <svg xmlns="http://www.w3.org/2000/svg" width="1020" height="259" viewBox="0 0 1020 259" fill="none">
-            <path d="M-3 1C29.9202 3.49515 64.8058 7.48738 88.3904 17.468C111.975 27.4485 221.545 95.8155 310.97 122.264C382.51 143.423 653.275 183.645 779.714 201.111L1019 220.074V241.532L-3 258V1Z" fill="#F9FED8" stroke="#F9FED8"/>
-        </svg>
-    </div>
 </div>
 <div class="background-2">
     <div class="about-main">
-        <div class="group5">
-            <div class="rectangle12">
-                <div class="text-title-about-rectangle-1">
+        <div class="about-tiles-group">
+            <div class="about-tile">
+                <div class="title-1">
                     <text>150 ЛЕТ ИСТОРИИ</text>
                 </div>
-                <div class="text-2-about-rectangle">
+                <div class="text">
                     <text>— от первых евангельских общин
                         XIX века до современности.</text>
                 </div>
             </div>
-            <div class="rectangle15">
-                <div class="text-title-about-rectangle">
+            <div class="about-tile">
+                <div class="title">
                     <text>Передвижные выставки и лекции</text>
                 </div>
-                <div class="text-2-about-rectangle">
+                <div class="text">
                     <text>— проект знакомит жителей Калининградской области с историей через экспозиции и публичные встречи.</text>
                 </div>
             </div>
-            <div class="rectangle13">
-                <div class="text-title-about-rectangle">
+            <div class="about-tile">
+                <div class="title">
                     <text>ДЕСЯТКИ ГЕРОЕВ ВОЙНЫ</text>
                 </div>
-                <div class="text-2-about-rectangle">
+                <div class="text">
                     <text>— евангельские христиане
                         сражались и жертвовали жизнью
                         в годы Первой мировой и Великой
                         Отечественной войн.</text>
                 </div>
             </div>
-            <div class="rectangle14">
-                <div class="text-title-about-rectangle">
+            <div class="about-tile">
+                <div class="title">
                     <text>УНИКАЛЬНЫЕ ВИДЕОИНТЕРВЬЮ</text>
                 </div>
-                <div class="text-2-about-rectangle">
+                <div class="text">
                     <text>— живые свидетельства потомков, собранные специально для проекта.</text>
                 </div>
             </div>
         </div>
-        <div class="group23">
-            <div class="text-about-group23">
+        <div class="about-text-group">
+            <div class="about-text-group-title">
                 <text>Просвещение, сохранение памяти, разрушение стереотипов</text>
             </div>
-            <div class="text-about-group23-2">
+            <div class="about-text-group-title2">
                 <text>“Евангельские христиане – часть российской истории, внесшая духовный и патриотический вклад”.</text>
             </div>
         </div>
-        <div class="rectangle16">
-            <a class="btn-about" th:href="@{/about}" th:text="#{index.about}"></a>
+        <div class="more-btn">
+            <a class="link" th:href="@{/about}" th:text="#{index.about}"></a>
         </div>
     </div>
 </div>
 <div class="background-3">
-    <svg xmlns="http://www.w3.org/2000/svg" width="1280" height="1373" viewBox="0 0 1280 1373" fill="none">
-        <path d="M-1 268.5L961.251 142L1280 0V1140L868.179 1258L-1 1373V268.5Z" fill="#5A062A"/>
-    </svg>
     <div class="torn-edge2"></div>
     <div class="video-archive">
         <div class="video-archive-text-title">
@@ -120,51 +113,54 @@
             <text>"Они служили России"</text>
         </div>
         <div class="video-teasers">
-            <div class="rectangle11">
-                <img th:src="@{/../static/img/heroes/Ivan_Shatalin.jpg}" class="cover">
+            <div class="video-teasers-tile">
+                <div class="video-teasers-portraits">
+                    <img th:src="@{/../static/img/heroes/Ivan_Shatalin.jpg}" class="cover">
+                </div>
+                <div class="video-teasers-title">
+                    <text>Подвиг Ивана Шаталина</text>
+                </div>
             </div>
-            <div class="text-video-teaser-title-1">
-                <text>Подвиг Ивана Шаталина</text>
+            <div class="video-teasers-tile">
+                <div class="video-teasers-portraits">
+                    <img th:src="@{/../static/img/heroes/Vasiliy_Fedichkin.jpg}" class="cover">
+                </div>
+                <div class="video-teasers-title">
+                    <text>История Василия Федичкина</text>
+                </div>
             </div>
-            <div class="rectangle8">
-                <img th:src="@{/../static/img/heroes/Vasiliy_Fedichkin.jpg}" class="cover">
-            </div>
-            <div class="text-video-teaser-title-2">
-                <text>История Василия Федичкина</text>
-            </div>
-            <div class="rectangle9">
-                <img th:src="@{/../static/img/heroes/Lubov_Dmitrievna.jpg}" class="cover">
-            </div>
-            <div class="text-video-teaser-title-3">
-                <text>Память о Любовь Дмитриевне</text>
+            <div class="video-teasers-tile">
+                <div class="video-teasers-portraits">
+                    <img th:src="@{/../static/img/heroes/Lubov_Dmitrievna.jpg}" class="cover">
+                </div>
+                <div class="video-teasers-title">
+                    <text>Память о Любовь Дмитриевне</text>
+                </div>
             </div>
         </div>
-        <div class="rectangle16-1">
-            <a class="btn-about-1 a1" th:href="@{/biography}" th:text="#{index.about}"></a>
+        <div class="more-btn-1">
+            <a class="link-1 a1" th:href="@{/biography}" th:text="#{index.about}"></a>
         </div>
     </div>
+    <div class="torn-edge3"></div>
 </div>
 <div class="background-4">
-    <svg xmlns="http://www.w3.org/2000/svg" width="1280" height="700" viewBox="0 0 1280 700" fill="none">
-        <path d="M-5 0H1282V931.376L863.5 929.5H-5V0Z" fill="#F9FED8"/>
-    </svg>
-    <div class="torn-edge3"></div>
-    <div class="vector2">
-        <svg xmlns="http://www.w3.org/2000/svg" width="1020" height="259" viewBox="0 0 1020 259" fill="none">
-            <path d="M-3 0.539307C29.9202 3.03445 64.8058 7.02669 88.3904 17.0073C111.975 26.9879 221.545 95.3548 310.97 121.803C382.51 142.962 653.275 183.184 779.714 200.65L1019 219.613V241.071L-3 257.539V0.539307Z" fill="#F9FED8" stroke="#F9FED8"/>
-        </svg>
-    </div>
     <div class="announcements">
-        <div class="text-announcements-title">
-            <text>Анонсы</text>
+        <div class="announcements-title-tile">
+            <div class="announcements-title">
+                <text>Анонсы</text>
+            </div>
+            <div class="announcements-title-2">
+                <text>Мы будем рады встрече с Вами на мероприятиях проекта.</text>
+            </div>
+            <div class="more-btn-2">
+                <a class="link" th:href="@{/event}" th:text="#{index.about}"></a>
+            </div>
         </div>
-        <div class="text-announcements-title-2">
-            <text>Мы будем рады встрече с Вами на мероприятиях проекта.</text>
-        </div>
-        <div class="rectangle16-2">
-            <a class="btn-about" th:href="@{/event}" th:text="#{index.about}"></a>
-        </div>
-        <div class="rectangle17">
+        <div class="announcements-tile">
+            <div class="announcements-tile-img">
+                <img th:src="@{/../static/img/page_elements/chernyahovsk_anons.png}" class="cover">
+            </div>
             <div class="anons-title-1">
                 <text>Март — Черняховск</text>
             </div>
@@ -174,10 +170,10 @@
                 <text>Живая история края: от Первой мировой до Великой Отечественной. Возможность задать вопросы исследователям.</text>
             </div>
         </div>
-        <div class="rectangle17-img">
-            <img th:src="@{/../static/img/page_elements/chernyahovsk_anons.png}" class="cover">
-        </div>
-        <div class="rectangle17-1">
+        <div class="announcements-tile">
+            <div class="announcements-tile-img">
+                <img th:src="@{/../static/img/page_elements/kaliningrad_anons.png}" class="cover">
+            </div>
             <div class="anons-title-1">
                 <text>Январь — Калининград</text>
             </div>
@@ -187,10 +183,10 @@
                 <text>Узнайте, как евангельские христиане внесли вклад в победы России. Первая встреча цикла в столице региона</text>
             </div>
         </div>
-        <div class="rectangle17-img-1">
-            <img th:src="@{/../static/img/page_elements/kaliningrad_anons.png}" class="cover">
-        </div>
-        <div class="rectangle17-2">
+        <div class="announcements-tile">
+            <div class="announcements-tile-img">
+                <img th:src="@{/../static/img/page_elements/sovetsk_anons.jpg}" class="cover">
+            </div>
             <div class="anons-title-1">
                 <text>Февраль — Советск</text>
             </div>
@@ -200,10 +196,10 @@
                 <text> История в фотографиях, документах и личных свидетельствах. Открытие экспозиции для жителей Советска.</text>
             </div>
         </div>
-        <div class="rectangle17-img-2">
-            <img th:src="@{/../static/img/page_elements/sovetsk_anons.jpg}" class="cover">
-        </div>
-        <div class="rectangle17-3">
+        <div class="announcements-tile">
+            <div class="announcements-tile-img">
+                <img th:src="@{/../static/img/page_elements/gusev_anons.jpg}" class="cover">
+            </div>
             <div class="anons-title-1">
                 <text>Апрель — Гусев</text>
             </div>
@@ -213,9 +209,10 @@
                 <text>Уникальные интервью потомков и редкие архивные материалы — теперь в Гусеве.</text>
             </div>
         </div>
-        <div class="rectangle17-img-3">
-            <img th:src="@{/../static/img/page_elements/gusev_anons.jpg}" class="cover">
-        </div><div class="rectangle17-4">
+        <div class="announcements-tile">
+            <div class="announcements-tile-img">
+                <img th:src="@{/../static/img/page_elements/kaliningrad_anons.png}" class="cover">
+            </div>
         <div class="anons-title-1">
             <text>Май — Калининград</text>
         </div>
@@ -225,12 +222,13 @@
             <text> Итоговая выставка и заключительная лекция. Подведение итогов, презентация видеоархива и публикация материалов</text>
         </div>
     </div>
-        <div class="rectangle17-img-4">
-            <img th:src="@{/../static/img/page_elements/kaliningrad_anons.png}" class="cover">
-        </div>
     </div>
 </div>
-<div class="footer">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script th:src="@{../static/js/up-button.js}"></script>
+</div>
+</body>
+<footer class="footer">
     <div class="footer-logo"></div>
     <div class="footer-buttons-group">
         <a th:href="@{/}" class="footer-button-main-page" data-th-text="#{footer.main}"></a>
@@ -245,8 +243,5 @@
     <a th:href="#{footer.vk_link}" class="footer-button-vk"></a>
     <div class="footer-button-phone"></div>
     <div class="marking" data-th-text="#{footer.marking}"></div>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script th:src="@{/../static/js/button-up.js}"></script>
-</div>
-</body>
+</footer>
 </html>

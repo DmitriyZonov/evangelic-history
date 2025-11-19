@@ -27,6 +27,7 @@
   <link th:href="@{/../static/css/about.css}" rel="stylesheet">
 </head>
 <body>
+<div class="wrapper">
 <div class="menu">
   <div class="menu_logo"></div>
   <div class="to-main">
@@ -35,7 +36,7 @@
   <div class="group2">
     <a th:href="@{/about}" class="menu-button-about" data-th-text="#{header.about_us}"></a>
     <a th:href="@{/history}" class="menu-button-history" data-th-text="#{header.history}"></a>
-    <a th:href="@{/biography}" class="menu-button-biography" data-th-text="#{header.biography}"></a>
+    <a th:href="@{/biographies}" class="menu-button-biography" data-th-text="#{header.biography}"></a>
     <a th:href="@{/gallery}" class="menu-button-gallery" data-th-text="#{header.gallery}"></a>
     <a th:href="@{/events}" class="menu-button-events" data-th-text="#{header.event}"></a>
   </div>
@@ -57,69 +58,69 @@
     </div>
   </div>
   <div class="torn-edge1"></div>
-  <div class="vector1">
-    <svg xmlns="http://www.w3.org/2000/svg" width="1020" height="259" viewBox="0 0 1020 259" fill="none">
-      <path d="M-3 1C29.9202 3.49515 64.8058 7.48738 88.3904 17.468C111.975 27.4485 221.545 95.8155 310.97 122.264C382.51 143.423 653.275 183.645 779.714 201.111L1019 220.074V241.532L-3 258V1Z" fill="#F9FED8" stroke="#F9FED8"/>
-    </svg>
-  </div>
 </div>
 <div class="background-2">
-  <div class="engraving"></div>
-  <div class="epigram">
-    <text>История евангельских христиан — это история верности Богу и служения своей Родине».</text>
+  <div class="background-2-field">
+    <div class="engraving"></div>
+    <div class="epigram">
+      <text>История евангельских христиан — это история верности Богу и служения своей Родине».</text>
+    </div>
+    <div class="quotes_open"></div>
+    <div class="quotes_close"></div>
+    <div class="img-2nd-level"></div>
   </div>
-  <div class="quotes_open"></div>
-  <div class="quotes_close"></div>
-  <div class="img-2nd-level"></div>
 </div>
 <div class="background-3">
-  <svg xmlns="http://www.w3.org/2000/svg" width="1280" height="1373" viewBox="0 0 1280 1373" fill="none">
-    <path d="M-1 268.5L961.251 142L1280 0V1140L868.179 1258L-1 1373V268.5Z" fill="#5A062A"/>
-  </svg>
   <div class="torn-edge2"></div>
   <div class="team">
-    <div class="team-title" data-th-text="#{about_project.team_title}"></div>
-    <div class="team-photo1"></div>
-    <div class="team-photo2"></div>
-    <div class="team-photo3"></div>
-    <div class="team-description">
-      <text>Геннадий Лазарев — Руководитель проекта.</text><text>Епископ, старший пастор. Более 20 лет опыта в служении и общественной деятельности.</text>
+    <div class="team-photo-field">
+      <div class="team-photo1"></div>
+      <div class="team-photo2"></div>
+      <div class="team-photo3"></div>
+    </div>
+    <div class="team-title-description-achieves-field">
+      <div class="team-title" data-th-text="#{about_project.team_title}"></div>
+      <div class="team-description">
+        <text>Геннадий Лазарев — Руководитель проекта.</text><text>Епископ, старший пастор. Более 20 лет опыта в служении и общественной деятельности.</text>
 
-      <br><text>Роман Трифонов — Координатор проекта.</text><text>Юрист, исследователь. Более 10 лет опыта в управлении социальными и образовательными проектами.</text>
+        <br><text>Роман Трифонов — Координатор проекта.</text><text>Юрист, исследователь. Более 10 лет опыта в управлении социальными и образовательными проектами.</text>
 
         <br><text>Маргарита Трифонова — Менеджер проекта.</text><text>Специалист по визуальной коммуникации. Создала более 50 печатных и цифровых материалов для просветительских проектов.</text>
-    </div>
-    <div class="team-achieve-number1" data-th-text="#{about_project.team_achieve_number1}"></div>
-    <div class="team-achieve-number2" data-th-text="#{about_project.team_achieve_number2}"></div>
-    <div class="team-achieve-number3" data-th-text="#{about_project.team_achieve_number3}"></div>
-    <div class="team-achieve-number4" data-th-text="#{about_project.team_achieve_number4}"></div>
-    <div class="team-achieve-description-1">
-      <text>лет опыта
-        в реализации просветительских
-        и исследовательских инициатив</text>
-    </div>
-    <div class="team-achieve-description-2">
-      <text>лекций и выставок в Калининградской области и за её пределами</text>
-    </div>
-    <div class="team-achieve-description-3">
-      <text>человек  посетили  мероприятия— школьники, студенты
-        и исследователи</text>
-    </div>
-    <div class="team-achieve-description-4">
-      <text>опубликовано свыше 30 статей и материалов о роли евангельских христиан в истории России</text>
+      </div>
+      <div class="team-achieves">
+        <div class="team-achieve-field">
+          <div class="team-achieve-number" data-th-text="#{about_project.team_achieve_number1}"></div>
+          <div class="team-achieve-description">
+            <text>лет опыта
+              в реализации просветительских
+              и исследовательских инициатив</text>
+          </div>
+        </div>
+        <div class="team-achieve-field">
+          <div class="team-achieve-number" data-th-text="#{about_project.team_achieve_number2}"></div>
+          <div class="team-achieve-description">
+            <text>лекций и выставок в Калининградской области и за её пределами</text>
+          </div>
+        </div>
+        <div class="team-achieve-field">
+          <div class="team-achieve-number" data-th-text="#{about_project.team_achieve_number3}"></div>
+          <div class="team-achieve-description">
+            <text>человек  посетили  мероприятия— школьники, студенты
+              и исследователи</text>
+          </div>
+        </div>
+        <div class="team-achieve-field">
+          <div class="team-achieve-number" data-th-text="#{about_project.team_achieve_number4}"></div>
+          <div class="team-achieve-description">
+            <text>опубликовано свыше 30 статей и материалов о роли евангельских христиан в истории России</text>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
+  <div class="torn-edge3"></div>
 </div>
 <div class="background-4">
-  <svg xmlns="http://www.w3.org/2000/svg" width="1280" height="700" viewBox="0 0 1280 700" fill="none">
-    <path d="M-5 0H1282V931.376L863.5 929.5H-5V0Z" fill="#F9FED8"/>
-  </svg>
-  <div class="torn-edge3"></div>
-  <div class="vector2">
-    <svg xmlns="http://www.w3.org/2000/svg" width="1020" height="259" viewBox="0 0 1020 259" fill="none">
-      <path d="M-3 0.539307C29.9202 3.03445 64.8058 7.02669 88.3904 17.0073C111.975 26.9879 221.545 95.3548 310.97 121.803C382.51 142.962 653.275 183.184 779.714 200.65L1019 219.613V241.071L-3 257.539V0.539307Z" fill="#F9FED8" stroke="#F9FED8"/>
-    </svg>
-  </div>
   <div class="bibliography">
     <div class="bibliography-title" data-th-text="#{about_project.bibliography}"></div>
     <ul class="ul2" bibliography-list>
@@ -146,23 +147,24 @@
     <div class="phone"></div>
   </div>
 </div>
-  <div class="footer">
-    <div class="footer-logo"></div>
-    <div class="footer-buttons-group">
-      <a th:href="@{/}" class="footer-button-main-page" data-th-text="#{footer.main}"></a>
-      <a th:href="@{/about}" class="footer-button-about" data-th-text="#{footer.about_us}"></a>
-      <a th:href="@{/history}" class="footer-button-history" data-th-text="#{footer.history}"></a>
-      <a th:href="@{/biography}" class="footer-button-biography" data-th-text="#{footer.biography}"></a>
-      <a th:href="@{/gallery}" class="footer-button-gallery" data-th-text="#{footer.gallery}"></a>
-      <a th:href="@{/event}" class="footer-button-events" data-th-text="#{footer.event}"></a>
-      <a th:href="@{/privacy_policy}" class="footer-button-confidential" data-th-text="#{footer.privacy}"></a>
-    </div>
-    <a th:href="#{footer.rutube_link}" class="footer-button-rutube"></a>
-    <a th:href="#{footer.vk_link}" class="footer-button-vk"></a>
-    <div class="footer-button-phone"></div>
-    <div class="marking" data-th-text="#{footer.marking}"></div>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script th:src="@{/../static/js/button-up.js}"></script>
-  </div>
+</div>
 </body>
+<div class="footer">
+  <div class="footer-logo"></div>
+  <div class="footer-buttons-group">
+    <a th:href="@{/}" class="footer-button-main-page" data-th-text="#{footer.main}"></a>
+    <a th:href="@{/about}" class="footer-button-about" data-th-text="#{footer.about_us}"></a>
+    <a th:href="@{/history}" class="footer-button-history" data-th-text="#{footer.history}"></a>
+    <a th:href="@{/biography}" class="footer-button-biography" data-th-text="#{footer.biography}"></a>
+    <a th:href="@{/gallery}" class="footer-button-gallery" data-th-text="#{footer.gallery}"></a>
+    <a th:href="@{/event}" class="footer-button-events" data-th-text="#{footer.event}"></a>
+    <a th:href="@{/privacy_policy}" class="footer-button-confidential" data-th-text="#{footer.privacy}"></a>
+  </div>
+  <a th:href="#{footer.rutube_link}" class="footer-button-rutube"></a>
+  <a th:href="#{footer.vk_link}" class="footer-button-vk"></a>
+  <div class="footer-button-phone"></div>
+  <div class="marking" data-th-text="#{footer.marking}"></div>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script th:src="@{/js/up-button.js}"></script>
+</div>
 </html>
