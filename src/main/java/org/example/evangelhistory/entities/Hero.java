@@ -16,8 +16,13 @@ public class Hero {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String fullName;
+    private String smallName;
+    private String yearsOfLife;
     @Column(length = 10000)
     private String biography;
+    private String bigPortrait;
+    private String smallPortrait;
+    private boolean isVideo;
 
     @ManyToMany (mappedBy = "heroes")
     private Set<Video> videos;

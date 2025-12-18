@@ -166,7 +166,6 @@
 }
 .more-btn:active {
     background: rgba(90,6,42,0.88);
-    bottom:22px;
     margin-left: 50%;
     transform: translate(-50%,0) translateY(3px);
 }
@@ -183,7 +182,6 @@
 }
 .more-btn-2:active {
     background: rgba(90,6,42,0.88);
-    top: 168px;
     transform: translateY(3px);
 }
 .more-btn .link, .more-btn-1 .link-1, .more-btn-2 .link {

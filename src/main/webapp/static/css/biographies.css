@@ -86,7 +86,7 @@
     flex-flow: row wrap;
     justify-content: left;
     align-items: center;
-    width: 1238px;
+    width: 1289px;
     position: relative;
     margin-top: 50px;
     height: 392px;
@@ -96,7 +96,7 @@
     flex-flow: row wrap;
     justify-content: left;
     align-items: center;
-    width: 1238px;
+    width: 1289px;
     position: relative;
     margin-top: 50px;
     height: 829px;
@@ -106,7 +106,7 @@
     flex-flow: row wrap;
     justify-content: left;
     align-items: center;
-    width: 1238px;
+    width: 1289px;
     position: relative;
     margin-top: 50px;
     height: 1295px;
@@ -117,11 +117,20 @@
     justify-content: space-between;
     position: relative;
     margin-left: 115px;
+    width: 236px;
+    height: 363px;
+}
+.biographies-portrait-name-field .link {
+    position: absolute;
     width: 223px;
     height: 363px;
+    background-color: transparent;
 }
 .biographies-portrait-name-field-first {
     margin-left: 0;
+}
+.biographies-portrait-name-field:active, .biographies-portrait-name-field-first:active {
+    transform: translateY(3px);
 }
 .biographies-portrait {
     position: relative;
@@ -136,7 +145,7 @@
 }
 .biographies-name {
     position: relative;
-    width: 223px;
+    width: 236px;
     height: 61px;
     color: #000;
     text-align: center;
