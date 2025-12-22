@@ -58,6 +58,14 @@
     margin-left: -40px;
     margin-top: 86px;
 }
+.timeline_arrow {
+    position: absolute;
+    bottom: 350px;
+    left: 46px;
+    height: 59px;
+    width: 51px;
+    background: url("../img/page_elements/arrow_down.png") #F9FED8 50% / cover no-repeat;
+}
 .biographies-title-portraits-field {
     display: flex;
     flex-flow: column nowrap;

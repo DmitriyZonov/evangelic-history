@@ -31,7 +31,7 @@
     right: 62px;
     z-index: 2;
 }
-.menu-button-about, .menu-button-history, .menu-button-biography, .menu-button-gallery, .menu-button-events {
+.menu-button-about, .menu-button-history, .menu-button-biography, .menu-button-events {
     display: flex;
     height: 30px;
     flex-shrink: 0;
@@ -56,16 +56,13 @@
 .menu-button-biography {
     width: 110px;
 }
-.menu-button-gallery {
-    width: 76px;
-}
 .menu-button-events {
     width: 126px;
 }
-.menu-button-about:hover, .menu-button-history:hover, .menu-button-biography:hover, .menu-button-gallery:hover, .menu-button-events:hover  {
+.menu-button-about:hover, .menu-button-history:hover, .menu-button-biography:hover, .menu-button-events:hover  {
     border: 1px solid #FFFFFF;
 }
-.menu-button-about:active, .menu-button-history:active, .menu-button-biography:active, .menu-button-gallery:active, .menu-button-events:active {
+.menu-button-about:active, .menu-button-history:active, .menu-button-biography:active, .menu-button-events:active {
     border: 1px solid #FFFFFF;
     transform: translateY(2px);
 }

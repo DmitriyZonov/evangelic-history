@@ -14,7 +14,7 @@ body, html {
     z-index: -3;
     height: fit-content;
 }
-.background-1, .background-1-events {
+.background-1, .background-1-events, .background-1-history {
     position: relative;
     width: 100%;
     height: 689px;
@@ -29,6 +29,10 @@ body, html {
 .background-1-events {
     background-color: #F9FED8;
 }
+.background-1-history {
+    height: 900px;
+    background-color: #F9FED8;
+}
 .torn-edge1 {
     width: 100%;
     height: 76px;
@@ -40,7 +44,7 @@ body, html {
     background-repeat: no-repeat;
     z-index: 3;
 }
-.background-2, .background-2-events {
+.background-2, .background-2-events, .background-2-history {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -52,6 +56,9 @@ body, html {
 }
 .background-2-events {
     height: 850px;
+}
+.background-2-history {
+    height: fit-content;
 }
 .background-3, .background-3-events {
     margin-left: 50%;

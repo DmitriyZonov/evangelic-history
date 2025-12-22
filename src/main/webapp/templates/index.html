@@ -35,7 +35,6 @@
         <a th:href="@{/about}" class="menu-button-about" data-th-text="#{header.about_us}"></a>
         <a th:href="@{/history}" class="menu-button-history" data-th-text="#{header.history}"></a>
         <a th:href="@{/biographies}" class="menu-button-biography" data-th-text="#{header.biography}"></a>
-        <a th:href="@{/gallery}" class="menu-button-gallery" data-th-text="#{header.gallery}"></a>
         <a th:href="@{/events}" class="menu-button-events" data-th-text="#{header.event}"></a>
     </div>
 </div>
@@ -235,13 +234,12 @@
         <a th:href="@{/about}" class="footer-button-about" data-th-text="#{footer.about_us}"></a>
         <a th:href="@{/history}" class="footer-button-history" data-th-text="#{footer.history}"></a>
         <a th:href="@{/biography}" class="footer-button-biography" data-th-text="#{footer.biography}"></a>
-        <a th:href="@{/gallery}" class="footer-button-gallery" data-th-text="#{footer.gallery}"></a>
         <a th:href="@{/event}" class="footer-button-events" data-th-text="#{footer.event}"></a>
         <a th:href="@{/privacy_policy}" class="footer-button-confidential" data-th-text="#{footer.privacy}"></a>
     </div>
-    <a th:href="#{footer.rutube_link}" class="footer-button-rutube"></a>
-    <a th:href="#{footer.vk_link}" class="footer-button-vk"></a>
-    <div class="footer-button-phone"></div>
+    <a th:href="#{footer.rutube_link}" target="_blank" rel="noopener noreferrer" class="footer-button-rutube"></a>
+    <a th:href="#{footer.vk_link}" target="_blank" rel="noopener noreferrer" class="footer-button-vk"></a>
+    <a href="/about#contact" class="footer-button-phone"></a>
     <div class="marking" data-th-text="#{footer.marking}"></div>
 </footer>
 </html>

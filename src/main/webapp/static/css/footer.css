@@ -18,6 +18,8 @@
 }
 .footer-buttons-group {
     display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
     align-items: center;
     width: 648px;
     height: 80px;
@@ -28,11 +30,11 @@
     flex-shrink: 0;
 }
 .footer-button-main-page,.footer-button-about, .footer-button-history,
-.footer-button-biography, .footer-button-gallery, .footer-button-events, .footer-button-confidential {
+.footer-button-biography, .footer-button-events, .footer-button-confidential {
     display: flex;
     height: 30px;
     flex-shrink: 0;
-    position: absolute;
+    position: relative;
     align-items: center;
     justify-content: center;
     color: #FFF;
@@ -49,35 +51,28 @@
 }
 .footer-button-about {
     width: 60px;
-    left: 106px;
 }
 .footer-button-history {
     width: 85px;
-    left: 188px;
 }
 .footer-button-biography {
      width: 111px;
-     left: 295px;
-}
-.footer-button-gallery {
-    width: 77px;
-    left: 428px;
 }
 .footer-button-events {
     width: 127px;
-    right: 0;
 }
 .footer-button-confidential {
     width: 303px;
+    position: absolute;
     bottom: 0;
     right: 0;
 }
 .footer-button-main-page:hover,.footer-button-about:hover, .footer-button-history:hover,
-.footer-button-biography:hover, .footer-button-gallery:hover, .footer-button-events:hover, .footer-button-confidential:hover {
+.footer-button-biography:hover, .footer-button-events:hover, .footer-button-confidential:hover {
     border: 1px solid #FFFFFF;
 }
 .footer-button-main-page:active,.footer-button-about:active, .footer-button-history:active,
-.footer-button-biography:active, .footer-button-gallery:active, .footer-button-events:active, .footer-button-confidential:active {
+.footer-button-biography:active, .footer-button-events:active, .footer-button-confidential:active {
     border: 1px solid #FFFFFF;
     transform: translateY(2px);
 }

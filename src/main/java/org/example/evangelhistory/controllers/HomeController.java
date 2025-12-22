@@ -26,10 +26,6 @@ public class HomeController {
     public String toHistoryPage() {
         return "history";
     }
-    @GetMapping("/gallery")
-    public String toGalleryPage() {
-        return "gallery";
-    }
     @GetMapping("/events")
     public String toEventsPage() {
         return "events";
