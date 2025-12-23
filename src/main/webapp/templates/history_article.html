@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+      lang="en">
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="../../../../favicon.ico">
+
+  <title data-th-text="${periodArticle.title}"></title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="../../css/editor.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link th:href="@{/../static/css/to main button.css}" rel="stylesheet">
+  <link th:href="@{/../static/css/background.css}" rel="stylesheet">
+  <link th:href="@{/../static/css/fonts.css}" rel="stylesheet">
+  <link th:href="@{/../static/css/header.css}" rel="stylesheet">
+  <link th:href="@{/../static/css/footer.css}" rel="stylesheet">
+  <link th:href="@{/../static/css/history_article.css}" rel="stylesheet">
+</head>
+<body>
+<div class="wrapper">
+  <div class="menu">
+    <div class="menu_logo"></div>
+    <div class="back">
+      <a th:href="@{/history}" class="back-btn" data-th-text="Назад"></a>
+    </div>
+    <div class="group2">
+      <a th:href="@{/about}" class="menu-button-about" data-th-text="#{header.about_us}"></a>
+      <a th:href="@{/history}" class="menu-button-history" data-th-text="#{header.history}"></a>
+      <a th:href="@{/biographies}" class="menu-button-biography" data-th-text="#{header.biography}"></a>
+      <a th:href="@{/events}" class="menu-button-events" data-th-text="#{header.event}"></a>
+    </div>
+  </div>
+  <div class="background-1-article">
+    <div class="article-title-photo">
+      <img th:src="${periodArticle.image}">
+      <div class="article-title-text" th:text="${periodArticle.period}"></div>
+      <div class="article-title-torn-edge"></div>
+    </div>
+  </div>
+  <div class="background-2-history">
+    <div class="article-title-field">
+      <div class="article-title" th:text="${periodArticle.title}"></div>
+    </div>
+    <div class="article-body" th:utext="${periodArticle.article}"></div>
+  </div>
+</div>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script th:src="@{/../static/js/up-button.js}"></script>
+</body>
+<footer class="footer">
+  <div class="footer-logo"></div>
+  <div class="footer-buttons-group">
+    <a th:href="@{/}" class="footer-button-main-page" data-th-text="#{footer.main}"></a>
+    <a th:href="@{/about}" class="footer-button-about" data-th-text="#{footer.about_us}"></a>
+    <a th:href="@{/history}" class="footer-button-history" data-th-text="#{footer.history}"></a>
+    <a th:href="@{/biographies}" class="footer-button-biography" data-th-text="#{footer.biography}"></a>
+    <a th:href="@{/event}" class="footer-button-events" data-th-text="#{footer.event}"></a>
+    <a th:href="@{/privacy_policy}" class="footer-button-confidential" data-th-text="#{footer.privacy}"></a>
+  </div>
+  <a th:href="#{footer.rutube_link}" class="footer-button-rutube"></a>
+  <a th:href="#{footer.vk_link}" class="footer-button-vk"></a>
+  <a href="/about#contact" class="footer-button-phone"></a>
+  <div class="marking" data-th-text="#{footer.marking}"></div>
+</footer>
+</html>

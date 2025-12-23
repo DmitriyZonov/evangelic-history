@@ -19,7 +19,7 @@ public BiographyController(HeroService service) {
 public String getHeroBiography(Model model,
                                @PathVariable Long id) {
     Hero hero = heroService.findById(id);
-        model.addAttribute("hero", hero);
+        model.addAttribute("hero", hero);;
         return "/biography";
 }
 }

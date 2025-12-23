@@ -6,9 +6,7 @@ import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "photos", indexes = {
-        @Index(name = "idx_photos_title", columnList = "title")
-})
+@Table(name = "photo", schema = "evangelical_history")
 @Getter
 @Setter
 @NoArgsConstructor

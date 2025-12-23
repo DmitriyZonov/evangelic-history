@@ -1,5 +1,6 @@
 package org.example.evangelhistory.services;
 
+import org.example.evangelhistory.constants.Century;
 import org.example.evangelhistory.entities.Hero;
 import org.example.evangelhistory.repositories.HeroRepository;
 import org.jetbrains.annotations.NotNull;
@@ -36,6 +37,9 @@ public class HeroService {
         } else {
             throw new NullPointerException("Герой не найден");
         }
+    }
+    public Set<Hero> findByCentury(Century century) {
+        return repo.findHeroesByCentury(century);
     }
     public void save (@NotNull Hero hero) {
         repo.save(hero);

@@ -8,9 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name = "media_albums", indexes = {
-        @Index(name = "idx_album_title", columnList = "title")
-})
+@Table(name = "media_album", schema = "evangelical_history")
 @Getter
 @Setter
 @NoArgsConstructor
@@ -33,6 +31,10 @@ public class MediaAlbum {
     fetch = FetchType.LAZY)
     @Builder.Default
     private List<Photo> photos = new ArrayList<>();
+
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "event_id")
+    private Event event;
 
     public void addPhoto(Photo photo) {
         photos.add(photo);

@@ -1,0 +1,28 @@
+ALTER TABLE users_roles
+    DROP FOREIGN KEY FK2o0jvgh89lemvvo17cbqvdxaa;
+
+ALTER TABLE photos
+    DROP FOREIGN KEY FK4gq8cnqy9p61jtysdayt0ksu7;
+
+ALTER TABLE hero
+    DROP FOREIGN KEY FK_HERO_ON_PERIOD_ARTICLE;
+
+ALTER TABLE media_albums
+    DROP FOREIGN KEY FK_MEDIA_ALBUMS_ON_EVENT;
+
+ALTER TABLE users_roles
+    DROP FOREIGN KEY FKa62j07k5mhgifpp955h37ponj;
+
+DROP TABLE event;
+
+DROP TABLE hero;
+
+DROP TABLE media_albums;
+
+DROP TABLE photos;
+
+DROP TABLE roles;
+
+DROP TABLE users;
+
+DROP TABLE users_roles;

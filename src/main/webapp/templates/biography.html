@@ -13,7 +13,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../../../favicon.ico">
 
-    <title th:text="${hero.smallName}">Биография    </title>
+    <title th:text="${hero.smallName}"></title>
 
     <!-- Bootstrap core CSS -->
     <link href="../../css/editor.css" rel="stylesheet">
@@ -43,12 +43,14 @@
     <div class="background">
         <div class="biography-portrait-field">
             <div class="biography-portrait">
+                <div class="biography-portrait-title" th:text="${hero.smallName}"></div>
                 <img th:src="${hero.bigPortrait}">
                 <div class="biography-portrait-torn-edge"></div>
             </div>
         </div>
         <div th:if="${!hero.isVideo()}" class="biography-name-years-of-life-field">
-            <div class="biography-name-years-of-life" th:text="${hero.fullName}+' '+${hero.yearsOfLife}" ></div>
+            <div class="biography-name-years-of-life" th:text="${hero.fullName}"></div>
+            <div class="biography-name-years-of-life" th:text="${hero.yearsOfLife}" ></div>
         </div>
         <div th:if="${hero.isVideo()}" class="videobiography-name-years-of-life-field">
             <div class="videobiography-name-years-of-life" th:text="${hero.fullName}+' '+${hero.yearsOfLife}" ></div>

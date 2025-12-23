@@ -3,6 +3,7 @@ package org.example.evangelhistory.entities;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
+import org.example.evangelhistory.constants.Century;
 
 import javax.persistence.*;
 import java.util.Set;
@@ -11,9 +12,11 @@ import java.util.Set;
 @Getter
 @Setter
 @RequiredArgsConstructor
+@Table(name="hero", schema = "evangelical_history")
 public class Hero {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "hero_id")
     private Long id;
     private String fullName;
     private String smallName;
@@ -24,7 +27,12 @@ public class Hero {
     private String smallPortrait;
     private String videoLink;
     private boolean isVideo;
+    private Century century;
 
-    @ManyToMany (mappedBy = "heroes")
-    private Set<Video> videos;
+//    @ManyToMany (mappedBy = "heroes")
+//    private Set<Video> videos;
+
+    @ManyToOne (fetch = FetchType.LAZY)
+    @JoinColumn (name = "period_article_id")
+    private PeriodArticle periodArticle;
 }

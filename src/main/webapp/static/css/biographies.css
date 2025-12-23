@@ -128,7 +128,7 @@
     width: 236px;
     height: 363px;
 }
-.biographies-portrait-name-field .link {
+.biographies-portrait-name-field .link,.biographies-portrait-name-field-first .link {
     position: absolute;
     width: 223px;
     height: 363px;

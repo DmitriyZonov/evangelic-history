@@ -51,38 +51,14 @@
                 <div class="biographies-periods-title">
                     <text>XVI век: истоки</text>
                 </div>
-                <div class="biographies-portraits-field-1-stroke">
-                    <div class="biographies-portrait-name-field-first">
+                <div class="biographies-portraits-field-1-stroke" th:if="${sortedListOfHeroesLists.get(0).size() <= 4}">
+                    <div th:each="hero, iterStat : ${sortedListOfHeroesLists.get(0)}"
+                         th:class="${iterStat.first} ? 'biographies-portrait-name-field-first' : 'biographies-portrait-name-field'">
                         <div class="biographies-portrait">
-                            <img th:src="@{../static/img/heroes/XVI century/Ivan_Fedorov.png}">
+                            <img th:src="${hero.smallPortrait}">
                         </div>
-                        <div class="biographies-name">
-                            <text>Иван Фёдоров</text>
-                        </div>
-                    </div>
-                    <div class="biographies-portrait-name-field">
-                        <div class="biographies-portrait">
-                            <img th:src="@{../static/img/heroes/XVI century/Francis_Scorina.png}">
-                        </div>
-                        <div class="biographies-name">
-                            <text>Франциск Скорина</text>
-                        </div>
-                    </div>
-                    <div class="biographies-portrait-name-field">
-                        <div class="biographies-portrait">
-                            <img th:src="@{../static/img/heroes/XVI century/Hans_Missengein.png}">
-                        </div>
-                        <div class="biographies-name">
-                            <text>Ганс Миссенгейн</text>
-                        </div>
-                    </div>
-                    <div class="biographies-portrait-name-field">
-                        <div class="biographies-portrait">
-                            <img th:src="@{../static/img/heroes/XVI century/Petr_Mstislavcev.png}">
-                        </div>
-                        <div class="biographies-name">
-                            <text>Петр Мстиславцев</text>
-                        </div>
+                        <div class="biographies-name" th:text="${hero.smallName}"></div>
+                        <a class="link" th:href="|/biography/${hero.id}|"></a>
                     </div>
                 </div>
             </div>
@@ -92,41 +68,16 @@
             <div class="timeline-line"></div>
             <div class="biographies-title-portraits-field">
                 <div class="biographies-periods-title">
-                    <text>XVII-XVII века: эпоха подготовки почвы</text>
+                    <text>XVII-XVIII века: эпоха подготовки почвы</text>
                 </div>
-                <div class="biographies-portraits-field-1-stroke">
-                    <div class="biographies-portrait-name-field-first">
+                <div class="biographies-portraits-field-1-stroke" th:if="${sortedListOfHeroesLists.get(1).size() <= 4}">
+                    <div th:each="hero, iterStat : ${sortedListOfHeroesLists.get(1)}"
+                         th:class="${iterStat.first} ? 'biographies-portrait-name-field-first' : 'biographies-portrait-name-field'">
                         <div class="biographies-portrait">
-                            <img th:src="@{../static/img/heroes/XVII-XVIII centuries/Franz_Lefort.png}">
+                            <img th:src="${hero.smallPortrait}">
                         </div>
-                        <div class="biographies-name">
-                            <text>Франц Лефорт</text><br><text>(1656–1699)</text>
-                        </div>
-                    </div>
-                    <div class="biographies-portrait-name-field">
-                        <div class="biographies-portrait">
-                            <img th:src="@{../static/img/heroes/XVII-XVIII centuries/Ivan_Krusenstern.png}">
-                        </div>
-                        <div class="biographies-name">
-                            <text>Иван Крузенштерн (1770–1846)</text>
-                        </div>
-                    </div>
-                    <div class="biographies-portrait-name-field">
-                        <div class="biographies-portrait">
-                            <img th:src="@{../static/img/heroes/XVII-XVIII centuries/Faddei_Bellinsgausen.png}">
-                        </div>
-                        <div class="biographies-name">
-                            <text>Фаддей Беллинсгаузен (1778–1852)</text>
-                        </div>
-                    </div>
-                    <div class="biographies-portrait-name-field">
-                        <div class="biographies-portrait">
-                            <img th:src="@{../static/img/heroes/XVII-XVIII centuries/Alexander_Golitsin.png}">
-                        </div>
-                        <div class="biographies-name">
-                            <text>Князь Александр Голицын</text>
-                        </div>
-                        <a class="link" th:href="@{/biography/1}"></a>
+                        <div class="biographies-name" th:text="${hero.smallName}"></div>
+                        <a class="link" th:href="|/biography/${hero.id}|"></a>
                     </div>
                 </div>
             </div>

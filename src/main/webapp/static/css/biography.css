@@ -5,6 +5,25 @@
     width: 100%;
     height: fit-content;
 }
+.biography-portrait-title {
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    text-align: left;
+    left: 101px;
+    top: 200px;
+    width: 634px;
+    height: fit-content;
+    z-index: 5;
+    color: #F9FED8;
+    text-shadow: 10px 10px 5px #0F0F0C;
+    font-family: Novelist;
+    font-size: 128px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130px; /* 101.563% */
+    text-transform: uppercase;
+}
 .biography-portrait {
     position: relative;
     width: 1280px;
@@ -26,22 +45,22 @@
 .biography-name-years-of-life-field, .videobiography-name-years-of-life-field {
     position: relative;
     display: flex;
-    flex-flow: row nowrap;
-    justify-content: right;
-    align-items: center;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: end;
     width: 1280px;
     height: 315px;
     margin-left: 50%;
     transform: translateX(-50%);
 }
 .videobiography-name-years-of-life-field {
-    justify-content: left;
+    align-items: start;
 }
 .biography-name-years-of-life, .videobiography-name-years-of-life {
     display: flex;
     width: 687px;
-    height: 120px;
-    flex-direction: column;
+    height: fit-content;
+    flex-flow: column nowrap;
     justify-content: center;
     flex-shrink: 0;
     color: #5A062A;
@@ -52,6 +71,7 @@
     font-weight: 400;
     line-height: 64px; /* 100% */
     text-transform: uppercase;
+
 }
 .videobiography-name-years-of-life {
     text-align: left;
