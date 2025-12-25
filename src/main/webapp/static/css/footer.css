@@ -5,6 +5,7 @@
     bottom: 0;
     background-color: #0F0F0C;
     z-index: 0;
+    margin-top: auto;
 }
 .footer-logo {
     width: 192px;

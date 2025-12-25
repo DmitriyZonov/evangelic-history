@@ -3,6 +3,7 @@ package org.example.evangelhistory.entities;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
+import org.jetbrains.annotations.NotNull;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -29,4 +30,5 @@ public class Event {
 
     @OneToOne(mappedBy = "event")
     private MediaAlbum album;
+
 }

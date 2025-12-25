@@ -1,10 +1,13 @@
 package org.example.evangelhistory.controllers;
 
 import org.example.evangelhistory.constants.Century;
+import org.example.evangelhistory.entities.Event;
 import org.example.evangelhistory.entities.Hero;
 import org.example.evangelhistory.entities.PeriodArticle;
+import org.example.evangelhistory.services.EventService;
 import org.example.evangelhistory.services.HeroService;
 import org.example.evangelhistory.services.PeriodArticleService;
+import org.example.evangelhistory.utils.GetDateForAnnouncement;
 import org.example.evangelhistory.utils.GetHeroesByCentury;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,11 +22,11 @@ import java.util.Set;
 public class HomeController {
 
     private final HeroService heroService;
-    private final PeriodArticleService periodArticleService;
+    private final EventService eventService;
 
-    public HomeController (HeroService heroService, PeriodArticleService periodArticleService) {
+    public HomeController (HeroService heroService, EventService eventService) {
         this.heroService = heroService;
-        this.periodArticleService = periodArticleService;
+        this.eventService = eventService;
     }
 
     @GetMapping("/about")
@@ -42,7 +45,10 @@ public class HomeController {
         return "history";
     }
     @GetMapping("/events")
-    public String toEventsPage() {
+    public String toEventsPage(Model model) {
+        List<Event> eventList = eventService.getSortedListOfEvents();
+        model.addAttribute("eventList", eventList);
+        model.addAttribute("dateFormatter", new GetDateForAnnouncement());
         return "events";
     }
     @GetMapping("/index")

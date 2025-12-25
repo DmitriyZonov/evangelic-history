@@ -99,99 +99,21 @@
         <div class="events-announcements-title">
             <text>Анонсы</text>
         </div>
-        <div class="item">
+        <div th:each="event, iterStat : ${eventList}"
+        th:class="${iterStat.index < 3} ? 'item' : 'item collapsible'">
             <div class="item-img">
-                <img th:src="@{/static/img/page_elements/kaliningrad_anons.png}">
+                <img th:src="${event.titleImage}">
             </div>
-            <div class="title">Январь - Калининград</div>
-            <div class="text">
-                <text>Лекция-презентация проекта</text>
-                <br>
-                <text>Узнайте, как евангельские христиане внесли вклад в победы России. Первая встреча цикла в столице региона</text>
+            <div class="title" th:text="${event.title}"></div>
+            <div class="text" th:utext="${event.announcement}">
             </div>
-            <div class="address">Калининград, ул. Тельмана, 106</div>
-            <div class="time">17 января, 16:00</div>
+            <div class="address" th:text="${event.city + ', ' + event.address}"></div>
+            <div class="time" th:text="${dateFormatter.get(event.dateTime)}"></div>
             <div class="map-pin-icon"></div>
             <div class="clock-icon"></div>
             <div class="item-button">
                 <div class="item-button-img"></div>
-                <a class="item-btn" th:href="@{/about}"></a>
-            </div>
-        </div>
-        <div class="item">
-            <div class="item-img">
-                <img th:src="@{/static/img/page_elements/sovetsk_anons.jpg}">
-            </div>
-            <div class="title">Февраль - Советск</div>
-            <div class="text">
-                <text>Передвижная выставка</text>
-                <br>
-                <text>История в фотографиях, документах и личных свидетельствах. Открытие экспозиции для жителей Советска.</text>
-            </div>
-            <div class="address">Калининград, ул. Тельмана, 106</div>
-            <div class="time">17 января, 16:00</div>
-            <div class="map-pin-icon"></div>
-            <div class="clock-icon"></div>
-            <div class="item-button">
-                <div class="item-button-img"></div>
-                <a class="item-btn" th:href="@{/about}"></a>
-            </div>
-        </div>
-        <div class="item">
-            <div class="item-img">
-                <img th:src="@{/static/img/page_elements/chernyahovsk_anons.png}">
-            </div>
-            <div class="title">Март - Черняховск</div>
-            <div class="text">
-                <text>Лекция и дискуссия</text>
-                <br>
-                <text>Живая история края: от Первой мировой до Великой Отечественной. Возможность задать вопросы исследователям.</text>
-            </div>
-            <div class="address">Калининград, ул. Тельмана, 106</div>
-            <div class="time">17 января, 16:00</div>
-            <div class="map-pin-icon"></div>
-            <div class="clock-icon"></div>
-            <div class="item-button">
-                <div class="item-button-img"></div>
-                <a class="item-btn" th:href="@{/about}"></a>
-            </div>
-        </div>
-        <div class="item collapsible">
-            <div class="item-img">
-                <img th:src="@{/static/img/page_elements/gusev_anons.jpg}">
-            </div>
-            <div class="title">Апрель - Гусев</div>
-            <div class="text">
-                <text>Выставка и показ видеосвидетельств</text>
-                <br>
-                <text>Уникальные интервью потомков и редкие архивные материалы — теперь в Гусеве.</text>
-            </div>
-            <div class="address">Калининград, ул. Тельмана, 106</div>
-            <div class="time">17 января, 16:00</div>
-            <div class="map-pin-icon"></div>
-            <div class="clock-icon"></div>
-            <div class="item-button">
-                <div class="item-button-img"></div>
-                <a class="item-btn" th:href="@{/about}"></a>
-            </div>
-        </div>
-        <div class="item collapsible">
-            <div class="item-img">
-                <img th:src="@{/static/img/page_elements/kaliningrad_anons.png}">
-            </div>
-            <div class="title">Май - Калининград</div>
-            <div class="text">
-                <text>Завершение проекта</text>
-                <br>
-                <text>Итоговая выставка и заключительная лекция. Подведение итогов, презентация видеоархива и публикация материалов</text>
-            </div>
-            <div class="address">Калининград, ул. Тельмана, 106</div>
-            <div class="time">17 января, 16:00</div>
-            <div class="map-pin-icon"></div>
-            <div class="clock-icon"></div>
-            <div class="item-button">
-                <div class="item-button-img"></div>
-                <a class="item-btn" th:href="@{/about}"></a>
+                <a class="item-btn" th:href="|/event/${event.id}|"></a>
             </div>
         </div>
     </div>

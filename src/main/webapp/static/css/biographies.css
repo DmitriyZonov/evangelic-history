@@ -2,7 +2,15 @@
     display: flex;
     flex-flow: column nowrap;
     width: 100%;
-    height: 5705px;
+    min-height: 2200px;
+    margin-bottom: 200px;
+    height: fit-content;
+}
+.background-end {
+    display: flex;
+    flex-flow: column nowrap;
+    width: 100%;
+    height: 100px;
 }
 .biographies-title {
     display: flex;
@@ -24,31 +32,28 @@
     line-height: 130px; /* 101.563% */
     text-transform: uppercase;
 }
-.biographies-period-1, .biographies-period-2, .biographies-period-3, .biographies-period-4, .biographies-period-5 {
+.biographies-period {
     position: relative;
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-evenly;
     top: 200px;
     width: 1415px;
-    height: 600px;
+    height: fit-content;
     margin-left: 50%;
     transform: translateX(-50%);
-}
-.biographies-period-3, .biographies-period-4 {
-    height: 1600px;
-}
-.biographies-period-5 {
-    height: 1000px;
 }
 .timeline, .timeline-end {
     height: 100%;
     background-color: #8D0B19;
-    left: 30px;
-    position: relative;
+    left: 37px;
+    position: absolute;
     width: 10px;
+    z-index: 5;
 }
 .timeline-end {
+    display: flex;
+    flex-direction: column;
     height: 65%;
 }
 .timeline-line {
@@ -60,8 +65,8 @@
 }
 .timeline_arrow {
     position: absolute;
-    bottom: 350px;
-    left: 46px;
+    bottom: -59px;
+    left: -20px;
     height: 59px;
     width: 51px;
     background: url("../img/page_elements/arrow_down.png") #F9FED8 50% / cover no-repeat;
@@ -89,7 +94,7 @@
     font-weight: 400;
     line-height: 40px; /* 83.333% */
 }
-.biographies-portraits-field-1-stroke {
+.biographies-portraits-field {
     display: flex;
     flex-flow: row wrap;
     justify-content: left;
@@ -97,27 +102,7 @@
     width: 1289px;
     position: relative;
     margin-top: 50px;
-    height: 392px;
-}
-.biographies-portraits-field-2-strokes {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: left;
-    align-items: center;
-    width: 1289px;
-    position: relative;
-    margin-top: 50px;
-    height: 829px;
-}
-.biographies-portraits-field-3-strokes {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: left;
-    align-items: center;
-    width: 1289px;
-    position: relative;
-    margin-top: 50px;
-    height: 1295px;
+    height: fit-content;
 }
 .biographies-portrait-name-field, .biographies-portrait-name-field-first {
     display: flex;

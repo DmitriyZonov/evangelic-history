@@ -2,6 +2,7 @@ package org.example.evangelhistory.controllers;
 
 import org.example.evangelhistory.entities.Event;
 import org.example.evangelhistory.services.EventService;
+import org.example.evangelhistory.utils.GetDateForAnnouncement;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,11 +23,8 @@ public class EventController {
                             Model model) {
         Event event = service.findById(id);
 
-        DateTimeFormatter df = DateTimeFormatter.ofPattern("dd.MM.yyyy");
-        String date = df.format(event.getDateTime());
-
         model.addAttribute("event", event);
-        model.addAttribute("eventDate", date);
+        model.addAttribute("dateFormatter", new GetDateForAnnouncement());
         return "/event";
     }
 }
