@@ -77,7 +77,7 @@
     border: 1px solid #FFFFFF;
     transform: translateY(2px);
 }
-.footer-button-rutube, .footer-button-vk, .footer-button-phone {
+.footer-button-rutube, .footer-button-vk, .footer-button-phone, .footer-button-tg {
     display: flex;
     width: 39px;
     height: 39px;
@@ -91,16 +91,21 @@
 }
 .footer-button-rutube {
     top: 189px;
-    right: 155px;
+    right: 200px;
     background: url("../img/page_elements/logo/rutube_logo.svg") no-repeat;
 }
 .footer-button-vk {
-    right: 106px;
+    right: 151px;
     background: url("../img/page_elements/logo/vk_logo.svg") no-repeat;
 }
 .footer-button-phone {
-    right: 57px;
+    right: 102px;
     background: url("../img/page_elements/logo/phone_logo.svg") no-repeat;
+}
+.footer-button-tg {
+    right: 57px;
+    top: 182px;
+    background: url("../img/page_elements/tg_icon.svg") no-repeat;
 }
 .footer-button-rutube:hover, .footer-button-vk:hover, .footer-button-phone:hover {
     cursor: pointer;

@@ -52,18 +52,6 @@ public class PeriodArticleService {
         periodArticle.setPeriod(period);
         repo.save(periodArticle);
     }
-    public void addArticle (@NotNull PeriodArticle periodArticle, String article) {
-        periodArticle.setArticle(article);
-        repo.save(periodArticle);
-    }
-    public void addTitle (@NotNull PeriodArticle periodArticle, String title) {
-        periodArticle.setTitle(title);
-        repo.save(periodArticle);
-    }
-    public void addImage (@NotNull PeriodArticle periodArticle, String image) {
-        periodArticle.setTitle(image);
-        repo.save(periodArticle);
-    }
     public void deleteById (@NotNull Long id) {
         Optional<PeriodArticle> articleFromDB = repo.findById(id);
 

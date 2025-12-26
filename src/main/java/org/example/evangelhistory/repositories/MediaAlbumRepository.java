@@ -6,4 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface MediaAlbumRepository extends JpaRepository<MediaAlbum, Long> {
+    MediaAlbum findMediaAlbumByTitle(String title);
 }

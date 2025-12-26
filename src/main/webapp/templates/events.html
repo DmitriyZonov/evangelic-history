@@ -95,7 +95,7 @@
     </div>
 </div>
 <div class="background-3-events">
-    <div class="events-announcements">
+    <div class="events-announcements" id="events">
         <div class="events-announcements-title">
             <text>Анонсы</text>
         </div>
@@ -120,20 +120,68 @@
     <button id="hide-btn" class="hide-btn">Показать все</button>
 </div>
     <div class="background-4-events">
+        <div id="open-modal" class="events-modal-window">
+            <div>
+                <a th:href="@{/events#photo}" title="Закрыть" class="events-modal-close">×</a>
+                <img th:src="${photoSet.get(0)}">
+            </div>
+        </div>
+        <div id="open-modal1" class="events-modal-window">
+            <div>
+                <a th:href="@{/events#photo}" title="Закрыть" class="events-modal-close">×</a>
+                <img th:src="${photoSet.get(1)}">
+            </div>
+        </div>
+        <div id="open-modal2" class="events-modal-window">
+            <div>
+                <a th:href="@{/events#photo}" title="Закрыть" class="events-modal-close">×</a>
+                <img th:src="${photoSet.get(2)}">
+            </div>
+        </div>
+        <div id="open-modal3" class="events-modal-window">
+            <div>
+                <a th:href="@{/events#photo}" title="Закрыть" class="events-modal-close">×</a>
+                <img th:src="${photoSet.get(3)}">
+            </div>
+        </div>
+        <div id="open-modal4" class="events-modal-window">
+            <div>
+                <a th:href="@{/events#photo}" title="Закрыть" class="events-modal-close">×</a>
+                <img th:src="${photoSet.get(4)}">
+            </div>
+        </div>
+        <div id="open-modal5" class="events-modal-window">
+            <div>
+                <a th:href="@{/events#photo}" title="Закрыть" class="events-modal-close">×</a>
+                <img th:src="${photoSet.get(5)}">
+            </div>
+        </div>
         <div class="events-photo-field">
             <div class="events-photo-title">
                 <text>Фотографии с наших мероприятий</text>
             </div>
-            <div class="events-photo-carousel basic">
+            <div class="events-photo-carousel basic id=photo">
                 <div class="events-photo-carousel-group">
-                    <div class="events-photo-card"></div>
-                    <div class="events-photo-card"></div>
-                    <div class="events-photo-card"></div>
+                        <a class="events-photo-card" href="#open-modal">
+                            <img th:src="${photoSet.get(0)}" style="cursor:pointer;">
+                        </a>
+                    <a class="events-photo-card" href="#open-modal1">
+                        <img th:src="${photoSet.get(1)}" style="cursor:pointer;">
+                    </a>
+                    <a class="events-photo-card" href="#open-modal2">
+                        <img th:src="${photoSet.get(2)}" style="cursor:pointer;">
+                    </a>
                 </div>
                 <div aria-hidden class="events-photo-carousel-group">
-                    <div class="events-photo-card"></div>
-                    <div class="events-photo-card"></div>
-                    <div class="events-photo-card"></div>
+                    <a class="events-photo-card" href="#open-modal3">
+                        <img th:src="${photoSet.get(3)}" style="cursor:pointer;">
+                    </a>
+                    <a class="events-photo-card" href="#open-modal4">
+                        <img th:src="${photoSet.get(4)}" style="cursor:pointer;">
+                    </a>
+                    <a class="events-photo-card" href="#open-modal5">
+                        <img th:src="${photoSet.get(5)}" style="cursor:pointer;">
+                    </a>
                 </div>
             </div>
         </div>
@@ -170,9 +218,10 @@
         <a th:href="@{/event}" class="footer-button-events" data-th-text="#{footer.event}"></a>
         <a th:href="@{/privacy_policy}" class="footer-button-confidential" data-th-text="#{footer.privacy}"></a>
     </div>
-    <a th:href="#{footer.rutube_link}" class="footer-button-rutube"></a>
-    <a th:href="#{footer.vk_link}" class="footer-button-vk"></a>
+    <a th:href="#{footer.rutube_link}" target="_blank" rel="noopener noreferrer" class="footer-button-rutube"></a>
+    <a th:href="#{footer.vk_link}" target="_blank" rel="noopener noreferrer" class="footer-button-vk"></a>
     <a href="/about#contact" class="footer-button-phone"></a>
+    <a th:href="#{footer.tg_link}" target="_blank" rel="noopener noreferrer" class="footer-button-tg"></a>
     <div class="marking" data-th-text="#{footer.marking}"></div>
 </footer>
 </html>

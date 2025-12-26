@@ -44,26 +44,7 @@ public class HeroService {
     public void save (@NotNull Hero hero) {
         repo.save(hero);
     }
-    public void addBiography (@NotNull Hero hero, String biography){
-        hero.setBiography(biography);
-        repo.save(hero);
-    }
-    public void addBigPortrait (@NotNull Hero hero, String portrait){
-        hero.setBigPortrait(portrait);
-        repo.save(hero);
-    }
-    public void addSmallPortrait (@NotNull Hero hero, String portrait){
-        hero.setSmallPortrait(portrait);
-        repo.save(hero);
-    }
-    public void addSmallName (@NotNull Hero hero, String name){
-        hero.setSmallName(name);
-        repo.save(hero);
-    }
-    public void addYearsOfLife (@NotNull Hero hero, String yearsOfLife){
-        hero.setYearsOfLife(yearsOfLife);
-        repo.save(hero);
-    }
+
     public void deleteById (@NotNull Long id) {
         Optional<Hero> heroFromDB = repo.findById(id);
 

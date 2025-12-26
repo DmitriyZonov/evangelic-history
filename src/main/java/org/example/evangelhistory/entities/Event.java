@@ -24,9 +24,12 @@ public class Event {
     private String address;
     @Column(length = 2000)
     private String announcement;
+    private String descriptionTitle;
     @Column(length = 2000)
     private String description;
     private String titleImage;
+    @Column(nullable = false)
+    private boolean isDone;
 
     @OneToOne(mappedBy = "event")
     private MediaAlbum album;

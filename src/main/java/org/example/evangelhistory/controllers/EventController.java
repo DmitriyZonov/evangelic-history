@@ -22,9 +22,13 @@ public class EventController {
     public String getEvent (@PathVariable Long id,
                             Model model) {
         Event event = service.findById(id);
-
         model.addAttribute("event", event);
         model.addAttribute("dateFormatter", new GetDateForAnnouncement());
-        return "/event";
+        model.addAttribute("eventsSortedList", service.getSortedListOfEvents());
+        if (event.isDone()) {
+            return "event";
+        } else  {
+            return "announcement";
+        }
     }
 }

@@ -155,9 +155,10 @@
         <a th:href="@{/event}" class="footer-button-events" data-th-text="#{footer.event}"></a>
         <a th:href="@{/privacy_policy}" class="footer-button-confidential" data-th-text="#{footer.privacy}"></a>
     </div>
-    <a th:href="#{footer.rutube_link}" class="footer-button-rutube"></a>
-    <a th:href="#{footer.vk_link}" class="footer-button-vk"></a>
+    <a th:href="#{footer.rutube_link}" target="_blank" rel="noopener noreferrer" class="footer-button-rutube"></a>
+    <a th:href="#{footer.vk_link}" target="_blank" rel="noopener noreferrer" class="footer-button-vk"></a>
     <a href="/about#contact" class="footer-button-phone"></a>
+    <a th:href="#{footer.tg_link}" target="_blank" rel="noopener noreferrer" class="footer-button-tg"></a>
     <div class="marking" data-th-text="#{footer.marking}"></div>
 </footer>
 </html>

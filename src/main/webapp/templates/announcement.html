@@ -25,6 +25,7 @@
     <link th:href="@{/../static/css/header.css}" rel="stylesheet">
     <link th:href="@{/../static/css/footer.css}" rel="stylesheet">
     <link th:href="@{/../static/css/event.css}" rel="stylesheet">
+    <link th:href="@{/../static/css/announcement.css}" rel="stylesheet">
 </head>
 <body>
 <div class="wrapper">
@@ -56,33 +57,10 @@
         </div>
     </div>
     <div class="background-2-history">
-        <div class="event-title-text-field">
-            <div class="event-title" th:text="${event.descriptionTitle}"></div>
-            <div class="event-description" th:utext="${event.description}"></div>
+        <div class="announcement-text-field">
+            <text>Мероприятие еще не состоялось</text>
         </div>
     </div>
-    <div class="background-2-event">
-        <div th:each="photo, iterStat : ${event.getAlbum().getPhotos()}"
-                th:id="'open-modal' + ${iterStat.index}" class="events-modal-window">
-            <div>
-                <a th:href="|/event/${event.id}#photos|" title="Закрыть" class="events-modal-close">×</a>
-                <img th:src="${photo.path}">
-            </div>
-        </div>
-        <div class="event-photo-field" id=photos>
-            <div class="event-photo-title">
-                <text>Фото с мероприятия</text>
-                <div class="photo-card">
-                </div>
-            </div>
-            <div class="event-photo-album">
-                <a th:each="photo, iterStat : ${event.getAlbum().getPhotos()}"
-                th:class="${iterStat.first} ? 'first-photo-card' : 'photo-card'"
-                th:href="'#open-modal' + ${iterStat.index}">
-                    <img th:src="${photo.path}">
-                </a>
-            </div>
-        </div>
         <div class="event-transition-field">
             <div class="event-transition-backward-forward-field">
                 <div class="event-transition-backward-title">

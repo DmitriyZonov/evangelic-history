@@ -23,9 +23,7 @@ public class EventService {
 
     public List<Event> getSortedListOfEvents() {
         List<Event> allEvents = repo.findAll();
-        allEvents.stream()
-                .sorted(Comparator.comparing(Event::getDateTime))
-                .collect(Collectors.toList());
+        allEvents.sort(Comparator.comparing(Event::getDateTime));
         return allEvents;
     }
     public Event findById(@NotNull Long id) {
@@ -47,34 +45,7 @@ public class EventService {
     public void save (@NotNull Event event) {
         repo.save(event);
     }
-    public void addTitle(@NotNull Event event, String title) {
-        event.setTitle(title);
-        repo.save(event);
-    }
-    public void addDateTime(@NotNull Event event, LocalDateTime dateTime) {
-        event.setDateTime(dateTime);
-        repo.save(event);
-    }
-    public void addCity(@NotNull Event event, String city) {
-        event.setCity(city);
-        repo.save(event);
-    }
-    public void addAddress(@NotNull Event event, String address) {
-        event.setAddress(address);
-        repo.save(event);
-    }
-    public void addDescription(@NotNull Event event, String description) {
-        event.setDescription(description);
-        repo.save(event);
-    }
-    public void addAnnouncement(@NotNull Event event, String announcement) {
-        event.setAnnouncement(announcement);
-        repo.save(event);
-    }
-    public void addTitleImage(@NotNull Event event, String titleImage) {
-        event.setTitleImage(titleImage);
-        repo.save(event);
-    }
+
     public void deleteById(@NotNull Long id) {
         Optional<Event> eventFromDB = repo.findById(id);
         if (eventFromDB.isPresent()) {

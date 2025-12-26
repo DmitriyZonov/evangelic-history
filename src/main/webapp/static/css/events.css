@@ -407,6 +407,8 @@ button, button:active, button:focus {
     justify-content: space-between;
     width: 1278px;
     height: 500px;
+    margin-left: 50%;
+    transform: translateX(-50%);
 }
 .events-photo-title, .events-video-title  {
     display: flex;
@@ -440,7 +442,7 @@ button, button:active, button:focus {
     gap: 20px;
     padding-right: 20px;
     will-change: transform;
-    animation: scrolling 30s linear infinite;
+    animation: scrolling 20s linear infinite;
 }
 @keyframes scrolling {
     0% {
@@ -453,7 +455,11 @@ button, button:active, button:focus {
 .events-photo-card {
     width: 427px;
     height: 347px;
-    background: url(../img/page_elements/stub_photo_carousel.png) lightgray -1.722px -86.227px / 101.438% 124.669% no-repeat;
+}
+.events-photo-card img {
+    object-fit: fill;
+    max-width: 100%;
+    height: auto;
 }
 .events-video-field {
     width: 1278px;
@@ -461,6 +467,8 @@ button, button:active, button:focus {
     display: flex;
     position: relative;
     flex-flow: column nowrap;
+    margin-left: 50%;
+    transform: translateX(-50%);
 }
 .events-video-carousel {
     width: 1278px;
@@ -482,4 +490,42 @@ button, button:active, button:focus {
     width: 427px;
     height: 347px;
     background: url(../img/page_elements/stub_photo_carousel.png) no-repeat;
+}
+.events-modal-window {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+}
+.events-modal-window:target {
+    visibility: visible;
+    opacity: 1;
+}
+.events-modal-window > div {
+    max-width: 90%;
+    max-height: 90vh;
+    position: relative;
+}
+.events-modal-window img {
+    max-width: 100%;
+    max-height: 90vh;
+    object-fit: contain;
+}
+.events-modal-close {
+    position: absolute;
+    right: 40px;
+    color: #fff;
+    font-size: 50px;
+    z-index: 1001;
+    font-weight: bolder;
+    text-decoration: none;
 }

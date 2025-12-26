@@ -13,7 +13,9 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 import java.time.LocalDateTime;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Service
 @RequiredArgsConstructor
@@ -22,8 +24,9 @@ public class PhotoStorageService {
     private final PhotoRepository repo;
 
     private final MediaProperties mediaProperties;
+    private final MediaAlbumService mediaAlbumService;
 
-    public Photo store(MultipartFile file, String caption, String altText) throws IOException {
+    public Photo store(MultipartFile file, String caption, String altText, String albumTitle) throws IOException {
         String uploadDir = mediaProperties.getUploadDir();
         Path uploadPath = Paths.get(uploadDir).toAbsolutePath().normalize();
         if(!Files.exists(uploadPath)) {
@@ -41,6 +44,7 @@ public class PhotoStorageService {
                 .caption(caption)
                 .altText(altText)
                 .uploadedAt(LocalDateTime.now())
+                .mediaAlbum(mediaAlbumService.findByTitle(albumTitle))
                 .build();
 
         return repo.save(photo);
@@ -48,6 +52,9 @@ public class PhotoStorageService {
 
     public List<Photo> getAllPhotos() {
         return repo.findAll();
+    }
+    public Set<Photo> getSetOfAllPhotos() {
+        return new HashSet<>(repo.findAll());
     }
     public void delete (Long id) throws IOException {
         Photo photo = repo.findById(id)
