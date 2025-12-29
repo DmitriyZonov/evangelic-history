@@ -2,7 +2,9 @@ package org.example.evangelhistory.aspects;
 
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.After;
+import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.springframework.core.annotation.Order;
@@ -13,7 +15,7 @@ import org.springframework.stereotype.Component;
 @Order(1)
 @Slf4j
 public class AdviceExecutor {
-   @After("PointCutSearcher.getAllClients()")
+    @After("PointCutSearcher.getAllClients()")
     public void methodByNameAdvice(JoinPoint joinPoint) {
         log.info("Method: " + joinPoint.toShortString() + " is done his work");
     }
@@ -21,5 +23,14 @@ public class AdviceExecutor {
     @Before("PointCutSearcher.allControllers()")
     public void methodsByPackage(JoinPoint joinPoint) {
         log.info("Starting controller " + joinPoint.toShortString());
+    }
+
+    @Around("execution(* org.example.evangelhistory.controllers.*.*(..))")
+    public Object measureMethodExecutionTime(ProceedingJoinPoint pjp) throws Throwable {
+        long start = System.currentTimeMillis();
+        Object proceed = pjp.proceed();
+        long executionTime = System.currentTimeMillis() - start;
+        log.info("Controller execution " + pjp.getSignature() + " completed in " + executionTime + "ms"); // Добавьте эту строку
+        return proceed;
     }
 }

@@ -1,0 +1,18 @@
+.announcement-text-field {
+    display: flex;
+    position: relative;
+    width: 903px;
+    height: 71px;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    margin-top: 250px;
+    margin-bottom: 250px;
+    color: #5A062A;
+    font-family: Novelist;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 64px; /* 100% */
+}

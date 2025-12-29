@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+      lang="en">
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../../../favicon.ico">
+
+    <title data-th-text="${event.title}"></title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../css/editor.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link th:href="@{/css/to main button.css}" rel="stylesheet">
+    <link th:href="@{/css/background.css}" rel="stylesheet">
+    <link th:href="@{/css/fonts.css}" rel="stylesheet">
+    <link th:href="@{/css/header.css}" rel="stylesheet">
+    <link th:href="@{/css/footer.css}" rel="stylesheet">
+    <link th:href="@{/css/event.css}" rel="stylesheet">
+</head>
+<body>
+<div class="wrapper">
+    <div class="menu">
+        <div class="menu_logo"></div>
+        <div class="back">
+            <a th:href="@{/history}" class="back-btn" data-th-text="Назад"></a>
+        </div>
+        <div class="group2">
+            <a th:href="@{/about}" class="menu-button-about" data-th-text="#{header.about_us}"></a>
+            <a th:href="@{/history}" class="menu-button-history" data-th-text="#{header.history}"></a>
+            <a th:href="@{/biographies}" class="menu-button-biography" data-th-text="#{header.biography}"></a>
+            <a th:href="@{/events}" class="menu-button-events" data-th-text="#{header.event}"></a>
+        </div>
+    </div>
+    <div class="background-1-article">
+        <div class="event-title-photo">
+            <img th:src="${event.titleImage}">
+            <div class="event-title-content-box">
+                <div class="event-title-text" th:text="${event.title}"></div>
+                <div class="event-title-address-date-field">
+                    <div class="map-pin-icon"></div>
+                    <div class="address" th:text="${event.city + ', ' + event.address}"></div>
+                    <div class="clock-icon"></div>
+                    <div class="time" th:text="${dateFormatter.get(event.dateTime)}"></div>
+                </div>
+                <div class="event-title-torn-edge"></div>
+            </div>
+        </div>
+    </div>
+    <div class="background-2-history">
+        <div class="event-title-text-field">
+            <div class="event-title" th:text="${event.descriptionTitle}"></div>
+            <div class="event-description" th:utext="${event.description}"></div>
+        </div>
+    </div>
+    <div class="background-2-event">
+        <div th:each="photo, iterStat : ${event.getAlbum().getPhotos()}"
+                th:id="'open-modal' + ${iterStat.index}" class="events-modal-window">
+            <div>
+                <a th:href="|/event/${event.id}#photos|" title="Закрыть" class="events-modal-close">×</a>
+                <img th:src="${photo.path}">
+            </div>
+        </div>
+        <div class="event-photo-field" id=photos>
+            <div class="event-photo-title">
+                <text>Фото с мероприятия</text>
+                <div class="photo-card">
+                </div>
+            </div>
+            <div class="event-photo-album">
+                <a th:each="photo, iterStat : ${event.getAlbum().getPhotos()}"
+                th:class="${iterStat.first} ? 'first-photo-card' : 'photo-card'"
+                th:href="'#open-modal' + ${iterStat.index}">
+                    <img th:src="${photo.path}">
+                </a>
+            </div>
+        </div>
+        <div class="event-transition-field">
+            <div class="event-transition-backward-forward-field">
+                <div class="event-transition-backward-title">
+                    <text>Анонсы</text>
+                </div>
+                <div class="event-transition-backward-btn">
+                    <a th:href="@{/events#events}"></a>
+                </div>
+            </div>
+            <div class="event-transition-backward-forward-field" th:if="${event.dateTime.isBefore(eventsSortedList.get(eventsSortedList.size() - 1).dateTime)}">
+                <div class="event-transition-forward-title">
+                    <text>Следующее мероприятие</text>
+                </div>
+                <div class="event-transition-forward-btn">
+                    <a th:href="|/event/${eventsSortedList.get(eventsSortedList.indexOf(event) + 1).id}|"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script th:src="@{/js/up-button.js}"></script>
+</body>
+<footer class="footer">
+    <div class="footer-logo"></div>
+    <div class="footer-buttons-group">
+        <a th:href="@{/}" class="footer-button-main-page" data-th-text="#{footer.main}"></a>
+        <a th:href="@{/about}" class="footer-button-about" data-th-text="#{footer.about_us}"></a>
+        <a th:href="@{/history}" class="footer-button-history" data-th-text="#{footer.history}"></a>
+        <a th:href="@{/biographies}" class="footer-button-biography" data-th-text="#{footer.biography}"></a>
+        <a th:href="@{/event}" class="footer-button-events" data-th-text="#{footer.event}"></a>
+        <a th:href="@{/privacy_policy}" class="footer-button-confidential" data-th-text="#{footer.privacy}"></a>
+    </div>
+    <a th:href="#{footer.rutube_link}" target="_blank" rel="noopener noreferrer" class="footer-button-rutube"></a>
+    <a th:href="#{footer.vk_link}" target="_blank" rel="noopener noreferrer" class="footer-button-vk"></a>
+    <a href="/about#contact" class="footer-button-phone"></a>
+    <a th:href="#{footer.tg_link}" target="_blank" rel="noopener noreferrer" class="footer-button-tg"></a>
+    <div class="marking" data-th-text="#{footer.marking}"></div>
+</footer>
+</html>

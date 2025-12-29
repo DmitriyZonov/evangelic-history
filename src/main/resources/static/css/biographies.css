@@ -1,0 +1,150 @@
+.background {
+    display: flex;
+    flex-flow: column nowrap;
+    width: 100%;
+    min-height: 2200px;
+    margin-bottom: 200px;
+    height: fit-content;
+}
+.background-end {
+    display: flex;
+    flex-flow: column nowrap;
+    width: 100%;
+    height: 100px;
+}
+.biographies-title {
+    display: flex;
+    width: 634px;
+    height: 105px;
+    flex-direction: column;
+    justify-content: center;
+    flex-shrink: 0;
+    position: relative;
+    top: 100px;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    color: #5A062A;
+    text-align: justify;
+    font-family: Novelist;
+    font-size: 128px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130px; /* 101.563% */
+    text-transform: uppercase;
+}
+.biographies-period {
+    position: relative;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    top: 200px;
+    width: 1415px;
+    height: fit-content;
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+.timeline, .timeline-end {
+    height: 100%;
+    background-color: #8D0B19;
+    left: 37px;
+    position: absolute;
+    width: 10px;
+    z-index: 5;
+}
+.timeline-end {
+    display: flex;
+    flex-direction: column;
+    height: 65%;
+}
+.timeline-line {
+    height: 10px;
+    width: 60px;
+    background-color: #8D0B19;
+    margin-left: -40px;
+    margin-top: 86px;
+}
+.timeline_arrow {
+    position: absolute;
+    bottom: -59px;
+    left: -20px;
+    height: 59px;
+    width: 51px;
+    background: url("../img/page_elements/arrow_down.png") #F9FED8 50% / cover no-repeat;
+}
+.biographies-title-portraits-field {
+    display: flex;
+    flex-flow: column nowrap;
+    position: relative;
+    width: 1238px;
+    height: 100%;
+}
+.biographies-periods-title {
+    position: relative;
+    margin-top: 68px;
+    display: flex;
+    width: 920px;
+    height: 40px;
+    flex-direction: column;
+    justify-content: center;
+    flex-shrink: 0;
+    color: #8D0B19;
+    font-family: "Playfair Display";
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px; /* 83.333% */
+}
+.biographies-portraits-field {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: left;
+    align-items: center;
+    width: 1289px;
+    position: relative;
+    margin-top: 50px;
+    height: fit-content;
+}
+.biographies-portrait-name-field, .biographies-portrait-name-field-first {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    position: relative;
+    margin-left: 115px;
+    width: 236px;
+    height: 363px;
+}
+.biographies-portrait-name-field .link,.biographies-portrait-name-field-first .link {
+    position: absolute;
+    width: 223px;
+    height: 363px;
+    background-color: transparent;
+}
+.biographies-portrait-name-field-first {
+    margin-left: 0;
+}
+.biographies-portrait-name-field:active, .biographies-portrait-name-field-first:active {
+    transform: translateY(3px);
+}
+.biographies-portrait {
+    position: relative;
+    width: 223px;
+    height: 280px;
+    flex-shrink: 0;
+    border-radius: 15px;
+}
+.biographies-portrait img {
+    object-fit: cover;
+    border-radius: 15px;
+}
+.biographies-name {
+    position: relative;
+    width: 236px;
+    height: 61px;
+    color: #000;
+    text-align: center;
+    font-family: Gabriola;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 30px; /* 93.75% */
+}

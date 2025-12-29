@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  app:
+    image: dmitriyzonov/evangelic-history:1.0.0
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/evangelical_history
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: ZoNoV_DM1
+    networks:
+      - app-network
+
+  db:
+    image: mysql:8.0
+    ports:
+      - "3306:3306"
+    container_name: mysql_db
+    environment:
+      MYSQL_ROOT_PASSWORD: ZoNoV_DM1
+      MYSQL_DATABASE: evangelical_history
+    volumes:
+      - db_data:/var/lib/mysql/
+    networks:
+      - app-network
+
+volumes:
+  db_data:
+
+networks:
+  app-network:
+    driver: bridge

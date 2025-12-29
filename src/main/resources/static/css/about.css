@@ -1,0 +1,411 @@
+.about-title {
+    width: 1046px;
+    height: 443px;
+    flex-shrink: 0;
+    position: relative;
+    margin-left: 50%;
+    top: 50px;
+    transform: translate(-50%, 0);
+    z-index: 1;
+}
+.title-title {
+    display: flex;
+    width: 284px;
+    height: 71px;
+    flex-direction: column;
+    justify-content: center;
+    flex-shrink: 0;
+    position: absolute;
+    top: 22px;
+    margin-left: 50%;
+    transform: translate(-50%,0);
+    z-index: 2;
+    color: #F9FED8;
+    text-align: justify;
+    font-family: Novelist;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px; /* 62.5% */
+    text-transform: uppercase;
+}
+.title-text, .title-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    flex-shrink: 0;
+    color: #F9FED8;
+    text-align: justify;
+    font-family: Gabriola;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px; /* 125% */
+}
+.title-text {
+    width: 1046px;
+    height: 157px;
+    z-index: 2;
+    top: 120px;
+}
+.title-list {
+    width: 549px;
+    height: 160px;
+    top: 300px;
+    margin-left: 50%;
+    transform: translate(-50%, 0);
+}
+.background-2-field {
+    position: relative;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    width: 1278px;
+    height: 855px;
+    margin-left: 50%;
+    transform: translate(-50%,0);
+    z-index: -1;
+}
+.engraving {
+    width: 1081px;
+    height: 326px;
+    flex-shrink: 0;
+    border-radius: 47px;
+    background: url("../img/page_elements/engraving_about_project.png") lightgray 50% / cover no-repeat;
+    position: relative;
+    top: -150px;
+    z-index: 2;
+}
+.epigram {
+    display: flex;
+    width: 408px;
+    height: 157px;
+    flex-direction: column;
+    justify-content: center;
+    flex-shrink: 0;
+    position: relative;
+    top: -10px;
+    color: #000;
+    text-align: justify;
+    font-family: "Andantino script";
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px; /* 111.111% */
+}
+.quotes_open, .quotes_close {
+    width: 42px;
+    height: 42px;
+    flex-shrink: 0;
+    aspect-ratio: 1/1;
+    background-image: url("../img/page_elements/icon_quotes-solid.svg");
+    position: absolute;
+}
+.quotes_open {
+    left: 110px;
+    bottom:360px;
+}
+.quotes_close {
+    left: 535px;
+    bottom: 170px;
+    transform: rotate(180deg);
+}
+.img-2nd-level {
+    width: 427px;
+    height: 347px;
+    flex-shrink: 0;
+    border-radius: 34px;
+    background: url(../img/page_elements/stub_img.jpg) lightgray -1.722px -86.227px / 101.438% 124.669% no-repeat;
+    position: relative;
+    top: -100px;
+    z-index: 3;
+}
+.team {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    width: 1200px;
+    height: 740px;
+    flex-shrink: 0;
+    position: relative;
+    margin-left: 50%;
+    transform: translate(-50%, 0);
+    z-index: 1;
+}
+.team-photo-field {
+    display: flex;
+    flex-flow: column nowrap;
+    width: 554px;
+    height: 740px;
+    justify-content: space-around;
+}
+.team-photo1, .team-photo2, .team-photo3 {
+    width: 223px;
+    height: 280px;
+    flex-shrink: 0;
+    position: relative;
+    border-radius: 15px;
+    filter: grayscale(100%);
+    z-index: 5;
+}
+.team-photo1 {
+    background: url("../img/page_elements/lazarev_gs.jpg") lightgray 50% / cover no-repeat;
+    left: 20px;
+    top: 50px;
+ }
+.team-photo2 {
+    background: url("../img/page_elements/trifonova_mg.jpg") lightgray 50% / cover no-repeat;
+    align-self: flex-end;
+    right: 20px;
+    top: -50px;
+}
+.team-photo3 {
+    background: url("../img/page_elements/trifonov_rs.jpg") lightgray 50% / cover no-repeat;
+    top: -150px;
+    left: 20px;
+}
+.team-title-description-achieves-field {
+    height: 740px;
+    width: 586px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.team-title {
+    display: flex;
+    width: 259px;
+    height: 71px;
+    flex-direction: column;
+    justify-content: center;
+    flex-shrink: 0;
+    position: relative;
+    color: #FFF;
+    text-align: center;
+    font-family: Novelist;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px; /* 62.5% */
+    text-transform: uppercase;
+    z-index: 3;
+}
+.team-description {
+    display: flex;
+    width: 586px;
+    height: 396px;
+    flex-direction: column;
+    justify-content: center;
+    flex-shrink: 0;
+    position: relative;
+    color: #FFF;
+    text-align: justify;
+    font-family: Gabriola;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 30px; /* 93.75% */
+}
+.team-achieves {
+    height: 165px;
+    width: 586px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+.team-achieve-field {
+    display: flex;
+    position: relative;
+    height: 165px;
+    width: 142px;
+    align-items: center;
+    justify-content: flex-start;
+    flex-flow: column nowrap;
+}
+.team-achieve-number {
+    height: 63px;
+    width: 142px;
+    color: #F9FED8;
+    position: relative;
+    top: 5px;
+    text-align: center;
+    font-family: Gabriola;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px; /* 62.5% */
+}
+
+.team-achieve-description {
+    height: 63px;
+    width: 142px;
+    position: relative;
+    color: #FFF;
+    text-align: center;
+    font-family: Gabriola;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 111.111% */
+}
+.bibliography {
+    width: 980px;
+    height: 350px;
+    flex-shrink: 0;
+    position: absolute;
+    top: 50px;
+    margin-left: 50%;
+    transform: translate(-50%, 0);
+}
+.bibliography-title {
+    display: flex;
+    width: 592px;
+    height: 71px;
+    flex-direction: column;
+    justify-content: center;
+    flex-shrink: 0;
+    color: #1E1E1E;
+    position: absolute;
+    text-align: justify;
+    font-family: Novelist;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px; /* 62.5% */
+    text-transform: uppercase;
+}
+.bibliography-list {
+    color: #000;
+    text-align: justify;
+    font-family: Gabriola;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px; /* 125% */
+}
+.contacts {
+    width: 980px;
+    height: 209px;
+    flex-shrink: 0;
+    position: absolute;
+    margin-left: 50%;
+    transform: translate(-50%, 0);
+    bottom: 159px;
+}
+.contacts-title, .social-media-title {
+    display: flex;
+    height: 71px;
+    flex-direction: column;
+    justify-content: center;
+    flex-shrink: 0;
+    position: absolute;
+    color: #1E1E1E;
+    text-align: center;
+    font-family: Novelist;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px; /* 62.5% */
+    text-transform: uppercase;
+}
+.contacts-title {
+    width: 274px;
+}
+.social-media-title {
+    width: 460px;
+    right: 0;
+}
+.contacts-group {
+    display: flex;
+    width: 923px;
+    height: 157px;
+    flex-direction: column;
+    justify-content: center;
+    flex-shrink: 0;
+    position: absolute;
+    bottom: 0;
+    right: 10px;
+    color: #000;
+    text-align: justify;
+    font-family: Gabriola;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 50px; /* 125% */
+}
+.alpha-dog {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    position: absolute;
+    left: 7px;
+    bottom: 43px;
+    background: url("../img/page_elements/alpha_dog_icon.svg") no-repeat;
+}
+.phone {
+    width: 25px;
+    height: 25px;
+    flex-shrink: 0;
+    position: absolute;
+    left: 7px;
+    bottom: 85px;
+    background: url("../img/page_elements/phone_icon.svg") no-repeat;
+}
+.social-media-icons-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 209px;
+    height: 93px;
+    flex-shrink: 0;
+    position: absolute;
+    bottom: 42px;
+    right: 100px;
+}
+.rutube-icon, .vk-icon {
+    position: absolute;
+    display: flex;
+    width: 92px;
+    height: 93px;
+    padding: 11.625px 7.667px 0.721px 7.667px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    aspect-ratio: 92/93;
+}
+.rutube-icon {
+    background: url("../img/page_elements/rutube_contacts_icon.svg") no-repeat;
+    left: 0;
+    top: 10px;
+}
+.vk-icon {
+    background: url("../img/page_elements/vk_contacts_icon.svg") no-repeat;
+    right: 0;
+}
+.rutube-icon:active, .vk-icon:active {
+    transform: translateY(3px);
+    filter:brightness(1.2);
+}
+ul {
+margin-left: -2em;
+}
+.ul2 {
+    display: flex;
+    width: 980px;
+    flex-direction: column;
+    justify-content: left;
+    flex-shrink: 0;
+    position: absolute;
+    bottom: 0;
+}
+.li1 {
+    list-style: none;
+    background: url("../img/page_elements/tabler_point.svg") no-repeat 0 8px;
+    padding-left: 30px;
+}
+.li2 {
+    list-style: none;
+    background: url("../img/page_elements/book_tabler_point.svg") no-repeat 0 8px;
+    padding-left: 30px;
+}

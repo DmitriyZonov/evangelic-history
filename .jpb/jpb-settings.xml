@@ -3,6 +3,10 @@
   <component name="DatabaseMigrationSettings" lastSelectedDirectory="src\main\resources\db\migration" flywayMigrationDescription="" useFlywayForce="true" />
   <component name="JpaLiquibaseChangesConfig">
     <exclude-change idName="user_roles" tagName="dropTable" />
+    <exclude-change idName="user" tagName="dropTable" />
+    <exclude-change idName="role" tagName="dropTable" />
+    <exclude-change idName="FKj9553ass9uctjrmh0gkqsmv0d" tagName="dropForeignKeyConstraint" />
+    <exclude-change idName="FK55itppkw3i07do3h7qoclqd4k" tagName="dropForeignKeyConstraint" />
   </component>
   <component name="PersistenceUnitSettings">
     <persistence-units>
