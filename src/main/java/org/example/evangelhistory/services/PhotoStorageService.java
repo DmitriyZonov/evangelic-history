@@ -38,9 +38,11 @@ public class PhotoStorageService {
 
         Files.copy(file.getInputStream(), targetPath, StandardCopyOption.REPLACE_EXISTING);
 
+        String webPath = "/uploads/" + fileName;
+
         Photo photo = Photo.builder()
                 .title(fileName)
-                .path("/uploads")
+                .path(webPath)
                 .caption(caption)
                 .altText(altText)
                 .uploadedAt(LocalDateTime.now())

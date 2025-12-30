@@ -21,6 +21,7 @@ public class HomeController {
     private final EventService eventService;
     private final PhotoStorageService photoStorageService;
 
+
     public HomeController (HeroService heroService, EventService eventService, PhotoStorageService photoStorageService) {
         this.heroService = heroService;
         this.eventService = eventService;
@@ -52,11 +53,17 @@ public class HomeController {
         return "events";
     }
     @GetMapping("/index")
-    public String toMainPage() {
+    public String toMainPage(Model model) {
+        model.addAttribute("eventList", eventService.getSortedListOfEvents());
         return "index";
     }
     @GetMapping("/privacy_policy")
     public String toPrivacyPolicyPage() {
         return "privacy_policy";
+    }
+
+    @GetMapping("/yandex_23d96a0065d0dcca.html")
+    public String forYandexWebMaster() {
+        return "yandex_23d96a0065d0dcca.html";
     }
 }

@@ -8,6 +8,20 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 <head>
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        (function(m,e,t,r,i,k,a){
+            m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+            m[i].l=1*new Date();
+            for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+            k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+        })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=106072754', 'ym');
+
+        ym(106072754, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", accurateTrackBounce:true, trackLinks:true});
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/106072754" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
@@ -38,191 +52,153 @@
         <a th:href="@{/events}" class="menu-button-events" data-th-text="#{header.event}"></a>
     </div>
 </div>
-<div class="background-1">
-    <div class="banner-img">
-        <div class="main-title">
-            <text>Евангельские христиане</text>
+<div class="background">
+        <div class="background-1">
+            <div class="banner-img">
+                <div class="main-title">
+                    <text>Евангельские христиане</text>
+                </div>
+                <div class="main-title1">
+                    <text>на службе России</text>
+                </div>
+            </div>
+            <div class="torn-edge1"></div>
         </div>
-        <div class="main-title1">
-            <text>на службе России</text>
+        <div class="background-2">
+            <div class="about-main">
+                <div class="about-tiles-group">
+                    <div class="about-tile">
+                        <div class="title-1">
+                            <text>150 ЛЕТ ИСТОРИИ</text>
+                        </div>
+                        <div class="text">
+                            <text>— от первых евангельских общин
+                                XIX века до современности.</text>
+                        </div>
+                    </div>
+                    <div class="about-tile">
+                        <div class="title">
+                            <text>Передвижные выставки и лекции</text>
+                        </div>
+                        <div class="text">
+                            <text>— проект знакомит жителей Калининградской области с историей через экспозиции и публичные встречи.</text>
+                        </div>
+                    </div>
+                    <div class="about-tile">
+                        <div class="title">
+                            <text>ДЕСЯТКИ ГЕРОЕВ ВОЙНЫ</text>
+                        </div>
+                        <div class="text">
+                            <text>— евангельские христиане
+                                сражались и жертвовали жизнью
+                                в годы Первой мировой и Великой
+                                Отечественной войн.</text>
+                        </div>
+                    </div>
+                    <div class="about-tile">
+                        <div class="title">
+                            <text>УНИКАЛЬНЫЕ ВИДЕОИНТЕРВЬЮ</text>
+                        </div>
+                        <div class="text">
+                            <text>— живые свидетельства потомков, собранные специально для проекта.</text>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-text-group">
+                    <div class="about-text-group-title">
+                        <text>Просвещение, сохранение памяти, разрушение стереотипов</text>
+                    </div>
+                    <div class="about-text-group-title2">
+                        <text>“Евангельские христиане – часть российской истории, внесшая духовный и патриотический вклад”.</text>
+                    </div>
+                </div>
+                <div class="more-btn">
+                    <a class="link" th:href="@{/about}" th:text="#{index.about}"></a>
+                </div>
+            </div>
+        </div>
+        <div class="background-3">
+            <div class="torn-edge2"></div>
+            <div class="video-archive">
+                <div class="video-archive-text-title">
+                    <text>Видеоархив</text>
+                </div>
+                <div class="video-archive-text-title-2">
+                    <text>"Они служили России"</text>
+                </div>
+                <div class="video-teasers">
+                    <div class="video-teasers-tile">
+                        <div class="video-teasers-portraits">
+                            <img th:src="@{/img/heroes/Ivan_Shatalin.jpg}" class="cover">
+                        </div>
+                        <div class="video-teasers-title">
+                            <text>Подвиг Ивана Шаталина</text>
+                        </div>
+                    </div>
+                    <div class="video-teasers-tile">
+                        <div class="video-teasers-portraits">
+                            <img th:src="@{/img/heroes/Vasiliy_Fedichkin.jpg}" class="cover">
+                        </div>
+                        <div class="video-teasers-title">
+                            <text>История Василия Федичкина</text>
+                        </div>
+                    </div>
+                    <div class="video-teasers-tile">
+                        <div class="video-teasers-portraits">
+                            <img th:src="@{/img/heroes/Lubov_Dmitrievna.jpg}" class="cover">
+                        </div>
+                        <div class="video-teasers-title">
+                            <text>Память о Любовь Дмитриевне</text>
+                        </div>
+                    </div>
+                </div>
+                <div class="more-btn-1">
+                    <a class="link-1 a1" th:href="@{/biographies}" th:text="#{index.about}"></a>
+                </div>
+            </div>
+            <div class="torn-edge3"></div>
+        </div>
+        <div class="background-4">
+            <div class="announcements">
+                <div class="announcements-row">
+                    <div class="announcements-title-tile">
+                        <div class="announcements-title">
+                            <text>Анонсы</text>
+                        </div>
+                        <div class="announcements-title-2">
+                            <text>Мы будем рады встрече с Вами на мероприятиях проекта.</text>
+                        </div>
+                        <div class="more-btn-2">
+                            <a class="link" th:href="@{/events}" th:text="#{index.about}"></a>
+                        </div>
+                    </div>
+                    <div class="announcements-1st-row-announce-tile-field">
+                        <div class="announcements-tile" th:each="event, iterStat :${eventList}"
+                             th:if="${iterStat.count <= 2}">
+                            <img th:src="${event.announceImage}">
+                            <div class="announcements-tile-content-box">
+                                <a class="announcement-btn" th:href="|/event/${event.id}|"></a>
+                                <div class="anons-title-1" th:text="${event.title}"></div>
+                                <div class="anons-title-2" th:utext="${event.announcement}"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="announcements-main-row">
+                    <div th:each="event, iterStat :${eventList}"
+                         th:if="${iterStat.count > 2}"
+                         th:class="${iterStat.count % 3 == 0} ? 'announcements-1st-tile' : 'announcements-tile'">
+                        <img th:src="${event.announceImage}">
+                        <div class="announcements-tile-content-box">
+                            <a class="announcement-btn" th:href="|/event/${event.id}|"></a>
+                            <div class="anons-title-1" th:text="${event.title}"></div>
+                            <div class="anons-title-2" th:utext="${event.announcement}"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-    <div class="torn-edge1"></div>
-</div>
-<div class="background-2">
-    <div class="about-main">
-        <div class="about-tiles-group">
-            <div class="about-tile">
-                <div class="title-1">
-                    <text>150 ЛЕТ ИСТОРИИ</text>
-                </div>
-                <div class="text">
-                    <text>— от первых евангельских общин
-                        XIX века до современности.</text>
-                </div>
-            </div>
-            <div class="about-tile">
-                <div class="title">
-                    <text>Передвижные выставки и лекции</text>
-                </div>
-                <div class="text">
-                    <text>— проект знакомит жителей Калининградской области с историей через экспозиции и публичные встречи.</text>
-                </div>
-            </div>
-            <div class="about-tile">
-                <div class="title">
-                    <text>ДЕСЯТКИ ГЕРОЕВ ВОЙНЫ</text>
-                </div>
-                <div class="text">
-                    <text>— евангельские христиане
-                        сражались и жертвовали жизнью
-                        в годы Первой мировой и Великой
-                        Отечественной войн.</text>
-                </div>
-            </div>
-            <div class="about-tile">
-                <div class="title">
-                    <text>УНИКАЛЬНЫЕ ВИДЕОИНТЕРВЬЮ</text>
-                </div>
-                <div class="text">
-                    <text>— живые свидетельства потомков, собранные специально для проекта.</text>
-                </div>
-            </div>
-        </div>
-        <div class="about-text-group">
-            <div class="about-text-group-title">
-                <text>Просвещение, сохранение памяти, разрушение стереотипов</text>
-            </div>
-            <div class="about-text-group-title2">
-                <text>“Евангельские христиане – часть российской истории, внесшая духовный и патриотический вклад”.</text>
-            </div>
-        </div>
-        <div class="more-btn">
-            <a class="link" th:href="@{/about}" th:text="#{index.about}"></a>
-        </div>
-    </div>
-</div>
-<div class="background-3">
-    <div class="torn-edge2"></div>
-    <div class="video-archive">
-        <div class="video-archive-text-title">
-            <text>Видеоархив</text>
-        </div>
-        <div class="video-archive-text-title-2">
-            <text>"Они служили России"</text>
-        </div>
-        <div class="video-teasers">
-            <div class="video-teasers-tile">
-                <div class="video-teasers-portraits">
-                    <img th:src="@{/img/heroes/Ivan_Shatalin.jpg}" class="cover">
-                </div>
-                <div class="video-teasers-title">
-                    <text>Подвиг Ивана Шаталина</text>
-                </div>
-            </div>
-            <div class="video-teasers-tile">
-                <div class="video-teasers-portraits">
-                    <img th:src="@{/img/heroes/Vasiliy_Fedichkin.jpg}" class="cover">
-                </div>
-                <div class="video-teasers-title">
-                    <text>История Василия Федичкина</text>
-                </div>
-            </div>
-            <div class="video-teasers-tile">
-                <div class="video-teasers-portraits">
-                    <img th:src="@{/img/heroes/Lubov_Dmitrievna.jpg}" class="cover">
-                </div>
-                <div class="video-teasers-title">
-                    <text>Память о Любовь Дмитриевне</text>
-                </div>
-            </div>
-        </div>
-        <div class="more-btn-1">
-            <a class="link-1 a1" th:href="@{/biographies}" th:text="#{index.about}"></a>
-        </div>
-    </div>
-    <div class="torn-edge3"></div>
-</div>
-<div class="background-4">
-    <div class="announcements">
-        <div class="announcements-title-tile">
-            <div class="announcements-title">
-                <text>Анонсы</text>
-            </div>
-            <div class="announcements-title-2">
-                <text>Мы будем рады встрече с Вами на мероприятиях проекта.</text>
-            </div>
-            <div class="more-btn-2">
-                <a class="link" th:href="@{/events}" th:text="#{index.about}"></a>
-            </div>
-        </div>
-        <div class="announcements-tile">
-            <div class="announcements-tile-img">
-                <img th:src="@{/img/page_elements/chernyahovsk_anons.png}" class="cover">
-            </div>
-            <div class="anons-title-1">
-                <text>Март — Черняховск</text>
-            </div>
-            <div class="anons-title-2">
-                <text>Лекция и дискуссия</text>
-                <br>
-                <text>Живая история края: от Первой мировой до Великой Отечественной. Возможность задать вопросы исследователям.</text>
-            </div>
-        </div>
-        <div class="announcements-tile">
-            <div class="announcements-tile-img">
-                <img th:src="@{/img/page_elements/kaliningrad_anons.png}" class="cover">
-            </div>
-            <div class="anons-title-1">
-                <text>Январь — Калининград</text>
-            </div>
-            <div class="anons-title-2">
-                <text>Лекция-презентация проекта </text>
-                <br>
-                <text>Узнайте, как евангельские христиане внесли вклад в победы России. Первая встреча цикла в столице региона</text>
-            </div>
-        </div>
-        <div class="announcements-tile">
-            <div class="announcements-tile-img">
-                <img th:src="@{/img/page_elements/sovetsk_anons.jpg}" class="cover">
-            </div>
-            <div class="anons-title-1">
-                <text>Февраль — Советск</text>
-            </div>
-            <div class="anons-title-2">
-                <text>Передвижная выставка</text>
-                <br>
-                <text> История в фотографиях, документах и личных свидетельствах. Открытие экспозиции для жителей Советска.</text>
-            </div>
-        </div>
-        <div class="announcements-tile">
-            <div class="announcements-tile-img">
-                <img th:src="@{/img/page_elements/gusev_anons.jpg}" class="cover">
-            </div>
-            <div class="anons-title-1">
-                <text>Апрель — Гусев</text>
-            </div>
-            <div class="anons-title-2">
-                <text>Выставка и показ видеосвидетельств</text>
-                <br>
-                <text>Уникальные интервью потомков и редкие архивные материалы — теперь в Гусеве.</text>
-            </div>
-        </div>
-        <div class="announcements-tile">
-            <div class="announcements-tile-img">
-                <img th:src="@{/img/page_elements/kaliningrad_anons.png}" class="cover">
-            </div>
-        <div class="anons-title-1">
-            <text>Май — Калининград</text>
-        </div>
-        <div class="anons-title-2">
-            <text>Завершение проекта</text>
-            <br>
-            <text> Итоговая выставка и заключительная лекция. Подведение итогов, презентация видеоархива и публикация материалов</text>
-        </div>
-    </div>
-    </div>
-</div>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script th:src="@{/js/up-button.js}"></script>
 </div>

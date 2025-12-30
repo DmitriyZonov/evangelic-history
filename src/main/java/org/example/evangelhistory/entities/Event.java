@@ -28,6 +28,7 @@ public class Event {
     @Column(length = 2000)
     private String description;
     private String titleImage;
+    private String announceImage;
     @Column(nullable = false)
     private boolean isDone;
 

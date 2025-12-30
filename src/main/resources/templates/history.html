@@ -7,6 +7,20 @@
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <head>
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        (function(m,e,t,r,i,k,a){
+            m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+            m[i].l=1*new Date();
+            for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+            k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+        })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=106072754', 'ym');
+
+        ym(106072754, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", accurateTrackBounce:true, trackLinks:true});
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/106072754" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
@@ -283,7 +297,7 @@
                     </div>
                     <div class="history-period-2nd-type-line-2"></div>
                     <div class="history-period-2nd-type-title-photo-img">
-                        <img th:src="@{../static/img/page_elements/history/1917-1941_photo.png}">
+                        <img th:src="@{/img/page_elements/history/1917-1941_photo.png}">
                     </div>
                     <div class="history-period-2nd-type-main-tdp-text-under-photo">
                         <text>Дети участвуют в антирелигиозной демонстрации. 1920‑е</text>
@@ -392,7 +406,7 @@
                     <text>1980-1990-е</text>
                 </div>
                 <div class="history-period-1st-type-title-photo-img">
-                    <img th:src="@{../static/img/page_elements/history/1980-1990_photo.png}">
+                    <img th:src="@{/img/page_elements/history/1980-1990_photo.png}">
                 </div>
             </div>
             <div class="history-period-1st-type-photo-description">
@@ -427,7 +441,7 @@
     <div class="background-2-history">
         <div class="history-period-2nd-type">
             <div class="history-period-2nd-type-title-century">
-                <text>1990-е -2020-е<text>
+                <text>1990-е -2020-е</text>
             </div>
             <div class="history-period-2nd-type-main">
                 <div class="history-period-2nd-type-main-tdp">

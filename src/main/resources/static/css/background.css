@@ -103,9 +103,9 @@ body, html {
     background-image: url('../img/page_elements/torn_edges/torn_edge3-2.png');
     background-repeat: no-repeat;
 }
-.background-4 {
+.background-4, .background-4-about {
     width: 100%;
-    height: 832px;
+    height: fit-content;
     position: relative;
     display: inline-block;
     margin-left: 50%;
@@ -114,6 +114,9 @@ body, html {
     flex-shrink: 0;
     background-color: #F9FED8;
     z-index: -1;
+}
+.background-4-about {
+    height: 835px
 }
 .background-4-events {
     display: flex;
