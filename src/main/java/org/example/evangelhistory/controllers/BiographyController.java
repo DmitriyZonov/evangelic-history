@@ -20,10 +20,10 @@ public String getHeroBiography(Model model,
                                @PathVariable Long id) {
     Hero hero = heroService.findById(id);
     if (hero == null) {
-        return "/error";
+        return "error";
     } else {
         model.addAttribute("hero", hero);
-        return "/biography";
+        return "biography";
     }
 }
 }
