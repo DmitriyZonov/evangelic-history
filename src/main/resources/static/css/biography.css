@@ -97,7 +97,7 @@ p {
     transform: translateX(-50%);
     height: fit-content;
 }
-.video {
+.biography-video {
     position: relative;
     float: left;
     width: 720px;

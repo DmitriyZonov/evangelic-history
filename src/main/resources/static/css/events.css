@@ -79,7 +79,7 @@
     font-weight: 400;
     line-height: 30px; /* 125% */
 }
-.about-project-btn {
+.events-about-project-btn {
     width: 238px;
     height: 59px;
     position: relative;
@@ -90,11 +90,11 @@
     align-items: center;
     background: #5A062A;
 }
-.about-project-btn:active {
+.events-about-project-btn:active {
     background: rgba(90,6,42,0.88);
     transform: translateY(3px);
 }
-.about-project-btn-text {
+.events-about-project-btn-text {
     display: flex;
     width: 238px;
     height: 51px;
@@ -342,7 +342,7 @@
     height: 25px;
     color: #FFFFFF;
 }
-.map-pin-icon {
+.events-map-pin-icon {
     position: absolute;
     z-index: 4;
     left: 461px;
@@ -353,7 +353,7 @@
     aspect-ratio: 1/1;
     background: url("../img/page_elements/map_pin_icon.svg") transparent no-repeat;
 }
-.clock-icon {
+.events-clock-icon {
     position: absolute;
     z-index: 4;
     left: 463px;
@@ -386,6 +386,7 @@
     color: #F9FED8;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
 }
 .hide-btn:active {
     background: rgba(90,6,42,0.88);

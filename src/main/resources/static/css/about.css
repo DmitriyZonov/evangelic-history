@@ -8,7 +8,7 @@
     transform: translate(-50%, 0);
     z-index: 1;
 }
-.title-title {
+.about-title .title {
     display: flex;
     width: 284px;
     height: 71px;
@@ -29,7 +29,7 @@
     line-height: 40px; /* 62.5% */
     text-transform: uppercase;
 }
-.title-text, .title-list {
+.about-title .text, .about-title .list {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -43,20 +43,20 @@
     font-weight: 400;
     line-height: 40px; /* 125% */
 }
-.title-text {
+.about-title .text {
     width: 1046px;
     height: 157px;
     z-index: 2;
     top: 120px;
 }
-.title-list {
+.about-title .list {
     width: 549px;
     height: 160px;
     top: 300px;
     margin-left: 50%;
     transform: translate(-50%, 0);
 }
-.background-2-field {
+.about-background-2-field {
     position: relative;
     display: flex;
     flex-flow: row wrap;
@@ -67,7 +67,7 @@
     transform: translate(-50%,0);
     z-index: -1;
 }
-.engraving {
+.about-engraving {
     width: 1081px;
     height: 326px;
     flex-shrink: 0;
@@ -77,7 +77,7 @@
     top: -150px;
     z-index: 2;
 }
-.epigram {
+.about-epigram {
     display: flex;
     width: 408px;
     height: 157px;
@@ -146,24 +146,41 @@
     flex-shrink: 0;
     position: relative;
     border-radius: 15px;
-    filter: grayscale(100%);
     z-index: 5;
 }
 .team-photo1 {
-    background: url("../img/page_elements/lazarev_gs.jpg") lightgray 50% / cover no-repeat;
     left: 20px;
     top: 50px;
  }
+.team-photo1 img {
+    width: 223px;
+    height: 280px;
+    filter: grayscale(100%);
+    border-radius: 15px;
+    object-fit: cover;
+}
 .team-photo2 {
-    background: url("../img/page_elements/trifonova_mg.jpg") lightgray 50% / cover no-repeat;
     align-self: flex-end;
     right: 20px;
     top: -50px;
 }
+.team-photo2 img {
+    width: 223px;
+    height: 280px;
+    filter: grayscale(100%);
+    border-radius: 15px;
+    object-fit: cover;
+}
 .team-photo3 {
-    background: url("../img/page_elements/trifonov_rs.jpg") lightgray 50% / cover no-repeat;
     top: -150px;
     left: 20px;
+}
+.team-photo3 img {
+    width: 223px;
+    height: 280px;
+    filter: grayscale(100%);
+    border-radius: 15px;
+    object-fit: cover;
 }
 .team-title-description-achieves-field {
     height: 740px;

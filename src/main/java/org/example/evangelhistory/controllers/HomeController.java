@@ -57,6 +57,11 @@ public class HomeController {
         model.addAttribute("eventList", eventService.getSortedListOfEvents());
         return "index";
     }
+    @GetMapping("/")
+    public String toTitlePage(Model model) {
+        model.addAttribute("eventList", eventService.getSortedListOfEvents());
+        return "index";
+    }
     @GetMapping("/privacy_policy")
     public String toPrivacyPolicyPage() {
         return "privacy_policy";

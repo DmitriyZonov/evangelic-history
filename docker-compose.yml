@@ -5,9 +5,12 @@ services:
     image: dmitriyzonov/evangelic-history:1.0.0
     ports:
       - "8080:8080"
+    volumes:
+      - /var/www/evangelic-history/uploads:/app/uploads
     depends_on:
       - db
     environment:
+      SPRING_PROFILES_ACTIVE: prod
       SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/evangelical_history
       SPRING_DATASOURCE_USERNAME: root
       SPRING_DATASOURCE_PASSWORD: ZoNoV_DM1

@@ -49,7 +49,7 @@
     height: 89px;
     left: 46px;
 }
-.map-pin-icon {
+.event-map-pin-icon {
     position: relative;
     width: 50px;
     height: 50px;
@@ -76,7 +76,7 @@
     height: 38px;
     color: #FFFFFF;
 }
-.clock-icon {
+.event-clock-icon {
     position: relative;
     left: 6px;
     width: 42px;
@@ -234,7 +234,7 @@
     height: 48px;
     z-index: 10;
 }
-.events-modal-window {
+.event-modal-window {
     position: fixed;
     top: 0;
     right: 0;
@@ -249,21 +249,21 @@
     align-items: start;
     justify-content: center;
 }
-.events-modal-window:target {
+.event-modal-window:target {
     visibility: visible;
     opacity: 1;
 }
-.events-modal-window > div {
+.event-modal-window > div {
     max-width: 90%;
     max-height: 90vh;
     position: relative;
 }
-.events-modal-window img {
+.event-modal-window img {
     max-width: 100%;
     max-height: 90vh;
     object-fit: contain;
 }
-.events-modal-close {
+.event-modal-close {
     position: absolute;
     right: 40px;
     color: #fff;

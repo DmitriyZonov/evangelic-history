@@ -9,11 +9,10 @@
     z-index: 1;
 }
 .menu_logo {
-    width: 108px;
-    height: 108px;
+    width: 109px;
+    height: 109px;
     flex-shrink: 0;
-    aspect-ratio: 108/108;
-    background: url('../img/page_elements/logo/logo.png') #0f0f0c 50% / cover no-repeat;
+    background: url('../img/page_elements/logo/logo_footer.png') #0f0f0c 50% / cover no-repeat;
     bottom: 1px;
     left: 12px;
     z-index: 1;

@@ -15,7 +15,35 @@
     left: 2px;
     flex-shrink: 0;
     aspect-ratio: 192/192;
-    background: url(../img/page_elements/logo/logo.png) black 50% / cover no-repeat;
+    background: url(../img/page_elements/logo/logo_footer.png) black 50% / cover no-repeat;
+}
+.footer-logo-nko {
+    width: 192px;
+    height: 192px;
+    position: absolute;
+    top: 21px;
+    left: 203px;
+    flex-shrink: 0;
+    aspect-ratio: 192/192;
+    background: url(../img/page_elements/logo/nko_logo_gradient.png) black 50% / cover no-repeat;
+}
+.marking-nko {
+    width: 600px;
+    height: 24px;
+    display: flex;
+    flex-flow: row wrap;
+    flex-shrink: 0;
+    color: #FFF;
+    position: absolute;
+    left: 2px;
+    bottom: 45px;
+    text-align: left;
+    font-family: Noah;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
 }
 .footer-buttons-group {
     display: flex;
