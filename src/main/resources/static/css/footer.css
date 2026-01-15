@@ -25,7 +25,7 @@
     left: 203px;
     flex-shrink: 0;
     aspect-ratio: 192/192;
-    background: url(../img/page_elements/logo/nko_logo_gradient.png) black 50% / cover no-repeat;
+    background: url(../img/page_elements/logo/nko_logo.png)
 }
 .marking-nko {
     width: 600px;
