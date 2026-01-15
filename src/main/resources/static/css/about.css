@@ -155,7 +155,6 @@
 .team-photo1 img {
     width: 223px;
     height: 280px;
-    filter: grayscale(100%);
     border-radius: 15px;
     object-fit: cover;
 }
@@ -167,7 +166,6 @@
 .team-photo2 img {
     width: 223px;
     height: 280px;
-    filter: grayscale(100%);
     border-radius: 15px;
     object-fit: cover;
 }
@@ -178,7 +176,6 @@
 .team-photo3 img {
     width: 223px;
     height: 280px;
-    filter: grayscale(100%);
     border-radius: 15px;
     object-fit: cover;
 }
