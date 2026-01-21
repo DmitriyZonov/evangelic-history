@@ -16,13 +16,15 @@
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 
     <!-- Custom styles for this template -->
-        <link th:href="@{/css/background.css}" rel="stylesheet" />
-        <link th:href="@{/css/header.css}" rel="stylesheet" />
-        <link th:href="@{/css/footer.css}" rel="stylesheet" />
-        <link th:href="@{/css/fonts.css}" rel="stylesheet" />
-        <link th:href="@{/css/to main button.css}" rel="stylesheet" />
+    <link th:href="@{/css/background.css}" rel="stylesheet" />
+    <link th:href="@{/css/header.css}" rel="stylesheet" />
+    <link th:href="@{/css/footer.css}" rel="stylesheet" />
+    <link th:href="@{/css/fonts.css}" rel="stylesheet" />
+    <link th:href="@{/css/to main button.css}" rel="stylesheet" />
+    <link th:href="@{/css/privacy_policy.css}" rel="stylesheet" />
 </head>
 <body>
+<div class="wrapper">
 <div class="menu">
     <div class="menu_logo"></div>
     <div class="to-main">
@@ -35,32 +37,10 @@
         <a th:href="@{/events}" class="menu-button-events" data-th-text="#{header.event}"></a>
     </div>
 </div>
-<div class="background-1">
-    <div class="torn-edge1"></div>
-    <div class="vector1">
-        <svg xmlns="http://www.w3.org/2000/svg" width="1020" height="259" viewBox="0 0 1020 259" fill="none">
-            <path d="M-3 1C29.9202 3.49515 64.8058 7.48738 88.3904 17.468C111.975 27.4485 221.545 95.8155 310.97 122.264C382.51 143.423 653.275 183.645 779.714 201.111L1019 220.074V241.532L-3 258V1Z" fill="#F9FED8" stroke="#F9FED8"/>
-        </svg>
-    </div>
+<div class="background-1-privacy-policy">
+    <div class = "privacy-policy-title" data-th-text="#{privacy_policy.title}"></div>
+    <div class ="privacy-policy-body" th:utext="#{privacy_policy.text}"></div>
 </div>
-<div class="background-2">
-</div>
-<div class="background-3">
-    <svg xmlns="http://www.w3.org/2000/svg" width="1280" height="1373" viewBox="0 0 1280 1373" fill="none">
-        <path d="M-1 268.5L961.251 142L1280 0V1140L868.179 1258L-1 1373V268.5Z" fill="#5A062A"/>
-    </svg>
-    <div class="torn-edge2"></div>
-</div>
-<div class="background-4">
-    <svg xmlns="http://www.w3.org/2000/svg" width="1280" height="700" viewBox="0 0 1280 700" fill="none">
-        <path d="M-5 0H1282V931.376L863.5 929.5H-5V0Z" fill="#F9FED8"/>
-    </svg>
-    <div class="torn-edge3"></div>
-    <div class="vector2">
-        <svg xmlns="http://www.w3.org/2000/svg" width="1020" height="259" viewBox="0 0 1020 259" fill="none">
-            <path d="M-3 0.539307C29.9202 3.03445 64.8058 7.02669 88.3904 17.0073C111.975 26.9879 221.545 95.3548 310.97 121.803C382.51 142.962 653.275 183.184 779.714 200.65L1019 219.613V241.071L-3 257.539V0.539307Z" fill="#F9FED8" stroke="#F9FED8"/>
-        </svg>
-    </div>
 </div>
 <footer class="footer">
     <div class="footer-logo"></div>

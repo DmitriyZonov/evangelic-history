@@ -35,6 +35,10 @@ body, html {
 .background-1-article {
     height: 837px;
 }
+.background-1-privacy-policy {
+    background-color: #F9FED8;
+    height: fit-content;
+}
 .torn-edge1 {
     width: 100%;
     height: 76px;
