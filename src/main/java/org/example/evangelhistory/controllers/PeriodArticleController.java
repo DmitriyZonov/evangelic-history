@@ -22,6 +22,6 @@ public class PeriodArticleController {
                                    @PathVariable Long id) {
         PeriodArticle periodArticle = periodArticleService.findById(id);
         model.addAttribute("periodArticle", periodArticle);
-        return "/history_article";
+        return "history_article";
     }
 }
