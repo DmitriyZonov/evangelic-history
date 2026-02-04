@@ -37,20 +37,16 @@ public class PeriodArticleService {
             throw new NullPointerException("Такой статьи нет");
         }
     }
-    public PeriodArticle findByPeriod (@NotNull String period) {
-        PeriodArticle articleFromDB = repo.findPeriodArticleByPeriod(period);
-        if (articleFromDB != null) {
-            return articleFromDB;
-        } else {
-            throw new NullPointerException("Такой статьи нет");
-        }
-    }
+//    public PeriodArticle findByPeriod (@NotNull String period) {
+//        PeriodArticle articleFromDB = repo.findPeriodArticleByPeriod(period);
+//        if (articleFromDB != null) {
+//            return articleFromDB;
+//        } else {
+//            throw new NullPointerException("Такой статьи нет");
+//        }
+//    }
     public void save (@NotNull PeriodArticle article) {
         repo.save(article);
-    }
-    public void addPeriod (@NotNull PeriodArticle periodArticle, String period) {
-        periodArticle.setPeriod(period);
-        repo.save(periodArticle);
     }
     public void deleteById (@NotNull Long id) {
         Optional<PeriodArticle> articleFromDB = repo.findById(id);

@@ -1,12 +1,16 @@
 .menu {
     background: #0F0F0C;
-    width: 100%;
+    width: 100% !important;
+    max-width: 100vw;
     height: 109px;
-    margin-left: 50%;
-    transform: translate(-50%,0);
-    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    margin: 0 !important;
     position: relative;
-    z-index: 1;
+    box-sizing: border-box;
+    z-index: 1000;
 }
 .menu_logo {
     width: 109px;
@@ -14,21 +18,28 @@
     flex-shrink: 0;
     background: url('../img/page_elements/logo/logo_footer.png') #0f0f0c 50% / cover no-repeat;
     bottom: 1px;
+    margin-right: 40px;
     left: 12px;
     z-index: 1;
 }
+.nav-wrapper {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: flex-start;
+}
 .group2 {
     display: flex;
+    gap: 30px;
     justify-content: space-between;
     align-items: center;
-    width: 538px;
+    width: auto;
+    max-width: 100%;
+    min-width: 300px;
     height: 40px;
-    position: absolute;
-    top: 50%;
-    transform: translate(0, -50%);
+    position: relative;
+    margin-left: auto;
     flex-shrink: 0;
-    right: 62px;
-    z-index: 2;
 }
 .menu-button-about, .menu-button-history, .menu-button-biography, .menu-button-events {
     display: flex;
@@ -65,6 +76,78 @@
     border: 1px solid #FFFFFF;
     transform: translateY(2px);
 }
+
+/* Десктопная правка: скрываем бургер */
+.burger-menu { display: none; }
+
+@media (max-width: 991px) {
+    /* Кнопка бургера */
+    .burger-menu {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 24px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        z-index: 1002;
+        margin-right: 20px;
+    }
+    .burger-menu span { width: 100%; height: 3px; background: #FFF; transition: 0.3s; }
+
+    /* Выпадающее меню */
+    .nav-wrapper {
+        display: none; /* Скрыто по умолчанию */
+        flex-direction: column;
+        position: fixed; /* На весь экран */
+        top: 109px;
+        left: 0;
+        width: 100%;
+        height: calc(100vh - 109px);
+        background: #0F0F0C;
+        z-index: 1001;
+        padding-top: 20px;
+    }
+
+    .nav-wrapper.active .to-main,
+    .nav-wrapper.active .group2 {
+        width: 100%;
+        margin: 0;
+    }
+
+    .nav-wrapper.active { display: flex; }
+
+    /* Выстраиваем кнопки в колонку */
+    .group2 {
+        flex-direction: column;
+        position: static !important; /* Убираем absolute */
+        width: 100% !important;
+        height: auto !important;
+        transform: none !important;
+        right: auto !important;
+        gap: 10px;
+    }
+
+    .to-main {
+        margin-right: 0;
+        text-align: center;
+    }
+
+    .menu-button-about, .menu-button-history,
+    .menu-button-biography, .menu-button-events {
+        width: 80% !important;
+        margin: 0 auto;
+        height: 50px;
+    }
+
+    /* Анимация крестика */
+    .burger-menu.open span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    .burger-menu.open span:nth-child(2) { opacity: 0; }
+    .burger-menu.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+}
+
+
 .a1:hover {
     text-decoration: none;
     color: #5A062A;
@@ -76,4 +159,23 @@ a {
 a:hover{
     text-decoration: none;
     color: #FFF;
+}
+
+.group2 a,
+.to-main-btn,
+.menu-button-about,
+.menu-button-history,
+.menu-button-biography,
+.menu-button-events {
+    text-decoration: none !important;
+    font-family: 'Noah', sans-serif !important;
+}
+
+.group2 a:hover,
+.to-main-btn:hover {
+    text-decoration: none !important;
+}
+
+.group2 a, .to-main-btn {
+    color: #FFFFFF;
 }

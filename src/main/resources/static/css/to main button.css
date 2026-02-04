@@ -1,74 +1,52 @@
-.to-main {
+.to-main, .back {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    width: 110px;
+    width: auto;
     height: 40px;
-    position: absolute;
-    top: 50%;
-    transform: translate(0, -50%);
     flex-shrink: 0;
-    left: 120px;
     z-index: 2;
 }
-.to-main-btn {
+
+.to-main-btn, .back-btn {
     display: flex;
-    width: 110px;
+    width: 130px;
     height: 30px;
     flex-shrink: 0;
-    color: #FFF;
-    font-family: Noah;
+    color: #FFF !important;
+    font-family: 'Noah', sans-serif !important;
+    text-decoration: none !important;
     justify-content: center;
     align-items: center;
     font-size: 16px;
-    font-style: normal;
     font-weight: 700;
-    line-height: normal;
     text-transform: uppercase;
-    z-index: 3;
     background: transparent;
+    transition: 0.2s;
+    border: 1px solid transparent;
 }
-.to-main-btn:hover  {
+
+.to-main-btn:hover, .back-btn:hover {
     border: 1px solid #FFFFFF;
+    text-decoration: none !important;
+    color: #FFF !important;
 }
-.to-main-btn:active {
+
+.to-main-btn:active, .back-btn:active {
     border: 1px solid #FFFFFF;
     transform: translateY(2px);
 }
-.back {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 80px;
-    height: 40px;
-    position: absolute;
-    top: 50%;
-    transform: translate(0, -50%);
-    flex-shrink: 0;
-    left: 120px;
-    z-index: 2;
-}
-.back-btn {
-    display: flex;
-    width: 110px;
-    height: 30px;
-    flex-shrink: 0;
-    color: #FFF;
-    font-family: Noah;
-    justify-content: center;
-    align-items: center;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    text-transform: uppercase;
-    z-index: 3;
-    background: transparent;
-}
-.back-btn:hover  {
-    border: 1px solid #FFFFFF;
-}
-.back-btn:active {
-    border: 1px solid #FFFFFF;
-    transform: translateY(2px);
+
+
+@media (max-width: 991px) {
+    .to-main, .back {
+        margin-left: 0;
+        margin-bottom: 20px;
+        width: 100%;
+    }
+
+    .to-main-btn, .back-btn {
+        width: 80%;
+        height: 45px;
+    }
 }

@@ -1,159 +1,234 @@
-.footer{
+.footer {
     position: relative;
     width: 100%;
-    height: 342px;
-    bottom: 0;
+    min-height: 342px; /* Изменил на min-height */
     background-color: #0F0F0C;
     z-index: 0;
     margin-top: auto;
-}
-.footer-logo {
-    width: 192px;
-    height: 192px;
-    position: absolute;
-    top: 21px;
-    left: 2px;
-    flex-shrink: 0;
-    aspect-ratio: 192/192;
-    background: url(../img/page_elements/logo/logo_footer.png) black 50% / cover no-repeat;
-}
-.footer-logo-nko {
-    width: 192px;
-    height: 192px;
-    position: absolute;
-    top: 21px;
-    left: 203px;
-    flex-shrink: 0;
-    aspect-ratio: 192/192;
-    background: url(../img/page_elements/logo/nko_logo.png)
-}
-.marking-nko {
-    width: 600px;
-    height: 24px;
     display: flex;
-    flex-flow: row wrap;
-    flex-shrink: 0;
-    color: #FFF;
-    position: absolute;
-    left: 2px;
-    bottom: 45px;
-    text-align: left;
-    font-family: Noah;
-    font-size: 10px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    text-transform: uppercase;
+    flex-direction: column;
+    padding: 40px 50px;
+    box-sizing: border-box;
 }
+
+/* Верхний ряд: Логотипы и Кнопки */
+.footer-main-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    width: 100%;
+}
+.nav-and-social {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding-top: 50px;
+    box-sizing: border-box;
+}
+
+/* Блок логотипов */
+.logos-group {
+    display: flex;
+    gap: 10px;
+}
+
+.footer-logo, .footer-logo-nko {
+    width: 192px;
+    height: 192px;
+    flex-shrink: 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.footer-logo { background-image: url(../img/page_elements/logo/logo_footer.png); }
+.footer-logo-nko { background-image: url(../img/page_elements/logo/nko_logo.png); }
+
+/* Группа кнопок навигации */
 .footer-buttons-group {
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-between;
-    align-items: center;
-    width: 648px;
-    height: 80px;
-    position: absolute;
-    z-index: 1;
-    top: 77px;
-    right: 53px;
-    flex-shrink: 0;
+    justify-content: flex-end;
+    gap: 5px 20px;
+    max-width: 650px;
+    height: auto; !important;
 }
-.footer-button-main-page,.footer-button-about, .footer-button-history,
+
+.footer-button-main-page, .footer-button-about, .footer-button-history,
 .footer-button-biography, .footer-button-events, .footer-button-confidential {
     display: flex;
     height: 30px;
-    flex-shrink: 0;
-    position: relative;
-    align-items: center;
-    justify-content: center;
     color: #FFF;
-    text-align: right;
-    font-family: Noah;
+    font-family: 'Noah', sans-serif !important;
     font-size: 16px;
-    font-style: normal;
     font-weight: 700;
-    line-height: normal;
     text-transform: uppercase;
+    text-decoration: none !important;
 }
-.footer-button-main-page {
-    width: 80px;
-}
-.footer-button-about {
-    width: 60px;
-}
-.footer-button-history {
-    width: 85px;
-}
-.footer-button-biography {
-     width: 111px;
-}
-.footer-button-events {
-    width: 127px;
-}
+
 .footer-button-confidential {
-    width: 303px;
-    position: absolute;
-    bottom: 0;
-    right: 0;
+    width: 100%; /* Занимает всю строку в своей группе */
+    justify-content: flex-end;
+    margin-top: 2px;
 }
-.footer-button-main-page:hover,.footer-button-about:hover, .footer-button-history:hover,
-.footer-button-biography:hover, .footer-button-events:hover, .footer-button-confidential:hover {
-    border: 1px solid #FFFFFF;
-}
-.footer-button-main-page:active,.footer-button-about:active, .footer-button-history:active,
-.footer-button-biography:active, .footer-button-events:active, .footer-button-confidential:active {
-    border: 1px solid #FFFFFF;
-    transform: translateY(2px);
-}
-.footer-button-rutube, .footer-button-vk, .footer-button-phone, .footer-button-tg {
+
+/* Соцсети (выносим в отдельный ряд) */
+.social-group {
     display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.footer-button-rutube, .footer-button-vk, .footer-button-phone, .footer-button-tg {
     width: 39px;
     height: 39px;
-    position: absolute;
-    top: 184px;
-    padding: 5px 3px 0 3px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    transition: 0.2s;
+    justify-content: center;
+}
+
+.footer-button-rutube { background-image: url("../img/page_elements/logo/rutube_logo.svg"); }
+.footer-button-vk { background-image: url("../img/page_elements/logo/vk_logo.svg"); }
+.footer-button-phone { background-image: url("../img/page_elements/logo/phone_logo.svg"); }
+.footer-button-tg { background-image: url("../img/page_elements/tg_icon.svg"); }
+
+/* Техническая маркировка (НКО и прочее) */
+.marking-row {
+    display: flex;
+    justify-content: space-between;
+    margin-top: auto;
+    padding-top: 30px;
+    width: 100%;
+}
+
+.marking-nko, .marking {
+    color: #FFF;
+    font-family: 'Noah', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    max-width: 45%;
+}
+
+.marking { text-align: right; }
+
+/* --- МОБИЛЬНАЯ АДАПТАЦИЯ --- */
+@media (max-width: 991px) {
+    .footer {
+        height: auto !important; /* Убираем фиксированную высоту 342px */
+        padding: 30px 15px !important;
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Центрируем всё по середине */
+    }
+
+    .footer-main-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+    }
+
+    .logos-group {
+        flex-direction: row; /* Логотипы в ряд на мобильном */
+        gap: 15px;
+    }
+
+    .footer-logo, .footer-logo-nko {
+        width: 120px; /* Уменьшаем логотипы для мобильных */
+        height: 120px;
+    }
+
+    .nav-and-social {
+        padding-top: 0 !important; /* Убираем десктопный отступ в 21px */
+        align-items: center;
+        width: 100%;
+    }
+
+    .footer-buttons-group {
+        flex-direction: column; /* Кнопки в столбик */
+        align-items: center;
+        gap: 12px;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    /* Делаем все кнопки в футере одинаковыми и удобными на мобилках */
+    .footer-buttons-group a {
+        width: 90% !important; /* Почти на всю ширину экрана */
+        height: 45px !important; /* Увеличиваем высоту для нажатия */
+        justify-content: center !important;
+        margin: 0 auto !important;
+    }
+
+    .social-group {
+        justify-content: center;
+        margin-top: 20px;
+        gap: 20px;
+    }
+
+    .marking-row {
+        flex-direction: column; /* Маркировки друг под другом */
+        align-items: center;
+        gap: 10px;
+        margin-top: 30px;
+        width: 100%;
+    }
+
+    .marking-nko, .marking {
+        text-align: center !important;
+        max-width: 100%;
+        font-size: 11px; /* Чуть крупнее для читаемости */
+    }
+}
+
+.footer-button-main-page,
+.footer-button-about,
+.footer-button-history,
+.footer-button-biography,
+.footer-button-events,
+.footer-button-confidential {
+    display: flex;
     justify-content: center;
     align-items: center;
-    flex-shrink: 0;
-    aspect-ratio: 39/39;
+    text-align: center;
+    box-sizing: border-box;
 }
-.footer-button-rutube {
-    top: 189px;
-    right: 200px;
-    background: url("../img/page_elements/logo/rutube_logo.svg") no-repeat;
+
+.footer-button-main-page:hover,
+.footer-button-about:hover,
+.footer-button-history:hover,
+.footer-button-biography:hover,
+.footer-button-events:hover,
+.footer-button-confidential:hover {
+    border: 1px solid #FFFFFF;
+    text-decoration: none !important;
+    color: #FFF !important;
 }
-.footer-button-vk {
-    right: 151px;
-    background: url("../img/page_elements/logo/vk_logo.svg") no-repeat;
+
+.footer-button-confidential {
+    width: auto !important;
+    min-width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    height: 30px;
+    margin-left: auto;
 }
-.footer-button-phone {
-    right: 102px;
-    background: url("../img/page_elements/logo/phone_logo.svg") no-repeat;
-}
-.footer-button-tg {
-    right: 57px;
-    top: 182px;
-    background: url("../img/page_elements/tg_icon.svg") no-repeat;
-}
-.footer-button-rutube:hover, .footer-button-vk:hover, .footer-button-phone:hover {
-    cursor: pointer;
-}
-.footer-button-rutube:active, .footer-button-vk:active, .footer-button-phone:active {
+
+/* Эффект имитации нажатия */
+.footer-button-main-page:active,
+.footer-button-about:active,
+.footer-button-history:active,
+.footer-button-biography:active,
+.footer-button-events:active,
+.footer-button-confidential:active {
+    border: 1px solid #FFFFFF;
     transform: translateY(2px);
 }
-.marking {
-    width: 600px;
-    height: 24px;
-    flex-shrink: 0;
-    color: #FFF;
-    position: absolute;
-    right: 53px;
-    bottom: 45px;
-    text-align: right;
-    font-family: Noah;
-    font-size: 10px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    text-transform: uppercase;
+
+.footer-buttons-group a {
+    border: 1px solid transparent;
+    box-sizing: border-box;
 }

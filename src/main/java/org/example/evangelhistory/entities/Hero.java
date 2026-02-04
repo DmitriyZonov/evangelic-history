@@ -25,8 +25,9 @@ public class Hero {
     private String biography;
     private String bigPortrait;
     private String smallPortrait;
-    private String videoLink;
     private boolean isVideo;
+    private String videoLink;
+    private String videoTitle;
     private Century century;
 
 //    @ManyToMany (mappedBy = "heroes")

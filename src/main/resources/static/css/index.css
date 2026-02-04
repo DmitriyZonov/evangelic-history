@@ -1,87 +1,74 @@
 .index-background {
     display: flex;
-    flex-flow: column nowrap;
+    flex-direction: column;
     width: 100%;
-    min-height: 2200px;
-    margin-bottom: 200px;
-    height: fit-content;
-    z-index: -100;
+    min-height: auto;
+    margin-bottom: 100px;
+    z-index: 1;
 }
 .banner-img {
     width: 100%;
     height: 689px;
-    position: absolute;
-    flex-shrink: 0;
-    aspect-ratio: 1920/689;
+    position: relative;
     background: url('../img/page_elements/site_cover2.jpg') lightgray 50% / cover no-repeat;
-    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
-.main-title {
-    width: 1000px;
-    height: 114px;
-    flex-shrink: 0;
-    position: absolute;
-    top: 184px;
-    margin-left: 50%;
-    transform: translate(-50%,0);
+.main-title, .main-title1 {
+    width: 90%; /* Вместо 1000px */
+    max-width: 1000px;
+    position: static; /* Убрал absolute */
+    margin: 0 auto;
+    transform: none;
+    height: auto;
     color: #FFF;
     text-shadow: 5px 10px 10px #000;
     text-align: center;
+    font-style: normal;
+    line-height: normal;
+}
+.main-title {
     font-family: "Playfair Display";
     font-size: 64px;
-    font-style: normal;
     font-weight: 700;
-    line-height: normal;
     text-transform: uppercase;
 }
 .main-title1 {
-    width: 609px;
-    height: 208px;
-    position: absolute;
-    top: 208px;
-    margin-left: 50%;
-    transform: translate(-50%, 0);
-    flex-shrink: 0;
-    color: #FFF;
-    text-shadow: 5px 10px 10px #000;
-    text-align: center;
     font-family: "Andantino script";
     font-size: 96px;
-    font-style: normal;
     font-weight: 400;
-    line-height: normal;
 }
 .about-main {
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-between;
-    width: 1198px;
-    height: 556px;
-    flex-shrink: 0;
+    justify-content: center;
+    width: 100% !important;
+    max-width: 1198px;
+    height: auto !important;
+    margin: 40px auto 0 auto;
+    transform: none !important;
     position: relative;
-    margin-top: 20px;
-    margin-left: 50%;
-    transform: translate(-50%,0);
-    z-index: 1;
+    padding: 0 15px;
+    box-sizing: border-box;
 }
 .about-tiles-group {
     display: flex;
-    flex-flow: column wrap;
-    justify-content: space-evenly;
-    width: 605px;
-    height: 386px;
-    position: relative;
-    flex-shrink: 0;
-    z-index: 2;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 15px;
+    width: 100% !important;
+    max-width: 610px;
+    height: auto !important;
+    position: static !important;
 }
 .about-text-group {
-    width: 510px;
-    height: 267px;
-    position: relative;
-    top: 36px;
-    justify-self: flex-end;
-    flex-shrink: 0;
-    z-index: 2;
+    width: 100% !important;
+    max-width: 510px;
+    height: auto !important;
+    position: static !important; /* Убираем absolute */
+    margin: 20px auto;
 }
 .about-tile {
     width: 296px;
@@ -128,14 +115,12 @@
     font-weight: 400;
     line-height: 20px; /* 100% */
 }
+
 .about-text-group-title, .about-text-group-title2 {
-    display: flex;
-    width: 506px;
-    position: absolute;
-    flex-direction: column;
-    flex-shrink: 0;
-    color: #1E1E1E;
-    font-style: normal;
+    width: 100% !important;
+    position: static !important;
+    height: auto !important;
+    word-wrap: break-word;
 }
 .about-text-group-title {
     height: 153px;
@@ -164,6 +149,10 @@
     flex-shrink: 0;
     border-radius: 45px;
     z-index: 5;
+    /* Убираем старое смещение, ставим ровно по центру */
+    display: flex;
+    margin: 20px auto;
+    transform: none;
 }
 .more-btn {
     display: flex;
@@ -193,21 +182,26 @@
     background: rgba(90,6,42,0.88);
     transform: translateY(3px);
 }
-.more-btn .link, .more-btn-1 .link-1, .more-btn-2 .link {
+.more-btn .link,
+.more-btn-1 .link-1,
+.more-btn-2 .link,
+.more-btn-1 .link-1 *,
+.more-btn .link * {
+    font-family: 'Novelist', serif !important;
+    text-decoration: none !important;
+    font-size: 32px;
+    text-transform: uppercase;
     display: flex;
-    background: transparent;
     align-items: center;
     justify-content: center;
-    width: 238px;
-    height: 59px;
-    flex-shrink: 0;
-    border-radius: 45px;
-    font-family: Novelist;
-    font-size: 32px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    text-transform: uppercase;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    margin: 0 !important;
+    padding: 0 !important;
+    position: relative;
+    left: 0 !important;
+    transform: none !important;
 }
 .more-btn .link, .more-btn-2 .link {
     color: #F9FED8;
@@ -220,11 +214,12 @@
     flex-flow: column nowrap;
     justify-content: space-evenly;
     align-items: center;
-    width: 1005px;
+    width: 100%;           /* Делаем гибким */
+    max-width: 1005px;     /* Твой размер */
     height: 740px;
     position: relative;
-    margin-left: 50%;
-    transform: translate(-50%, 0);
+    margin: 0 auto;        /* Центрируем блок на странице */
+    transform: none;
     flex-shrink: 0;
     z-index: 1;
 }
@@ -258,14 +253,17 @@
 .video-teasers {
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-between;
-    width: 1005px;
-    height: 364px;
-    flex-shrink: 0;
+    justify-content: center;
+    gap: 40px;
+    width: 100%;
+    max-width: 1005px;
+    height: auto;
     position: relative;
     z-index: 3;
+    margin: 30px auto;
 }
 .video-teasers-tile {
+    position: relative;
     display: flex;
     flex-flow: column wrap;
     justify-content: space-evenly;
@@ -273,6 +271,21 @@
     width: 238px;
     height: 364px;
     z-index: 4;
+    font-family: 'Noah', sans-serif !important;
+    text-decoration: none !important;
+    transition: transform 0.2s ease;
+}
+.video-teasers-tile .link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    z-index: 10;
+}
+.video-teasers-tile:active {
+    transform: translateY(3px);
 }
 .video-teasers-portraits {
     width: 223px;
@@ -305,36 +318,33 @@
 }
 .announcements {
     display: flex;
-    flex-flow: column nowrap;
-    width: 1156px;
-    height: fit-content;
-    top: 120px;
-    flex-shrink: 0;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1156px;
+    height: auto;
     position: relative;
-    margin-left: 50%;
-    transform: translateX(-50%);
+    top: 120px;
+    margin: 0 auto; /* Убрали 50% */
+    transform: none !important;
 }
 .announcements-row, .announcements-main-row {
     display: flex;
-    position: relative;
     flex-flow: row wrap;
-    width: 1156px;
-    height: fit-content;
+    width: 100%;
+    height: auto;
+    justify-content: center; /* Центрируем плитки */
 }
 .announcements-1st-row-announce-tile-field {
     display: flex;
-    position: relative;
-    width: 792px;
-    height: fit-content;
+    flex-wrap: wrap;
+    width: auto;
+    max-width: 792px;
 }
 .announcements-title-tile, .announcements-1st-tile, .announcements-tile {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    position: relative;
-    margin-bottom: 56px;
     width: 364px;
     height: 226px;
+    margin-bottom: 56px;
+    position: relative;
 }
 .announcements-1st-tile, .announcements-tile {
     border-radius: 15px;
@@ -343,8 +353,8 @@
     margin-left: 32px;
 }
 .announcements-tile img, .announcements-1st-tile img {
-    width: 364px;
-    height: 226px;
+    width: 100%;
+    height: 100%;
     position: absolute;
     object-fit: cover;
     border-radius: 15px;
@@ -356,8 +366,8 @@
     flex-direction: column;
     justify-content: center;
     position: relative;
-    width: 364px;
-    height: 226px;
+    width: 100%;
+    height: 100%;
     border-radius: 15px;
     z-index: 500;
     background: rgba(141, 11, 25, 0.82);
@@ -449,4 +459,94 @@
 .cover {
     object-fit: cover;
     border-radius: 15px;
+}
+
+@media (max-width: 991.98px) {
+    /* 1. Баннер и шрифты заголовков */
+    .banner-img { height: 450px !important; }
+    .main-title { font-size: 32px !important; width: 95% !important; position: static !important; margin: 10px auto !important; transform: none !important; }
+    .main-title1 { font-size: 44px !important; width: 95% !important; position: static !important; margin: 0 auto !important; transform: none !important; }
+
+    /* 2. Блок "О проекте" (Плитки и Текст) */
+    .about-main { flex-direction: column !important; align-items: center !important; height: auto !important; margin: 20px auto !important; transform: none !important; width: 100% !important; }
+    .about-tiles-group { flex-direction: column !important; align-items: center !important; width: 100% !important; height: auto !important; gap: 15px !important; position: static !important; }
+    .about-tile { width: 90% !important; max-width: 320px; margin: 0 auto !important; position: static !important; }
+    .about-tile .title, .about-tile .text { width: 90% !important; left: 5% !important; position: static !important; margin: 10px auto !important; height: auto !important; }
+    .about-text-group { width: 100% !important; height: auto !important; position: static !important; margin-top: 30px !important; padding: 0 15px !important; }
+    .about-text-group-title, .about-text-group-title2 { position: static !important; width: 100% !important; height: auto !important; text-align: center !important; font-size: 24px !important; }
+
+    /* 3. Видеоархив */
+    .video-archive { width: 100% !important; height: auto !important; padding: 40px 0 !important; margin: 0 auto !important; transform: none !important; }
+    .video-archive-text-title, .video-archive-text-title-2 { width: 100% !important; text-align: center !important; font-size: 32px !important; height: auto !important; }
+    .video-teasers { flex-direction: column !important; align-items: center !important; width: 100% !important; height: auto !important; gap: 30px !important; position: static !important; }
+    .video-teasers-portraits {
+        margin-bottom: 15px !important;
+    }
+    .video-teasers-tile { width: 280px !important; height: auto !important; position: static !important;
+        margin-top: 10px !important;
+        line-height: 1.2 !important;
+        height: auto !important;}
+
+    /* 4. Кнопки "Подробнее" */
+    .more-btn, .more-btn-1, .more-btn-2 { width: 200px !important; height: 50px !important; margin: 20px auto !important; transform: none !important; }
+    .more-btn .link, .more-btn-1 .link-1, .more-btn-2 .link {
+        font-family: 'Novelist', serif !important;
+        font-size: 22px !important;
+        width: 100% !important;
+        height: 100% !important;
+    }
+    .announcements {
+        width: 100% !important;
+        top: 50px !important;
+        margin: 0 auto !important;
+    }
+
+    .announcements-row, .announcements-main-row,
+    .announcements-1st-row-announce-tile-field {
+        flex-direction: column !important;
+        align-items: center !important;
+        width: 100% !important;
+        height: auto !important;
+    }
+
+    .announcements-title-tile {
+        height: auto !important;
+        align-items: center !important;
+        text-align: center !important;
+        margin-bottom: 40px !important;
+    }
+
+    .announcements-title, .announcements-title-2 {
+        width: 90% !important;
+        height: auto !important;
+        text-align: center !important;
+    }
+
+    .announcements-title { font-size: 36px !important; }
+
+    /* Сами карточки анонсов */
+    .announcements-tile, .announcements-1st-tile {
+        width: 90% !important; /* На мобилке — почти во весь экран */
+        max-width: 364px;
+        margin: 0 auto 30px auto !important; /* Убираем левый отступ 32px */
+    }
+
+    .announcements-tile-content-box, .announcement-btn {
+        width: 100% !important;
+    }
+
+    .anons-title-1 {
+        font-size: 24px !important;
+        width: 80% !important;
+    }
+
+    .anons-title-2 {
+        font-size: 18px !important;
+        width: 85% !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-title { font-size: 28px !important; }
+    .main-title1 { font-size: 36px !important; }
 }

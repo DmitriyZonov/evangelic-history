@@ -4,40 +4,15 @@
       xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
       lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" th:href="@{favicon.ico}">
+    <th:block th:replace="fragments/header :: header-meta"></th:block>
 
     <title data-th-text="${event.title}"></title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-
-    <!-- Custom styles for this template -->
-        <link th:href="@{/css/background.css}" rel="stylesheet" />
-        <link th:href="@{/css/header.css}" rel="stylesheet" />
-        <link th:href="@{/css/footer.css}" rel="stylesheet" />
-        <link th:href="@{/css/fonts.css}" rel="stylesheet" />
-        <link th:href="@{/css/to main button.css}" rel="stylesheet" />
-        <link th:href="@{/css/event.css}" rel="stylesheet" />
-        <link th:href="@{/css/announcement.css}" rel="stylesheet" />
+    <link th:href="@{/css/event.css}" rel="stylesheet" />
+    <link th:href="@{/css/announcement.css}" rel="stylesheet" />
 </head>
 <body>
 <div class="wrapper">
-    <div class="menu">
-        <div class="menu_logo"></div>
-        <div class="back">
-            <a th:href="@{/events}" class="back-btn" data-th-text="Назад"></a>
-        </div>
-        <div class="group2">
-            <a th:href="@{/about}" class="menu-button-about" data-th-text="#{header.about_us}"></a>
-            <a th:href="@{/history}" class="menu-button-history" data-th-text="#{header.history}"></a>
-            <a th:href="@{/biographies}" class="menu-button-biography" data-th-text="#{header.biography}"></a>
-            <a th:href="@{/events}" class="menu-button-events" data-th-text="#{header.event}"></a>
-        </div>
-    </div>
+    <div th:replace="fragments/header :: main-header"></div>
     <div class="background-1-article">
         <div class="event-title-photo">
             <img th:src="${event.titleImage}">
@@ -77,39 +52,6 @@
         </div>
     </div>
 </div>
-<footer class="footer">
-    <div class="footer-logo"></div>
-    <div class="footer-logo-nko"></div>
-    <div class="marking-nko" data-th-text="#{footer.nko_marking}"></div>
-    <div class="footer-buttons-group">
-        <a th:href="@{/}" class="footer-button-main-page" data-th-text="#{footer.main}"></a>
-        <a th:href="@{/about}" class="footer-button-about" data-th-text="#{footer.about_us}"></a>
-        <a th:href="@{/history}" class="footer-button-history" data-th-text="#{footer.history}"></a>
-        <a th:href="@{/biographies}" class="footer-button-biography" data-th-text="#{footer.biography}"></a>
-        <a th:href="@{/events}" class="footer-button-events" data-th-text="#{footer.event}"></a>
-        <a th:href="@{/privacy_policy}" class="footer-button-confidential" data-th-text="#{footer.privacy}"></a>
-    </div>
-    <a th:href="#{footer.rutube_link}" target="_blank" rel="noopener noreferrer" class="footer-button-rutube"></a>
-    <a th:href="#{footer.vk_link}" target="_blank" rel="noopener noreferrer" class="footer-button-vk"></a>
-    <a href="/about#contact" class="footer-button-phone"></a>
-    <a th:href="#{footer.tg_link}" target="_blank" rel="noopener noreferrer" class="footer-button-tg"></a>
-    <div class="marking" data-th-text="#{footer.marking}"></div>
-</footer>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-    <script th:src="@{/js/up-button.js}"></script>
-<!-- Yandex.Metrika counter -->
-<script type="text/javascript">
-    (function(m,e,t,r,i,k,a){
-        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-        m[i].l=1*new Date();
-        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
-    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=106072754', 'ym');
-
-    ym(106072754, 'init', {ssr:true, webvisor:true, clickmap:true, accurateTrackBounce:true, trackLinks:true});
-</script>
-<noscript><div><img src="https://mc.yandex.ru/watch/106072754" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-<!-- /Yandex.Metrika counter -->
+<div th:replace="fragments/footer :: main-footer"></div>
 </body>
 </html>

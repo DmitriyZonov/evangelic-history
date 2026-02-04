@@ -6,6 +6,7 @@ import org.example.evangelhistory.services.HeroService;
 import org.example.evangelhistory.services.PhotoStorageService;
 import org.example.evangelhistory.utils.GetDateForAnnouncement;
 import org.example.evangelhistory.utils.GetHeroesByCentury;
+import org.example.evangelhistory.utils.GetHeroesWithVideo;
 import org.example.evangelhistory.utils.GetSixRandomPhotoPaths;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -55,6 +56,7 @@ public class HomeController {
     @GetMapping("/index")
     public String toMainPage(Model model) {
         model.addAttribute("eventList", eventService.getSortedListOfEvents());
+        model.addAttribute("heroSet", GetHeroesWithVideo.getHeroesWithVideo(heroService.getAllHeroes()));
         return "index";
     }
     @GetMapping("/")

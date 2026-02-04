@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<div th:fragment="main-footer">
+    <footer class="footer">
+        <div class="footer-main-content">
+            <!-- Группа логотипов -->
+            <div class="logos-group">
+                <div class="footer-logo"></div>
+                <div class="footer-logo-nko"></div>
+            </div>
+
+            <!-- Группа кнопок и соцсетей -->
+            <div class="nav-and-social">
+                <div class="footer-buttons-group">
+                    <a th:href="@{/}" class="footer-button-main-page" th:text="#{footer.main}"></a>
+                    <a th:href="@{/about}" class="footer-button-about" th:text="#{footer.about_us}"></a>
+                    <a th:href="@{/history}" class="footer-button-history" th:text="#{footer.history}"></a>
+                    <a th:href="@{/biographies}" class="footer-button-biography" th:text="#{footer.biography}"></a>
+                    <a th:href="@{/events}" class="footer-button-events" th:text="#{footer.event}"></a>
+                    <a th:href="@{/privacy_policy}" class="footer-button-confidential" th:text="#{footer.privacy}"></a>
+                </div>
+
+                <div class="social-group">
+                    <a th:href="#{footer.rutube_link}" target="_blank" class="footer-button-rutube"></a>
+                    <a th:href="#{footer.vk_link}" target="_blank" class="footer-button-vk"></a>
+                    <a href="/about#contact" class="footer-button-phone"></a>
+                    <a th:href="#{footer.tg_link}" target="_blank" class="footer-button-tg"></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="marking-row">
+            <div class="marking-nko" th:text="#{footer.nko_marking}"></div>
+            <div class="marking" th:text="#{footer.marking}"></div>
+        </div>
+    </footer>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script th:src="@{/js/up-button.js}"></script>
+
+    <script type="text/javascript">
+        (function(m,e,t,r,i,k,a){
+            m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+            m[i].l=1*new Date();
+            for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+            k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+        })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=106072754', 'ym');
+        ym(106072754, 'init', {ssr:true, webvisor:true, clickmap:true, accurateTrackBounce:true, trackLinks:true});
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/106072754" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+</div>
+</html>

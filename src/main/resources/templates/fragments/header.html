@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- Технический head -->
+    <th:block th:fragment="header-meta">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="icon" th:href="@{/favicon.ico}">
+
+        <!-- Bootstrap core CSS -->
+        <link href="//://maxcdn.bootstrapcdn.com" rel="stylesheet">
+
+        <!-- Общие стили для всех страниц -->
+        <link th:href="@{/css/background.css}" rel="stylesheet" />
+        <link th:href="@{/css/header.css}" rel="stylesheet" />
+        <link th:href="@{/css/footer.css}" rel="stylesheet" />
+        <link th:href="@{/css/fonts.css}" rel="stylesheet" />
+        <link th:href="@{/css/to main button.css}" rel="stylesheet" />
+    </th:block>
+</head>
+<body>
+
+<div th:fragment="main-header">
+    <div class="menu">
+        <div class="menu_logo"></div>
+        <!-- Кнопка «бургер» (появится только на мобильных через CSS) -->
+        <button class="burger-menu" id="burgerBtn" onclick="toggleMobileMenu()">
+            <span></span><span></span><span></span>
+        </button>
+
+        <!-- Обертка для всех ссылок, которые должны скрываться -->
+        <div class="nav-wrapper" id="navLinks">
+            <div class="to-main" th:unless="${#httpServletRequest.requestURI == '/' or #httpServletRequest.requestURI == '/index'}">
+                <!-- Если это страница биографии (например, /biography/1), показываем "Назад" -->
+                <a th:if="${#httpServletRequest.requestURI.contains('/biography/')or #httpServletRequest.requestURI.contains('/history_article/')}"
+                   th:href="@{/biographies}" class="back-btn" th:text="#{header.back}">Назад</a>
+
+                <!-- В остальных случаях (кроме индекса) показываем "На главную" -->
+                <a th:unless="${#httpServletRequest.requestURI.contains('/biography/') or #httpServletRequest.requestURI.contains('/history_article/')}"
+                   th:href="@{/index}" class="to-main-btn" th:text="#{header.to_main}">На главную</a>
+            </div>
+            <div class="group2">
+                <a th:href="@{/about}" class="menu-button-about" th:text="#{header.about_us}"></a>
+                <a th:href="@{/history}" class="menu-button-history" th:text="#{header.history}"></a>
+                <a th:href="@{/biographies}" class="menu-button-biography" th:text="#{header.biography}"></a>
+                <a th:href="@{/events}" class="menu-button-events" th:text="#{header.event}"></a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleMobileMenu() {
+            const nav = document.getElementById('navLinks');
+            const burger = document.getElementById('burgerBtn');
+            nav.classList.toggle('active');
+            burger.classList.toggle('open');
+            // Блокируем скролл страницы при открытом меню
+            document.body.style.overflow = nav.classList.contains('active') ? 'hidden' : 'auto';
+        }
+    </script>
+</div>
+
+</body>
+</html>
