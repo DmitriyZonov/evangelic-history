@@ -435,7 +435,14 @@
     border-radius: 15px;
 }
 @media (max-width: 991.98px) {
-    /* 1. Глобальные центровки (как ты просил, лаконично) */
+    /* 1. ГЛОБАЛЬНЫЕ СБРОСЫ И ЦЕНТРИРОВАНИЕ */
+    .index-background {
+        height: auto !important;
+        margin-bottom: 50px;
+        overflow-x: hidden;
+    }
+
+    /* Универсальное центрирование всех секций */
     .about-main, .video-archive, .announcements,
     .about-tiles-group, .video-teasers, .announcements-row,
     .announcements-main-row, .announcements-1st-row-announce-tile-field {
@@ -448,63 +455,98 @@
         display: flex !important;
         flex-direction: column !important;
         align-items: center !important;
-        padding: 0 10px !important;
+        padding: 0 !important;
         box-sizing: border-box;
     }
 
-    /* 2. Баннер (возвращаем твой десктопный стиль) */
+    /* 2. БАННЕР */
     .banner-img { height: 450px !important; position: relative !important; }
-    .main-title { font-size: 32px !important; width: 90% !important; }
+    .main-title { font-size: 32px !important; width: 95% !important; }
     .main-title1 { font-size: 44px !important; }
     .torn-edge1 { position: absolute !important; bottom: -1px !important; height: 50px !important; }
 
-    /* 3. Блок "О проекте" (Плитки 296x181) */
+    /* 3. БЛОК "О ПРОЕКТЕ" (Второй блок) */
     .about-tile {
         width: 296px !important;
         height: 181px !important;
         flex: 0 0 181px !important;
         margin: 0 auto 20px auto !important;
     }
-    .about-tile .title, .about-tile .text { position: static !important; text-align: center !important; width: 100% !important; left: 0 !important; }
 
-    /* 4. ВИДЕОАРХИВ */
+    .about-text-group {
+        width: 100% !important;
+        padding: 0 25px !important;
+        box-sizing: border-box;
+        margin: 20px auto !important;
+    }
+
+    .about-text-group-title { font-size: 32px !important; text-align: center !important; height: auto !important; }
+    .about-text-group-title2 { font-size: 20px !important; text-align: center !important; height: auto !important; }
+
+    /* 4. ВИДЕОАРХИВ (Третий блок) */
     .video-archive { padding: 40px 0 !important; }
+    .video-archive-text-title, .video-archive-text-title-2 {
+        font-size: 32px !important;
+        text-align: center !important;
+        width: 100% !important;
+    }
     .video-teasers-tile { margin-bottom: 20px; }
 
-    /* 5. АНОНСЫ (Хирургический фикс) */
-    .announcements { top: 40px !important; }
+    /* 5. АНОНСЫ (Четвертый блок) */
+    .announcements { top: 20px !important; }
 
-    /* ВОТ ЗДЕСЬ мы убиваем невидимую высоту 226px у заголовка */
+    /* Исправление заголовка: центрируем строго */
     .announcements-title-tile {
-        height: auto !important;   /* УБИРАЕМ 226px */
-        flex: 0 0 auto !important; /* УБИРАЕМ 364px */
-        margin-bottom: 15px !important; /* ТЕПЕРЬ ТЕКСТ ТУТ */
-        display: block !important;
-        padding: 0 !important;
+        height: auto !important;
+        flex: 0 0 auto !important;
+        width: 100% !important;
+        margin-bottom: 15px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
     }
 
-    .announcements-title {
-        font-size: 36px !important;
-        text-align: center !important;
-        margin: 0 0 5px 0 !important;
-    }
-    .announcements-title-2 {
-        font-size: 24px !important;
-        text-align: center !important;
-        margin: 0 !important;
-    }
-
-    /* Плитки с картинками оставляем 226px */
+    /* Плитки анонсов: все одинаковые и без смещений */
     .announcements-1st-tile, .announcements-tile {
         width: 100% !important;
         max-width: 364px !important;
         height: 226px !important;
         flex: 0 0 226px !important;
         margin: 0 auto 30px auto !important;
+        left: 0 !important;
+        transform: none !important;
+        overflow: hidden !important;
     }
 
-    /* Кнопки */
-    .more-btn { margin: 30px auto !important; align-self: center !important; }
+    /* ФИКС ВЫЛЕТА ТЕКСТА ВНУТРИ ПЛИТОК АНОНСОВ */
+    .announcements-tile-content-box {
+        width: 100% !important;
+        height: 100% !important;
+        padding: 0 20px !important; /* Внутренние отступы вместо маргинов */
+        justify-content: center !important;
+        box-sizing: border-box !important;
+    }
+
+    .anons-title-1, .anons-title-2 {
+        width: 100% !important;
+        max-width: none !important; /* Сбрасываем десктопные 322px */
+        margin-left: 0 !important; /* Сбрасываем десктопные 21px */
+        text-align: left !important; /* Текст внутри плитки прижат влево */
+        word-wrap: break-word !important;
+    }
+
+    .anons-title-1 { font-size: 24px !important; margin-bottom: 5px !important; }
+    .anons-title-2 { font-size: 18px !important; }
+
+    /* 6. КНОПКИ */
+    .more-btn {
+        margin: 20px auto !important;
+        align-self: center !important;
+        transform: none !important;
+        left: 0 !important;
+        position: relative !important;
+    }
 }
 
 @media (max-width: 480px) {
