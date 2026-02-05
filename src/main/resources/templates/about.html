@@ -11,123 +11,140 @@
 
 </head>
 <body>
-<div class="wrapper">
+  <div class="wrapper">
+    <div th:replace="fragments/header :: main-header"></div>
 
-  <div th:replace="fragments/header :: main-header"></div>
-
-<div class="background-1">
-  <div class="about-title">
-    <div class="title" data-th-text="#{about_project.title}"></div>
-    <div class="text">
-      <text>«Евангельские христиане на службе России» — историко-просветительская инициатива, цель которой сохранить память о вкладе евангельских христиан в историю и культуру нашей страны.
-        Мы рассказываем о том, как вера, патриотизм и жертвенность стали частью национальной истории. В рамках проекта собираются и публикуются:</text>
-    </div>
-    <div class="list">
-      <ul>
-        <li class="li1">биографии основателей евангельского движения;</li>
-        <li class="li1">истории фронтовиков и тружеников тыла;</li>
-        <li class="li1">свидетельства потомков героев;</li>
-        <li class="li1">архивные документы, фото и видеоинтервью.</li>
-      </ul>
-    </div>
-  </div>
-  <div class="torn-edge1"></div>
-</div>
-<div class="background-2">
-  <div class="about-background-2-field">
-    <div class="about-engraving"></div>
-    <div class="about-epigram">
-      <text>История евангельских христиан — это история верности Богу и служения своей Родине».</text>
-    </div>
-    <div class="quotes_open"></div>
-    <div class="quotes_close"></div>
-    <div class="img-2nd-level"></div>
-  </div>
-</div>
-<div class="background-3">
-  <div class="torn-edge2"></div>
-  <div class="team">
-    <div class="team-photo-field">
-      <div class="team-photo1">
-        <img th:src="@{img/page_elements/lazarev_gs.jpg}" alt="Геннадий Лазарев — Руководитель проекта">
-      </div>
-      <div class="team-photo2">
-        <img th:src="@{img/page_elements/trifonov_rs.jpg}" alt="Роман Трифонов — Координатор проекта">
-      </div>
-      <div class="team-photo3">
-        <img th:src="@{img/page_elements/trifonova_mg.jpg}" alt="Маргарита Трифонова — Менеджер проекта">
-      </div>
-    </div>
-    <div class="team-title-description-achieves-field">
-      <div class="team-title" data-th-text="#{about_project.team_title}"></div>
-      <div class="team-description">
-        <text>Геннадий Лазарев — Руководитель проекта.</text><text>Епископ, старший пастор. Более 20 лет опыта в служении и общественной деятельности.</text>
-
-        <br><text>Роман Трифонов — Координатор проекта.</text><text>Юрист, исследователь. Более 10 лет опыта в управлении социальными и образовательными проектами.</text>
-
-        <br><text>Маргарита Трифонова — Менеджер проекта.</text><text>Специалист по визуальной коммуникации. Создала более 50 печатных и цифровых материалов для просветительских проектов.</text>
-      </div>
-      <div class="team-achieves">
-        <div class="team-achieve-field">
-          <div class="team-achieve-number" data-th-text="#{about_project.team_achieve_number1}"></div>
-          <div class="team-achieve-description">
-            <text>лет опыта
-              в реализации просветительских
-              и исследовательских инициатив</text>
-          </div>
+    <!-- Блок 1: Описание проекта -->
+    <div class="background-1">
+      <div class="about-title">
+        <div class="title" th:text="#{about_project.title}"></div>
+        <div class="text">
+          <p>«Евангельские христиане на службе России» — историко-просветительская инициатива, цель которой сохранить память о вкладе евангельских христиан в историю и культуру нашей страны. Мы рассказываем о том, как вера, патриотизм и жертвенность стали частью национальной истории. В рамках проекта собираются и публикуются:</p>
         </div>
-        <div class="team-achieve-field">
-          <div class="team-achieve-number" data-th-text="#{about_project.team_achieve_number2}"></div>
-          <div class="team-achieve-description">
-            <text>лекций и выставок в Калининградской области и за её пределами</text>
-          </div>
+        <div class="list">
+          <ul>
+            <li class="li1">биографии основателей евангельского движения;</li>
+            <li class="li1">истории фронтовиков и тружеников тыла;</li>
+            <li class="li1">свидетельства потомков героев;</li>
+            <li class="li1">архивные документы, фото и видеоинтервью.</li>
+          </ul>
         </div>
-        <div class="team-achieve-field">
-          <div class="team-achieve-number" data-th-text="#{about_project.team_achieve_number3}"></div>
-          <div class="team-achieve-description">
-            <text>человек  посетили  мероприятия— школьники, студенты
-              и исследователи</text>
+      </div>
+      <div class="torn-edge1"></div>
+    </div>
+
+    <!-- Блок 2: Эпиграмма и гравюра -->
+    <div class="background-2">
+      <div class="about-background-2-field">
+        <div class="about-engraving"></div>
+        <div class="quote-img-row">
+          <div class="epigram-wrapper">
+            <div class="quotes_open"></div>
+            <div class="about-epigram">
+              История евангельских христиан — это история верности Богу и служения своей Родине».
+            </div>
+            <div class="quotes_close"></div>
           </div>
-        </div>
-        <div class="team-achieve-field">
-          <div class="team-achieve-number" data-th-text="#{about_project.team_achieve_number4}"></div>
-          <div class="team-achieve-description">
-            <text>опубликовано свыше 30 статей и материалов о роли евангельских христиан в истории России</text>
-          </div>
+
+          <div class="img-2nd-level"></div>
         </div>
       </div>
     </div>
-  </div>
-  <div class="torn-edge3"></div>
-</div>
-<div class="background-4-about">
-  <div class="bibliography">
-    <div class="bibliography-title" data-th-text="#{about_project.bibliography}"></div>
-    <ul class="ul2">
-      <li class="bibliography-list li2" data-th-text="#{about_project.bibliography_1st_book}"></li>
-      <li class="bibliography-list li2" data-th-text="#{about_project.bibliography_2nd_book}"></li>
-      <li class="bibliography-list li2" data-th-text="#{about_project.bibliography_3rd_book}"></li>
-      <li class="bibliography-list li2" data-th-text="#{about_project.bibliography_4th_book}"></li>
-      <li class="bibliography-list li2" data-th-text="#{about_project.bibliography_5th_book}"></li>
-      <li class="bibliography-list li2" data-th-text="#{about_project.bibliography_6s_book}"></li>
-    </ul>
-  </div>
-  <div class="contacts" id="contact">
-    <div class="contacts-title" data-th-text="#{about_project.contacts_title}"></div>
-    <div class="social-media-title" data-th-text="#{about_project.contacts_social_media_title}"></div>
-    <div class="contacts-group">
-      <text data-th-text="#{about_project.contacts_phone_number}"></text>
-      <text data-th-text="#{about_project.contacts_email}"></text>
-      <div class="social-media-icons-group">
-        <a th:href="#{footer.rutube_link}" target="_blank" rel="noopener noreferrer" class="rutube-icon"></a>
-        <a th:href="#{footer.vk_link}" target="_blank" rel="noopener noreferrer" class="vk-icon"></a>
+
+    <!-- Блок 3: Команда и достижения -->
+    <div class="background-3">
+      <div class="torn-edge2"></div>
+      <div class="team">
+        <div class="team-title" data-th-text="#{about_project.team_title}"></div>
+
+        <div class="team-container">
+          <!-- Участник 1 -->
+          <div class="team-item item-1">
+            <div class="member-photo">
+              <img th:src="@{img/page_elements/lazarev_gs.jpg}" alt="Геннадий Лазарев">
+            </div>
+            <div class="member-info">
+              <p><strong>Геннадий Лазарев</strong> — Руководитель проекта. Епископ, старший пастор. Более 20 лет опыта в служении и общественной деятельности.</p>
+            </div>
+          </div>
+
+          <!-- Участник 2 -->
+          <div class="team-item item-2">
+            <div class="member-photo">
+              <img th:src="@{img/page_elements/trifonov_rs.png}" alt="Роман Трифонов">
+            </div>
+            <div class="member-info">
+              <p><strong>Роман Трифонов</strong> — Координатор проекта. Юрист, исследователь. Более 10 лет опыта в управлении проектами.</p>
+            </div>
+          </div>
+
+          <!-- Участник 3 -->
+          <div class="team-item item-3">
+            <div class="member-photo">
+              <img th:src="@{img/page_elements/trifonova_mg.jpg}" alt="Маргарита Трифонова">
+            </div>
+            <div class="member-info">
+              <p><strong>Маргарита Трифонова</strong> — Менеджер проекта. Специалист по визуальной коммуникации.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Достижения выносим в отдельный ряд внизу блока -->
+        <div class="team-achieves">
+          <div class="team-achieve-field" th:each="i : ${#numbers.sequence(1,4)}">
+            <div class="team-achieve-number" th:text="#{about_project.team_achieve_number__${i}__}"></div>
+            <div class="team-achieve-description">
+              <text th:text="${i == 1 ? 'лет опыта в реализации просветительских и исследовательских инициатив' : (i == 2 ? 'лекций и выставок в Калининградской области и за её пределами' : (i == 3 ? 'человек посетили мероприятия— школьники, студенты и исследователи' : 'опубликовано свыше 30 статей и материалов о роли евангельских христиан в истории России'))}"></text>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="torn-edge3"></div>
+    </div>
+
+    <!-- Блок 4: Литература и Контакты -->
+    <div class="background-4-about">
+      <div class="bibliography">
+        <div class="bibliography-title" th:text="#{about_project.bibliography}"></div>
+        <ul class="ul2">
+          <li class="li2" th:text="#{about_project.bibliography_1st_book}"></li>
+          <li class="li2" th:text="#{about_project.bibliography_2nd_book}"></li>
+          <li class="li2" th:text="#{about_project.bibliography_3rd_book}"></li>
+          <li class="li2" th:text="#{about_project.bibliography_4th_book}"></li>
+          <li class="li2" th:text="#{about_project.bibliography_5th_book}"></li>
+          <li class="li2" th:text="#{about_project.bibliography_6s_book}"></li>
+        </ul>
+      </div>
+
+      <div class="contacts" id="contact">
+        <div class="contacts-container">
+          <!-- ЛЕВАЯ КОЛОНКА -->
+          <div class="contact-left-side">
+            <div class="contacts-title" th:text="#{about_project.contacts_title}">Контакты</div>
+            <div class="contacts-group">
+              <div class="contact-item phone-row">
+                <div class="phone"></div>
+                <span th:text="#{about_project.contacts_phone_number}"></span>
+              </div>
+              <div class="contact-item email-row">
+                <div class="alpha-dog"></div>
+                <span th:text="#{about_project.contacts_email}"></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- ПРАВАЯ КОЛОНКА -->
+          <div class="social-media-side">
+            <div class="social-media-title" th:text="#{about_project.contacts_social_media_title}">Мы в соцсетях</div>
+            <div class="social-media-icons-group">
+              <a th:href="#{footer.rutube_link}" target="_blank" class="rutube-icon"></a>
+              <a th:href="#{footer.vk_link}" target="_blank" class="vk-icon"></a>
+            </div>
+          </div>
       </div>
     </div>
-    <div class="alpha-dog"></div>
-    <div class="phone"></div>
   </div>
-</div>
-</div>
-<div th:replace="fragments/footer :: main-footer"></div>
+  </div>
+  <div th:replace="fragments/footer :: main-footer"></div>
 </body>
 </html>

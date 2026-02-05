@@ -1,425 +1,576 @@
+/* --- БЛОК 1: ТИТУЛ --- */
 .about-title {
-    width: 1046px;
-    height: 443px;
-    flex-shrink: 0;
+    width: 90%;
+    max-width: 1046px;
+    height: auto;
+    padding-bottom: 90px;
     position: relative;
-    margin-left: 50%;
-    top: 50px;
-    transform: translate(-50%, 0);
-    z-index: 1;
-}
-.about-title .title {
+    margin: 50px auto 0 auto;
     display: flex;
-    width: 284px;
-    height: 71px;
     flex-direction: column;
-    justify-content: center;
-    flex-shrink: 0;
-    position: absolute;
-    top: 22px;
-    margin-left: 50%;
-    transform: translate(-50%,0);
-    z-index: 2;
-    color: #F9FED8;
-    text-align: justify;
-    font-family: Novelist;
+    align-items: center;
+    z-index: 5;
+}
+
+.about-title .title {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    font-family: 'Novelist', serif;
     font-size: 64px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 40px; /* 62.5% */
+    color: #F9FED8;
     text-transform: uppercase;
 }
-.about-title .text, .about-title .list {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    position: absolute;
-    flex-shrink: 0;
+
+.about-title .text {
+    position: relative;
+    width: 100%;
+    font-family: 'Gabriola', serif;
+    font-size: 32px;
     color: #F9FED8;
     text-align: justify;
-    font-family: Gabriola;
-    font-size: 32px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 40px; /* 125% */
+    line-height: 1.3;
+    margin-bottom: -10px;
 }
-.about-title .text {
-    width: 1046px;
-    height: 157px;
-    z-index: 2;
-    top: 120px;
-}
+
 .about-title .list {
-    width: 549px;
-    height: 160px;
-    top: 300px;
-    margin-left: 50%;
-    transform: translate(-50%, 0);
+    position: relative;
+    width: 100%;
+    max-width: 549px;
+    color: #F9FED8;
+    font-family: 'Gabriola', serif;
+    font-size: 32px;
+    margin-top: 0 !important;
 }
+.about-title .list ul {
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+
+/* --- БЛОК 2: ГРАВЮРА И ЭПИГРАММА --- */
 .about-background-2-field {
-    position: relative;
     display: flex;
-    flex-flow: row wrap;
-    justify-content: space-evenly;
-    width: 1278px;
-    height: 855px;
-    margin-left: 50%;
-    transform: translate(-50%,0);
-    z-index: -1;
-}
-.about-engraving {
-    width: 1081px;
-    height: 326px;
-    flex-shrink: 0;
-    border-radius: 47px;
-    background: url("../img/page_elements/engraving_about_project.png") lightgray 50% / cover no-repeat;
-    position: relative;
-    top: -150px;
-    z-index: 2;
-}
-.about-epigram {
-    display: flex;
-    width: 408px;
-    height: 157px;
     flex-direction: column;
-    justify-content: center;
-    flex-shrink: 0;
+    align-items: center;
+    width: 100%;
+    max-width: 1278px;
+    margin: 0 auto;
+    height: auto !important;
+    padding-bottom: 60px;
     position: relative;
-    top: -10px;
-    color: #000;
-    text-align: justify;
-    font-family: "Andantino script";
-    font-size: 36px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 40px; /* 111.111% */
+    z-index: 5;
 }
+
+/* 1. ГРАВЮРА (Центр с нахлестом вверх) */
+.about-engraving {
+    width: 100%;
+    max-width: 1081px;
+    height: 326px;
+    background: url("../img/page_elements/engraving_about_project.png") no-repeat 50% / cover;
+    border-radius: 47px;
+    margin-top: -150px;
+    position: relative;
+    z-index: 10;
+}
+
+/* 2. РЯД: ЦИТАТА + КАРТИНКА (Выравнивание по центрам) */
+.quote-img-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 50px;
+    padding: 0 40px;
+    box-sizing: border-box;
+}
+
+/* Обертка цитаты (для позиционирования кавычек) */
+.epigram-wrapper {
+    position: relative;
+    width: 408px;
+    flex-shrink: 0;
+}
+
+.about-epigram {
+    width: 100%;
+    font-family: "Andantino script", serif;
+    font-size: 36px;
+    color: #000;
+    text-align: center;
+    line-height: 1.2;
+}
+
+/* Кавычки (привязаны СТРОГО к тексту цитаты) */
 .quotes_open, .quotes_close {
     width: 42px;
     height: 42px;
-    flex-shrink: 0;
-    aspect-ratio: 1/1;
-    background-image: url("../img/page_elements/icon_quotes-solid.svg");
     position: absolute;
+    background: url("../img/page_elements/icon_quotes-solid.svg") no-repeat center / contain;
+    z-index: 2;
 }
+
 .quotes_open {
-    left: 110px;
-    bottom:360px;
+    top: -30px;
+    left: -30px;
 }
+
 .quotes_close {
-    left: 535px;
-    bottom: 170px;
+    bottom: -30px;
+    right: -30px;
     transform: rotate(180deg);
 }
+
+/* 3. ВТОРАЯ КАРТИНКА (Справа) */
 .img-2nd-level {
     width: 427px;
     height: 347px;
-    flex-shrink: 0;
     border-radius: 34px;
-    background: url(../img/page_elements/stub_img.jpg) lightgray -1.722px -86.227px / 101.438% 124.669% no-repeat;
+    background: url(../img/page_elements/stub_img.jpg) no-repeat 50% / cover;
+    flex-shrink: 0;
     position: relative;
-    top: -100px;
     z-index: 3;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
+
+/* --- БЛОК 3: КОМАНДА --- */
 .team {
     display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-around;
-    width: 1200px;
-    height: 740px;
-    flex-shrink: 0;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 40px auto 0;
     position: relative;
-    margin-left: 50%;
-    transform: translate(-50%, 0);
     z-index: 1;
 }
-.team-photo-field {
-    display: flex;
-    flex-flow: column nowrap;
-    width: 554px;
-    height: 740px;
-    justify-content: space-around;
+
+.team-title {
+    font-family: 'Novelist', serif;
+    font-size: 64px;
+    color: #FFFFFF !important;
+    text-transform: uppercase;
+    margin-bottom: 50px;
+    text-align: center;
 }
-.team-photo1, .team-photo2, .team-photo3 {
+
+/* Контейнер для карточек участников */
+.team-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 40px;
+}
+
+/* Карточка одного участника */
+.team-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    min-height: 280px;
+}
+
+/* Шахматка: Второй участник (Трифонов) отзеркален */
+.item-2 {
+    flex-direction: row-reverse;
+}
+
+/* Фотография */
+.member-photo {
     width: 223px;
     height: 280px;
     flex-shrink: 0;
     position: relative;
     border-radius: 15px;
+    overflow: hidden;
     z-index: 5;
 }
-.team-photo1 {
-    left: 20px;
-    top: 50px;
- }
-.team-photo1 img {
-    width: 223px;
-    height: 280px;
-    border-radius: 15px;
+
+.member-photo img {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
 }
-.team-photo2 {
-    align-self: flex-end;
-    right: 20px;
-    top: -50px;
-}
-.team-photo2 img {
-    width: 223px;
-    height: 280px;
-    border-radius: 15px;
-    object-fit: cover;
-}
-.team-photo3 {
-    top: -150px;
-    left: 20px;
-}
-.team-photo3 img {
-    width: 223px;
-    height: 280px;
-    border-radius: 15px;
-    object-fit: cover;
-}
-.team-title-description-achieves-field {
-    height: 740px;
+
+.member-info {
     width: 586px;
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: space-evenly;
-    align-items: center;
-}
-.team-title {
-    display: flex;
-    width: 259px;
-    height: 71px;
-    flex-direction: column;
-    justify-content: center;
-    flex-shrink: 0;
-    position: relative;
-    color: #FFF;
-    text-align: center;
-    font-family: Novelist;
-    font-size: 64px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 40px; /* 62.5% */
-    text-transform: uppercase;
-    z-index: 3;
-}
-.team-description {
-    display: flex;
-    width: 586px;
-    height: 396px;
-    flex-direction: column;
-    justify-content: center;
-    flex-shrink: 0;
-    position: relative;
-    color: #FFF;
-    text-align: justify;
-    font-family: Gabriola;
+    color: #FFFFFF !important;
+    font-family: 'Gabriola', serif;
     font-size: 32px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 30px; /* 93.75% */
+    line-height: 30px;
+    text-align: justify;
+    padding: 0 40px;
 }
+
+/* ХУДОЖЕСТВЕННЫЙ РАЗБРОС (Десктоп) */
+.item-1 .member-photo { left: 20px; top: 0; }
+.item-2 .member-photo { right: 20px; top: -30px; }
+.item-3 .member-photo { left: 20px; top: -60px; }
+
+/* --- ДОСТИЖЕНИЯ --- */
 .team-achieves {
-    height: 165px;
-    width: 586px;
     display: flex;
-    flex-flow: row nowrap;
+    flex-direction: row;
     justify-content: space-between;
+    width: 100%;
+    margin-top: 60px;
 }
+
 .team-achieve-field {
-    display: flex;
-    position: relative;
-    height: 165px;
-    width: 142px;
-    align-items: center;
-    justify-content: flex-start;
-    flex-flow: column nowrap;
-}
-.team-achieve-number {
-    height: 63px;
-    width: 142px;
-    color: #F9FED8;
-    position: relative;
-    top: 5px;
+    width: 23%;
     text-align: center;
-    font-family: Gabriola;
+}
+
+.team-achieve-number {
+    font-family: 'Gabriola', serif;
     font-size: 64px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 40px; /* 62.5% */
+    color: #F9FED8 !important;
+    line-height: 1;
 }
 
 .team-achieve-description {
-    height: 63px;
-    width: 142px;
-    position: relative;
-    color: #FFF;
-    text-align: center;
-    font-family: Gabriola;
+    font-family: 'Gabriola', serif;
     font-size: 18px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 20px; /* 111.111% */
+    color: #FFFFFF !important;
+    line-height: 1.1;
 }
+.background-3 {
+    padding-bottom: 50px !important;
+}
+
+/* --- БЛОК 4: ЛИТЕРАТУРА И КОНТАКТЫ --- */
 .bibliography {
-    width: 980px;
-    height: 350px;
-    flex-shrink: 0;
-    position: absolute;
-    top: 50px;
-    margin-left: 50%;
-    transform: translate(-50%, 0);
+    width: 90%;
+    max-width: 980px;
+    margin: 50px auto;
+    position: relative;
 }
+
 .bibliography-title {
-    display: flex;
-    width: 592px;
-    height: 71px;
-    flex-direction: column;
-    justify-content: center;
-    flex-shrink: 0;
-    color: #1E1E1E;
-    position: absolute;
-    text-align: justify;
-    font-family: Novelist;
+    font-family: 'Novelist', serif !important;
     font-size: 64px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 40px; /* 62.5% */
+    color: #1E1E1E;
     text-transform: uppercase;
+    margin-bottom: 30px;
 }
-.bibliography-list {
-    color: #000;
-    text-align: justify;
-    font-family: Gabriola;
+
+.ul2 {
+    list-style: none;
+    padding-left: 0;
+    margin-left: 0;
+}
+
+.li2 {
+    background: url("../img/page_elements/book_tabler_point.svg") no-repeat 0 8px; /* ВОЗВРАЩАЕМ КНИЖКИ */
+    padding-left: 45px;
+    font-family: 'Gabriola', serif !important;
     font-size: 32px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 40px; /* 125% */
+    line-height: 40px;
+    color: #000;
+    margin-bottom: 10px;
 }
+
+/* --- КОНТАКТЫ --- */
 .contacts {
-    width: 980px;
-    height: 209px;
-    flex-shrink: 0;
-    position: absolute;
-    margin-left: 50%;
-    transform: translate(-50%, 0);
-    bottom: 159px;
+    width: 95%;
+    max-width: 980px;
+    margin: 80px auto 100px auto;
+    position: relative;
+    height: auto !important;
 }
-.contacts-title, .social-media-title {
+
+.contacts-container {
     display: flex;
-    height: 71px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+    width: 100%;
+}
+
+/* --- КОЛОНКИ --- */
+.contact-left-side, .social-media-side {
+    display: flex;
     flex-direction: column;
-    justify-content: center;
-    flex-shrink: 0;
-    position: absolute;
-    color: #1E1E1E;
-    text-align: center;
-    font-family: Novelist;
-    font-size: 64px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 40px; /* 62.5% */
-    text-transform: uppercase;
+    min-height: 220px;
 }
-.contacts-title {
-    width: 274px;
+
+.contact-left-side {
+    width: 380px;
+    align-items: flex-start;
 }
-.social-media-title {
+
+.social-media-side {
     width: 460px;
-    right: 0;
+    align-items: center;
 }
+
+/* --- ЗАГОЛОВКИ --- */
+.contacts-title, .social-media-title {
+    font-family: 'Novelist', serif !important;
+    font-size: 64px;
+    color: #1E1E1E;
+    text-transform: uppercase;
+    margin: 0 0 20px 0 !important;
+    position: static !important;
+    line-height: 1;
+}
+
+.social-media-title {
+    text-align: center;
+    width: 100%;
+}
+
+/* --- КОНТЕНТНАЯ ЧАСТЬ (НИЗ) --- */
+.contacts-group, .social-media-icons-group {
+    margin-top: auto !important;
+}
+
+/* Лево: Телефон и Почта */
 .contacts-group {
     display: flex;
-    width: 923px;
-    height: 157px;
     flex-direction: column;
-    justify-content: center;
-    flex-shrink: 0;
-    position: absolute;
-    bottom: 0;
-    right: 10px;
-    color: #000;
-    text-align: justify;
-    font-family: Gabriola;
+    gap: 15px;
+    font-family: 'Gabriola', serif !important;
     font-size: 40px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 50px; /* 125% */
+    color: #000;
 }
-.alpha-dog {
-    width: 20px;
-    height: 20px;
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    line-height: 1.2;
+}
+
+.phone, .alpha-dog {
+    width: 30px;
+    height: 30px;
+    margin-right: 15px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
     flex-shrink: 0;
-    position: absolute;
-    left: 7px;
-    bottom: 43px;
-    background: url("../img/page_elements/alpha_dog_icon.svg") no-repeat;
 }
-.phone {
-    width: 25px;
-    height: 25px;
-    flex-shrink: 0;
-    position: absolute;
-    left: 7px;
-    bottom: 85px;
-    background: url("../img/page_elements/phone_icon.svg") no-repeat;
-}
+
+.phone { background-image: url("../img/page_elements/phone_icon.svg"); }
+.alpha-dog { background-image: url("../img/page_elements/alpha_dog_icon.svg"); }
+
+/* Право: Иконки Соцсетей */
 .social-media-icons-group {
     display: flex;
-    justify-content: center;
+    flex-direction: row;
     align-items: center;
-    width: 209px;
+    justify-content: center;
+    gap: 25px;
     height: 93px;
-    flex-shrink: 0;
-    position: absolute;
-    bottom: 42px;
-    right: 100px;
 }
+
 .rutube-icon, .vk-icon {
-    position: absolute;
-    display: flex;
+    display: block;
     width: 92px;
     height: 93px;
-    padding: 11.625px 7.667px 0.721px 7.667px;
-    justify-content: center;
-    align-items: center;
-    flex-shrink: 0;
-    aspect-ratio: 92/93;
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    transition: transform 0.3s ease;
+    cursor: pointer;
 }
-.rutube-icon {
-    background: url("../img/page_elements/rutube_contacts_icon.svg") no-repeat;
-    left: 0;
-    top: 10px;
+
+.rutube-icon { background-image: url("../img/page_elements/rutube_contacts_icon.svg");}
+.vk-icon { background-image: url("../img/page_elements/vk_contacts_icon.svg");
+    margin-bottom: 15px; !important;}
+
+.rutube-icon:hover, .vk-icon:hover {
+    transform: translateY(-5px);
 }
-.vk-icon {
-    background: url("../img/page_elements/vk_contacts_icon.svg") no-repeat;
-    right: 0;
-}
-.rutube-icon:active, .vk-icon:active {
-    transform: translateY(3px);
-    filter:brightness(1.2);
-}
-ul {
-margin-left: -2em;
-}
-.ul2 {
-    display: flex;
-    width: 980px;
-    flex-direction: column;
-    justify-content: left;
-    flex-shrink: 0;
-    position: absolute;
-    bottom: 0;
-}
-.li1 {
-    list-style: none;
-    background: url("../img/page_elements/tabler_point.svg") no-repeat 0 8px;
-    padding-left: 30px;
-}
-.li2 {
-    list-style: none;
-    background: url("../img/page_elements/book_tabler_point.svg") no-repeat 0 8px;
-    padding-left: 30px;
+
+@media (max-width: 991.98px) {
+    /* 1. Общие настройки фонов */
+    .background-1, .background-2, .background-3, .background-4-about {
+        height: auto !important;
+        padding: 40px 15px !important;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* 2. Блок 1: Титул (Заголовок и список) */
+    .about-title {
+        width: 100% !important;
+        padding-bottom: 20px !important;
+        margin: 20px auto !important;
+        position: static !important;
+        transform: none !important;
+    }
+
+    .about-title .title {
+        font-size: 32px !important;
+        margin-bottom: 15px !important;
+        position: static !important;
+        width: 100% !important;
+    }
+
+    .about-title .text, .about-title .list {
+        font-size: 22px !important;
+        line-height: 1.2 !important;
+        position: static !important;
+        width: 100% !important;
+        text-align: left !important;
+    }
+
+    /* 3. Блок 2: Гравюра и Цитата */
+    .about-background-2-field {
+        height: auto !important;
+        transform: none !important;
+        margin: 0 auto !important;
+    }
+
+    .about-engraving {
+        margin-top: 0 !important;
+        height: 200px !important;
+        width: 100% !important;
+        border-radius: 20px !important;
+        position: static !important;
+    }
+
+    .quote-img-row {
+        flex-direction: column !important;
+        padding: 0 !important;
+        margin-top: 30px !important;
+        gap: 30px;
+    }
+
+    .epigram-wrapper {
+        width: 100% !important;
+        margin: 0 auto !important;
+    }
+
+    .about-epigram {
+        font-size: 24px !important;
+        line-height: 1.1 !important;
+        width: 100% !important;
+    }
+
+    .quotes_open, .quotes_close {
+        display: none !important;
+    }
+
+    .img-2nd-level {
+        width: 100% !important;
+        max-width: 320px;
+        height: 260px !important;
+        position: static !important;
+    }
+
+    /* 4. Блок 3: Команда (Фото -> Имя/Текст) */
+    .team {
+        height: auto !important;
+        flex-direction: column !important;
+        transform: none !important;
+        margin: 0 auto !important;
+    }
+
+    .team-title {
+        font-size: 32px !important;
+        margin-bottom: 30px !important;
+    }
+
+    .team-container {
+        gap: 40px !important;
+    }
+
+    .team-item {
+        flex-direction: column !important;
+        text-align: center !important;
+    }
+
+    .member-photo {
+        position: static !important;
+        margin: 0 auto 15px auto !important;
+        width: 200px !important;
+        height: 250px !important;
+    }
+
+    .member-info {
+        width: 100% !important;
+        padding: 0 10px !important;
+        font-size: 22px !important;
+        text-align: center !important;
+    }
+
+    .team-achieves {
+        flex-direction: column !important;
+        gap: 30px !important;
+        margin-top: 40px !important;
+    }
+
+    .team-achieve-field {
+        width: 100% !important;
+    }
+
+    /* 5. Блок 4: Литература и Контакты */
+    .background-4-about {
+        margin-top: 0 !important;
+        padding-top: 40px !important;
+    }
+
+    .bibliography, .contacts {
+        position: static !important;
+        width: 100% !important;
+        transform: none !important;
+        margin: 0 auto 40px auto !important;
+    }
+
+    .bibliography-title, .contacts-title, .social-media-title {
+        font-size: 32px !important;
+        text-align: center !important;
+        width: 100% !important;
+        position: static !important;
+        margin-bottom: 15px !important;
+    }
+
+    .li2 {
+        font-size: 20px !important;
+        padding-left: 35px !important;
+        background-size: 20px !important;
+    }
+
+    /* Контакты: вертикальный стек */
+    .contacts-container {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 30px !important;
+    }
+
+    .contact-left-side, .social-media-side {
+        width: 100% !important;
+        align-items: center !important;
+        min-height: 0 !important;
+    }
+
+    .contacts-group {
+        margin-top: 0 !important;
+        align-items: center !important;
+    }
+
+    .contact-item {
+        font-size: 22px !important;
+    }
+
+    .social-media-side {
+        margin-top: 20px;
+    }
+
+    .social-media-icons-group {
+        position: static !important;
+        margin-top: 15px !important;
+        justify-content: center !important;
+        gap: 15px !important;
+    }
+
+    .rutube-icon, .vk-icon {
+        width: 65px !important;
+        height: 66px !important;
+    }
 }

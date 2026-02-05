@@ -1,4 +1,6 @@
-/* 1. БАЗОВЫЕ НАСТРОЙКИ */
+/* ==========================================================================
+   1. ГЛОБАЛЬНЫЕ НАСТРОЙКИ (СБРОС И БАЗА)
+   ========================================================================== */
 body, html {
     margin: 0;
     padding: 0;
@@ -6,76 +8,109 @@ body, html {
     flex-direction: column;
     background-color: #F9FED8;
     width: 100%;
-    z-index: -5;
-    height: fit-content;
-    overflow-x: hidden; /* Защита от вылетов вправо */
+    min-height: 100vh;
+    overflow-x: hidden; /* Защита от горизонтального скролла */
 }
 
 .wrapper {
     position: relative;
     display: flex;
     flex-direction: column;
-    z-index: -3;
-    height: fit-content;
     width: 100%;
+    z-index: 1;
 }
 
-/* 2. ФОНОВЫЕ БЛОКИ (ДЕКСТОП) */
+/* ==========================================================================
+   2. ОБЩИЕ СТИЛИ ФОНОВЫХ БЛОКОВ (АДАПТИВНАЯ ВЫСОТА)
+   ========================================================================== */
 .background-1, .background-1-events, .background-1-history, .background-1-article,
-.background-2, .background-3, .background-4 {
+.background-2, .background-2-events, .background-3, .background-4, .background-4-about {
     position: relative;
     width: 100%;
     max-width: 1920px;
     margin: 0 auto;
-    flex-shrink: 0;
-    z-index: -1;
+    height: auto !important; /* Высота подстраивается под контент */
+    box-sizing: border-box;
+    z-index: 1;
 }
 
-.background-1 { background-color: #5A062A; height: 689px; }
-.background-1-events { background-color: #F9FED8; }
-.background-1-history { height: 985px; }
-.background-1-article { height: 837px; }
-.background-1-privacy-policy { background-color: #F9FED8; height: fit-content; }
+/* Специфические паддинги для блоков */
+.background-1 {
+    background-color: #5A062A;
+    padding: 0 !important; /* Убираем отступы, чтобы баннер и край были единым целым */
+}
 
-.background-2 { height: 600px; display: flex; flex-direction: column; }
-.background-2-events { height: 850px; }
-.background-2-event { height: fit-content; margin-bottom: 10px; }
-
-.background-3 { height: 1120px; background-color: #5A062A; }
-.background-3-events { max-width: 1278px; background-color: #F9FED8; height: fit-content; }
-
-.background-4 {
-    height: fit-content;
-    margin: -232px auto 0 auto; /* Нахлест для десктопа */
+.background-2 {
     background-color: #F9FED8;
+    padding: 60px 0;
 }
-.background-4-about { height: 835px; }
 
-/* 3. РВАНЫЕ КРАЯ (TORN EDGES) */
-.torn-edge1 {
+.background-3 {
+    background-color: #5A062A;
+    padding-top: 80px;     /* Место под torn-edge2 */
+    padding-bottom: 130px; /* Запас для кнопки "Подробнее" и torn-edge3 */
+    z-index: 2;
+}
+
+.background-4, .background-4-about {
+    background-color: #F9FED8;
+    margin-top: -80px !important; /* Нахлест на десктопе */
+    padding-top: 100px !important;
+    position: relative;
+    z-index: 1; /* Уходит ПОД рваный край третьего блока */
+}
+
+/* Цвета для спец-страниц */
+.background-1-events { background-color: #F9FED8; }
+
+/* ==========================================================================
+   3. РВАНЫЕ КРАЯ (TORN EDGES) — ПЛОТНАЯ СКЛЕЙКА
+   ========================================================================== */
+.torn-edge1, .torn-edge2, .torn-edge3 {
     width: 100%;
     height: 76px;
-    position: absolute !important; /* <--- ВЕРНУЛИ ABSOLUTE */
-    bottom: 0 !important;         /* <--- ПРИБИЛИ К НИЗУ БАННЕРА */
-    flex-shrink: 0;
-    aspect-ratio: 1920/76;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    left: 0;
+    pointer-events: none;
+}
+
+/* Край 1: Приклеен к НИЗУ картинки баннера (важно для отсутствия щелей) */
+.banner-img .torn-edge1 {
+    bottom: -1px; /* Микро-нахлест убирает белую линию */
+    background-image: url('../img/page_elements/torn_edges/torn_edge1-2.png');
+    z-index: 10;
+}
+.background-1 .torn-edge1 {
+    position: absolute !important;
+    bottom: 0 !important;
+    left: 0;
+    width: 100%;
+    height: 76px;
     background-image: url('../img/page_elements/torn_edges/torn_edge1-2.png');
     background-repeat: no-repeat;
     background-size: cover;
-    z-index: 3;
+    z-index: 10;
 }
 
-.torn-edge2, .torn-edge3 {
-    width: 100%;
-    height: 76px;
-    position: relative;
-    background-repeat: no-repeat;
-    background-size: cover;
+/* Край 2: Верх третьего блока */
+.background-3 .torn-edge2 {
+    top: 0;
+    background-image: url('../img/page_elements/torn_edges/torn_edge2-2.png');
+    z-index: 10;
 }
-.torn-edge2 { background-image: url('../img/page_elements/torn_edges/torn_edge2-2.png'); z-index: 0; }
-.torn-edge3 { background-image: url('../img/page_elements/torn_edges/torn_edge3-2.png'); z-index: 1; }
 
-/* 4. КНОПКА ВВЕРХ */
+/* Край 3: Низ третьего блока (Всегда ПОВЕРХ анонсов) */
+.background-3 .torn-edge3 {
+    bottom: 0;
+    background-image: url('../img/page_elements/torn_edges/torn_edge3-2.png');
+    z-index: 100 !important;
+}
+
+/* ==========================================================================
+   4. ВСПОМОГАТЕЛЬНЫЕ ЭЛЕМЕНТЫ
+   ========================================================================== */
 .upbtn {
     z-index: 9999;
     width: 58px;
@@ -84,41 +119,31 @@ body, html {
     bottom: 20px;
     right: 20px;
     cursor: pointer;
-    border-radius: 50%;
-    transition: all .7s ease-in-out;
-    background: url('../img/page_elements/up_button.svg') no-repeat center transparent;
+    background: url('../img/page_elements/up_button.svg') no-repeat center / contain;
+    transition: transform 0.3s ease;
 }
-.upbtn:hover { transform: scale(1.2)!important; }
 
-/* 5. ЕДИНЫЙ @MEDIA ЗАПРОС (991px) */
+/* ==========================================================================
+   5. ЕДИНАЯ АДАПТАЦИЯ (MOBILE @MEDIA 991PX)
+   ========================================================================== */
 @media (max-width: 991px) {
-    /* Схлопываем все фиксированные высоты под контент */
-    .background-1, .background-1-history, .background-1-article,
-    .background-2, .background-2-events, .background-3, .background-4-about {
-        height: auto !important;
-        min-height: 100px; /* Базовый минимум */
-    }
-
-    /* Убираем дыру между баннером и краем */
-    .background-1 {
-        display: flex;
-        flex-direction: column;
-    }
-
-
-    /* Убираем нахлест 4-го блока, чтобы не перекрывал контент 3-го */
-    .background-4 {
+    /* Сбрасываем нахлесты четвертого блока */
+    .background-4, .background-4-about {
         margin-top: 0 !important;
+        padding-top: 40px !important;
     }
 
-    /* Рваные края: фикс размера */
+    /* Уменьшаем высоту краев для мобильных */
     .torn-edge1, .torn-edge2, .torn-edge3 {
-        height: 50px !important; /* Покомпактнее на мобильных */
+        height: 50px;
+    }
+
+    /* Мобильные паддинги для background-3 */
+    .background-3 {
+        padding-top: 60px !important;
+        padding-bottom: 90px !important;
     }
 }
 
-/* ССЫЛКИ ГЛОБАЛЬНО */
-.background-1 a, .background-2 a, .background-3 a, .background-4 a {
-    text-decoration: none !important;
-    font-family: 'Noah', sans-serif !important;
-}
+/* ГЛОБАЛЬНЫЕ ССЫЛКИ */
+a { text-decoration: none !important; }

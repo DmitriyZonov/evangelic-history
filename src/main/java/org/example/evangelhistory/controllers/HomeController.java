@@ -62,6 +62,7 @@ public class HomeController {
     @GetMapping("/")
     public String toTitlePage(Model model) {
         model.addAttribute("eventList", eventService.getSortedListOfEvents());
+        model.addAttribute("heroSet", GetHeroesWithVideo.getHeroesWithVideo(heroService.getAllHeroes()));
         return "index";
     }
     @GetMapping("/privacy_policy")

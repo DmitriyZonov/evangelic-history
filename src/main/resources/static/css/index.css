@@ -462,89 +462,165 @@
 }
 
 @media (max-width: 991.98px) {
-    /* 1. Баннер и шрифты заголовков */
-    .banner-img { height: 450px !important; }
-    .main-title { font-size: 32px !important; width: 95% !important; position: static !important; margin: 10px auto !important; transform: none !important; }
-    .main-title1 { font-size: 44px !important; width: 95% !important; position: static !important; margin: 0 auto !important; transform: none !important; }
-
-    /* 2. Блок "О проекте" (Плитки и Текст) */
-    .about-main { flex-direction: column !important; align-items: center !important; height: auto !important; margin: 20px auto !important; transform: none !important; width: 100% !important; }
-    .about-tiles-group { flex-direction: column !important; align-items: center !important; width: 100% !important; height: auto !important; gap: 15px !important; position: static !important; }
-    .about-tile { width: 90% !important; max-width: 320px; margin: 0 auto !important; position: static !important; }
-    .about-tile .title, .about-tile .text { width: 90% !important; left: 5% !important; position: static !important; margin: 10px auto !important; height: auto !important; }
-    .about-text-group { width: 100% !important; height: auto !important; position: static !important; margin-top: 30px !important; padding: 0 15px !important; }
-    .about-text-group-title, .about-text-group-title2 { position: static !important; width: 100% !important; height: auto !important; text-align: center !important; font-size: 24px !important; }
-
-    /* 3. Видеоархив */
-    .video-archive { width: 100% !important; height: auto !important; padding: 40px 0 !important; margin: 0 auto !important; transform: none !important; }
-    .video-archive-text-title, .video-archive-text-title-2 { width: 100% !important; text-align: center !important; font-size: 32px !important; height: auto !important; }
-    .video-teasers { flex-direction: column !important; align-items: center !important; width: 100% !important; height: auto !important; gap: 30px !important; position: static !important; }
-    .video-teasers-portraits {
-        margin-bottom: 15px !important;
+    /* 1. ГЛОБАЛЬНЫЕ СБРОСЫ (Убираем сдвиги и фиксированные высоты) */
+    .index-background {
+        height: auto !important;
+        min-height: 0 !important;
+        margin-bottom: 50px;
+        overflow-x: hidden;
     }
-    .video-teasers-tile { width: 280px !important; height: auto !important; position: static !important;
-        margin-top: 10px !important;
-        line-height: 1.2 !important;
-        height: auto !important;}
 
-    /* 4. Кнопки "Подробнее" */
-    .more-btn, .more-btn-1, .more-btn-2 { width: 200px !important; height: 50px !important; margin: 20px auto !important; transform: none !important; }
-    .more-btn .link, .more-btn-1 .link-1, .more-btn-2 .link {
-        font-family: 'Novelist', serif !important;
-        font-size: 22px !important;
+    .about-main, .video-archive, .announcements,
+    .about-tiles-group, .video-teasers, .announcements-row {
         width: 100% !important;
-        height: 100% !important;
-    }
-    .announcements {
-        width: 100% !important;
-        top: 50px !important;
+        max-width: 100% !important;
+        height: auto !important;
+        position: static !important;
         margin: 0 auto !important;
-    }
-
-    .announcements-row, .announcements-main-row,
-    .announcements-1st-row-announce-tile-field {
+        transform: none !important;
+        display: flex !important;
         flex-direction: column !important;
-        align-items: center !important;
-        width: 100% !important;
-        height: auto !important;
+        align-items: center !important; /* Глобальное центрирование всех блоков */
+        padding: 0 10px !important;
+        box-sizing: border-box;
     }
 
-    .announcements-title-tile {
+    /* 2. БАННЕР (ПЕРВЫЙ ЭКРАН) */
+    .banner-img {
+        height: 450px !important;
+        position: relative !important;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .main-title, .main-title1 {
+        width: 95% !important;
         height: auto !important;
-        align-items: center !important;
+        margin: 10px auto !important;
         text-align: center !important;
-        margin-bottom: 40px !important;
     }
 
-    .announcements-title, .announcements-title-2 {
+    .main-title { font-size: 32px !important; }
+    .main-title1 { font-size: 44px !important; }
+
+    /* 3. БЛОК "О ПРОЕКТЕ" (Красные плитки) */
+    .about-tile {
+        width: 100% !important;
+        max-width: 320px;
+        margin: 0 auto 20px auto !important;
+        left: 0 !important; /* Убираем сдвиг вправо */
+        height: auto !important;
+        min-height: 160px;
+        padding: 15px !important;
+    }
+
+    .about-tile .title, .about-tile .title-1, .about-tile .text {
+        width: 100% !important;
+        left: 0 !important; /* Убираем left: 17px */
+        margin: 10px 0 !important;
+        text-align: center !important;
+        height: auto !important;
+        position: static !important;
+    }
+
+    /* Текст описания справа (теперь снизу) */
+    .about-text-group {
+        margin-top: 30px !important;
+        top: 0 !important;
+    }
+
+    .about-text-group-title {
+        font-size: 28px !important;
+        line-height: 1.1 !important;
+        max-width: 300px; /* Чтобы текст встал в столбик */
+        margin: 0 auto 15px auto !important;
+    }
+
+    .about-text-group-title2 {
+        font-size: 22px !important;
+        line-height: 1.3 !important;
+        text-align: center !important;
+    }
+
+    /* 4. ВИДЕОАРХИВ (Портреты героев) */
+    .video-archive { padding: 40px 0 !important; }
+
+    .video-archive-text-title, .video-archive-text-title-2 {
+        font-size: 32px !important;
         width: 90% !important;
         height: auto !important;
         text-align: center !important;
     }
 
-    .announcements-title { font-size: 36px !important; }
+    .video-teasers { gap: 30px !important; margin: 20px 0 !important; }
 
-    /* Сами карточки анонсов */
-    .announcements-tile, .announcements-1st-tile {
-        width: 90% !important; /* На мобилке — почти во весь экран */
-        max-width: 364px;
-        margin: 0 auto 30px auto !important; /* Убираем левый отступ 32px */
+    .video-teasers-tile {
+        width: 280px !important;
+        height: auto !important;
+        margin: 0 auto !important;
     }
 
+    .video-teasers-portraits { margin-bottom: 10px !important; }
+
+    .video-teasers-title {
+        font-size: 20px !important;
+        margin-top: 5px !important;
+    }
+
+    /* 5. АНОНСЫ (Карточки из БД) */
+    .announcements { top: 40px !important; }
+
+    .announcements-title-tile {
+        margin-bottom: 30px !important;
+        text-align: center !important;
+        left: 0 !important;
+    }
+
+    .announcements-title { font-size: 36px !important; width: 100% !important; }
+    .announcements-title-2 { font-size: 24px !important; width: 100% !important; }
+
+    .announcements-tile, .announcements-1st-tile {
+        width: 100% !important;
+        max-width: 364px;
+        margin: 0 auto 30px auto !important; /* Обнулили margin-left: 32px */
+    }
+
+    .announcements-tile img, .announcements-1st-tile img,
     .announcements-tile-content-box, .announcement-btn {
         width: 100% !important;
     }
 
-    .anons-title-1 {
-        font-size: 24px !important;
-        width: 80% !important;
+    .anons-title-1 { font-size: 24px !important; width: 90% !important; margin-left: 15px !important; }
+    .anons-title-2 { font-size: 18px !important; width: 90% !important; margin-left: 15px !important; }
+
+    /* 6. КНОПКИ "ПОДРОБНЕЕ" И ШРИФТЫ */
+    .more-btn, .more-btn-1, .more-btn-2 {
+        width: 200px !important;
+        height: 50px !important;
+        margin: 20px auto !important;
+    }
+    .more-btn {
+        display: flex !important;
+        margin: 30px auto !important; /* Центрирование через auto */
+        position: relative !important;
+        left: 0 !important;
+        transform: none !important;
+        justify-content: center;
+        align-items: center;
     }
 
-    .anons-title-2 {
-        font-size: 18px !important;
-        width: 85% !important;
+    .more-btn .link, .more-btn-1 .link-1, .more-btn-2 .link {
+        font-family: 'Novelist', serif !important;
+        font-size: 22px !important;
+        width: 100% !important;
+        height: 100% !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
     }
 }
+
 
 @media (max-width: 480px) {
     .main-title { font-size: 28px !important; }
