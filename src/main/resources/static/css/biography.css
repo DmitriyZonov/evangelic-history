@@ -156,49 +156,111 @@
    ПОЛНАЯ МОБИЛЬНАЯ АДАПТАЦИЯ (991.98px)
    ========================================================================== */
 @media (max-width: 991.98px) {
-    .biography-portrait { height: 450px; }
-
-    .biography-portrait-title {
-        left: 20px;
-        top: 40px;
-        font-size: 48px;
-        width: 90%;
+    /* 1. Глобальный сброс фона */
+    .background {
+        padding-bottom: 60px;
     }
 
+    /* 2. Портрет: Фикс обрезки лица */
+    .biography-portrait {
+        width: 100% !important;
+        height: 350px !important; /* УМЕНЬШИЛИ высоту, чтобы уменьшить ЗУМ */
+        margin: 0 !important;
+        transform: none !important;
+        overflow: hidden;
+    }
+
+    .biography-portrait img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        object-position: center top !important;
+    }
+
+    .biography-portrait-title {
+        display: none !important;
+    }
+
+    .biography-portrait-torn-edge {
+        height: 40px !important;
+    }
+
+    /* 3. Имя и Годы жизни */
     .biography-name-years-of-life-field,
     .videobiography-name-years-of-life-field {
-        min-height: auto;
-        padding: 40px 20px;
-        align-items: center !important;
-        text-align: center !important;
+        width: 100% !important;
+        height: auto !important;
+        min-height: 0 !important;
+        margin: 30px 0 !important;
+        padding: 0 20px !important;
+        transform: none !important;
+        align-items: center !important; /* Всегда по центру */
     }
 
     .biography-name-years-of-life,
     .videobiography-name-years-of-life {
-        font-size: 36px;
-        width: 100%;
+        width: 100% !important;
+        font-size: 32px !important;
         text-align: center !important;
+        line-height: 1.2 !important;
     }
 
-    .videobiography-video-text-field { padding: 0 20px; }
+    /* 4. Видео и Текст */
+    .videobiography-video-text-field {
+        width: 100% !important;
+        margin: 0 !important;
+        transform: none !important;
+        padding: 0 20px !important;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 
     .biography-video {
-        float: none; /* Убираем обтекание */
-        width: 100%;
-        height: 250px;
-        margin: 0 0 30px 0;
+        float: none !important; /* Отменяем обтекание текстом */
+        width: 100% !important;
+        height: auto !important;
+        aspect-ratio: 16 / 9; /* Сохраняем пропорции видео */
+        margin: 0 0 25px 0 !important;
     }
 
     .biography-text {
-        font-size: 26px;
-        line-height: 1.2;
+        width: 100% !important;
+        font-size: 24px !important; /* Gabriola должна быть читабельной */
+        line-height: 1.2 !important;
+        text-align: left !important;
     }
 
+    p {
+        text-indent: 20px !important; /* Уменьшили отступ абзаца */
+    }
+
+    /* 5. Связанные статьи */
     .biography-under-text-field {
-        height: auto;
-        padding: 60px 20px;
-        justify-content: center;
+        width: 100% !important;
+        height: auto !important;
+        margin: 40px 0 !important;
+        padding: 0 20px !important;
+        transform: none !important;
+        justify-content: center !important;
     }
 
-    .related-articles { align-items: center; }
+    .related-articles {
+        width: 100% !important;
+        align-items: center !important;
+        height: auto !important;
+    }
+
+    .related-articles-title {
+        text-align: center !important;
+        width: 100% !important;
+        margin-bottom: 15px;
+    }
+
+    .related-articles-link {
+        width: auto !important;
+        min-width: 280px;
+        font-size: 24px !important;
+        padding: 10px 20px;
+    }
 }
