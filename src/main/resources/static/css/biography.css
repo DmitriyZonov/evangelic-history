@@ -1,157 +1,204 @@
+/* --- ГЛОБАЛЬНЫЙ КОНТЕЙНЕР --- */
+.background {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background-color: #F9FED8;
+    padding-bottom: 100px;
+    overflow-x: hidden;
+}
+
+/* --- ШАПКА: ПОРТРЕТ И ТИТУЛ --- */
 .biography-portrait-field {
     position: relative;
-    display: flex;
-    flex-flow: column nowrap;
     width: 100%;
-    height: fit-content;
+    max-width: 1280px;
+    height: auto;
 }
+
+.biography-portrait {
+    position: relative;
+    width: 100%;
+    height: 837px;
+    margin: 0 auto;
+}
+
+.biography-portrait img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 .biography-portrait-title {
-    display: flex;
     position: absolute;
-    flex-direction: column;
-    text-align: left;
-    left: 101px;
+    left: 100px;
     top: 200px;
-    width: 634px;
-    height: fit-content;
+    width: 60%;
     z-index: 5;
     color: #F9FED8;
     text-shadow: 10px 10px 5px #0F0F0C;
-    font-family: Novelist;
+    font-family: 'Novelist', serif;
     font-size: 128px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 130px; /* 101.563% */
     text-transform: uppercase;
+    line-height: 1;
 }
-.biography-portrait {
-    position: relative;
-    width: 1280px;
-    height: 837px;
-    flex-shrink: 0;
-    margin-left: 50%;
-    transform: translateX(-50%);
-}
-.biography-portrait img {
-    object-fit: cover;
-}
+
 .biography-portrait-torn-edge {
     position: absolute;
-    width: 100%;
+    inset: auto 0 0 0; /* Растягиваем по низу */
     height: 76px;
-    bottom: 0;
-    background-image: url("../img/page_elements/torn_edges/torn_edge3-2.png");
+    background: url("../img/page_elements/torn_edges/torn_edge3-2.png") repeat-x bottom / contain;
+    z-index: 6;
 }
-.biography-name-years-of-life-field, .videobiography-name-years-of-life-field {
-    position: relative;
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
-    align-items: end;
-    width: 1280px;
-    height: 315px;
-    margin-left: 50%;
-    transform: translateX(-50%);
-}
-.videobiography-name-years-of-life-field {
-    align-items: start;
-}
-.biography-name-years-of-life, .videobiography-name-years-of-life {
-    display: flex;
-    width: 687px;
-    height: fit-content;
-    flex-flow: column nowrap;
-    justify-content: center;
-    flex-shrink: 0;
-    color: #5A062A;
-    text-align: right;
-    font-family: Novelist;
-    font-size: 64px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 64px; /* 100% */
-    text-transform: uppercase;
 
+/* --- ЗАГОЛОВОК С ИМЕНЕМ И ГОДАМИ --- */
+.biography-name-years-of-life-field,
+.videobiography-name-years-of-life-field {
+    width: 100%;
+    max-width: 1280px;
+    min-height: 315px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 40px;
+    box-sizing: border-box;
 }
+
+.biography-name-years-of-life-field { align-items: flex-end; }
+.videobiography-name-years-of-life-field { align-items: flex-start; }
+
+.biography-name-years-of-life,
 .videobiography-name-years-of-life {
-    text-align: left;
-}
-.biography-text {
-    width: 1280px;
-    flex-shrink: 0;
+    font-family: 'Novelist', serif;
+    font-size: 64px;
     color: #5A062A;
-    text-align: justify;
-    font-family: Gabriola;
-    font-size: 40px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 40px; /* 100% */
+    text-transform: uppercase;
+    line-height: 1.1;
+    text-align: inherit; /* Берет выравнивание от родителя */
 }
-p {
-    text-indent: 40px;
-}
+
+/* --- ОСНОВНОЙ ТЕКСТ И ВИДЕО --- */
 .videobiography-video-text-field {
-    position: relative;
-    width: 1280px;
-    margin-left: 50%;
-    transform: translateX(-50%);
-    height: fit-content;
+    width: 100%;
+    max-width: 1280px;
+    padding: 0 40px;
+    box-sizing: border-box;
 }
+
 .biography-video {
-    position: relative;
-    float: left;
+    float: left; /* Оставляем обтекание для десктопа */
     width: 720px;
     height: 405px;
+    margin: 0 30px 20px 0;
+    border-radius: 15px;
     background-color: black;
-    margin-right: 30px;
 }
+
+.biography-text {
+    font-family: 'Gabriola', serif;
+    font-size: 40px;
+    line-height: 1.1;
+    color: #5A062A;
+    text-align: justify;
+}
+
+.biography-text p {
+    text-indent: 40px;
+    margin-bottom: 20px;
+}
+
+/* --- СВЯЗАННЫЕ СТАТЬИ --- */
 .biography-under-text-field {
-    position: relative;
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: left;
-    align-items: center;
-    width: 1280px;
+    width: 100%;
+    max-width: 1280px;
     height: 315px;
-    margin-left: 50%;
-    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    padding: 0 40px;
+    box-sizing: border-box;
 }
+
 .related-articles {
     display: flex;
-    flex-flow: column nowrap;
-    justify-content: space-between;
-    position: relative;
-    height: 113px;
-    width: 420px;
+    flex-direction: column;
+    gap: 20px;
 }
+
 .related-articles-title {
-    width: 260px;
-    height: 29px;
-    flex-shrink: 0;
-    text-align: justify;
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: #8D0B19;
-    font-family: Novelist;
+    font-family: 'Novelist', serif;
     font-size: 32px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    text-transform: uppercase;
-}
-.related-articles-link {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    width: 410px;
-    height: 57px;
-    flex-shrink: 0;
-    border-radius: 45px;
-    border: 3px solid #8D0B19;
     color: #8D0B19;
-    text-align: center;
-    font-family: Gabriola;
+    text-transform: uppercase;
+    -webkit-text-stroke: 1px #8D0B19;
+}
+
+.related-articles-link {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 30px;
+    border: 3px solid #8D0B19;
+    border-radius: 45px;
+    color: #8D0B19;
+    font-family: 'Gabriola', serif;
     font-size: 32px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.related-articles-link:hover {
+    background: #8D0B19;
+    color: #F9FED8;
+}
+
+/* ==========================================================================
+   ПОЛНАЯ МОБИЛЬНАЯ АДАПТАЦИЯ (991.98px)
+   ========================================================================== */
+@media (max-width: 991.98px) {
+    .biography-portrait { height: 450px; }
+
+    .biography-portrait-title {
+        left: 20px;
+        top: 40px;
+        font-size: 48px;
+        width: 90%;
+    }
+
+    .biography-name-years-of-life-field,
+    .videobiography-name-years-of-life-field {
+        min-height: auto;
+        padding: 40px 20px;
+        align-items: center !important;
+        text-align: center !important;
+    }
+
+    .biography-name-years-of-life,
+    .videobiography-name-years-of-life {
+        font-size: 36px;
+        width: 100%;
+        text-align: center !important;
+    }
+
+    .videobiography-video-text-field { padding: 0 20px; }
+
+    .biography-video {
+        float: none; /* Убираем обтекание */
+        width: 100%;
+        height: 250px;
+        margin: 0 0 30px 0;
+    }
+
+    .biography-text {
+        font-size: 26px;
+        line-height: 1.2;
+    }
+
+    .biography-under-text-field {
+        height: auto;
+        padding: 60px 20px;
+        justify-content: center;
+    }
+
+    .related-articles { align-items: center; }
 }
