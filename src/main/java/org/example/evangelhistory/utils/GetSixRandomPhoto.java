@@ -3,30 +3,28 @@ package org.example.evangelhistory.utils;
 import org.example.evangelhistory.entities.Photo;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-public class GetSixRandomPhotoPaths {
+public class GetSixRandomPhoto {
     private final Set<Photo> photoSet;
 
-    public GetSixRandomPhotoPaths (Set<Photo> photoSet) {
+    public GetSixRandomPhoto (Set<Photo> photoSet) {
         this.photoSet = photoSet;
     }
 
-    public List<String> getRandomPhotoPaths() {
-        List<String> listOfRandomPhotoPaths = new ArrayList<>();
+    public List<Photo> getRandomPhoto() {
+        List<Photo> listOfRandomPhoto = new ArrayList<>();
         int counter = 0;
         for (Photo photo : photoSet) {
             counter ++;
             if (counter <= 6) {
-                String path = photo.getPath();
-                listOfRandomPhotoPaths.add(path);
+                listOfRandomPhoto.add(photo);
             } else {
                 break;
             }
         }
 
-        return listOfRandomPhotoPaths;
+        return listOfRandomPhoto;
     }
 }

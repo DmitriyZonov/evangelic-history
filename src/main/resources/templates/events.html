@@ -71,18 +71,29 @@
         <div class="events-announcements-title">
             <text>Анонсы</text>
         </div>
-        <div th:each="event, iterStat : ${eventList}"
-        th:class="${iterStat.index < 3} ? 'item' : 'item collapsible'">
+        <div th:each="event, iterStat : ${eventList}" th:class="${iterStat.index < 3} ? 'item' : 'item collapsible'">
             <div class="item-img">
-                <img th:src="${event.titleImage}" th:alt="${event.title + ' ' + event.announcement}">
+                <img th:src="${event.titleImage}" th:alt="${event.title}">
             </div>
-            <div class="title" th:text="${event.title}"></div>
-            <div class="text" th:utext="${event.announcement}">
+
+            <!-- Контентный блок -->
+            <div class="item-content">
+                <div class="title" th:text="${event.title}"></div>
+                <div class="text" th:utext="${event.announcement}"></div>
+
+                <!-- Блок адреса -->
+                <div class="info-row">
+                    <div class="events-map-pin-icon"></div>
+                    <div class="address" th:text="${event.city + ', ' + event.address}"></div>
+                </div>
+
+                <!-- Блок даты -->
+                <div class="info-row">
+                    <div class="events-clock-icon"></div>
+                    <div class="time" th:text="${dateFormatter.get(event.dateTime)}"></div>
+                </div>
             </div>
-            <div class="address" th:text="${event.city + ', ' + event.address}"></div>
-            <div class="time" th:text="${dateFormatter.get(event.dateTime)}"></div>
-            <div class="events-map-pin-icon"></div>
-            <div class="events-clock-icon"></div>
+
             <div class="item-button">
                 <div class="item-button-img"></div>
                 <a class="item-btn" th:href="|/event/${event.id}|"></a>
@@ -92,82 +103,67 @@
     <button id="hide-btn" class="hide-btn">Показать все</button>
 </div>
     <div class="background-4-events">
-        <div id="open-modal" class="events-modal-window">
-            <div>
-                <a th:href="@{/events#photo}" title="Закрыть" class="events-modal-close">×</a>
-                <img th:src="${photoSet.get(0)}">
+        <!-- АВТОМАТИЧЕСКИЕ МОДАЛКИ (Цикл по твоему photoSet) -->
+        <div th:each="photo, iterStat : ${photoSet}"
+             th:id="${iterStat.index == 0} ? 'open-modal' : 'open-modal' + ${iterStat.index}"
+             class="events-modal-window">
+
+            <!-- Кнопка ЗАКРЫТЬ (теперь она всегда в углу экрана) -->
+            <a th:href="@{/events#photo}" title="Закрыть" class="events-modal-close">×</a>
+
+            <div class="events-modal-main-content">
+                <!-- Контейнер-якорь для фото и стрелок перелистывания -->
+                <div class="modal-img-wrapper">
+                    <!-- Стрелка НАЗАД -->
+                    <a th:if="${!iterStat.first}"
+                       th:href="${iterStat.index == 1} ? '#open-modal' : '#open-modal' + (${iterStat.index} - 1)"
+                       class="modal-nav-btn prev-btn">‹</a>
+
+                    <img th:src="${photo.path}" alt="Event Photo">
+
+                    <!-- Стрелка ВПЕРЕД -->
+                    <a th:if="${!iterStat.last}"
+                       th:href="'#open-modal' + (${iterStat.index} + 1)"
+                       class="modal-nav-btn next-btn">›</a>
+                </div>
+
+                <!-- Подпись под фото из объекта Photo -->
+                <div class="modal-caption" th:text="${photo.caption}">Подпись к фотографии</div>
             </div>
         </div>
-        <div id="open-modal1" class="events-modal-window">
-            <div>
-                <a th:href="@{/events#photo}" title="Закрыть" class="events-modal-close">×</a>
-                <img th:src="${photoSet.get(1)}">
-            </div>
-        </div>
-        <div id="open-modal2" class="events-modal-window">
-            <div>
-                <a th:href="@{/events#photo}" title="Закрыть" class="events-modal-close">×</a>
-                <img th:src="${photoSet.get(2)}">
-            </div>
-        </div>
-        <div id="open-modal3" class="events-modal-window">
-            <div>
-                <a th:href="@{/events#photo}" title="Закрыть" class="events-modal-close">×</a>
-                <img th:src="${photoSet.get(3)}">
-            </div>
-        </div>
-        <div id="open-modal4" class="events-modal-window">
-            <div>
-                <a th:href="@{/events#photo}" title="Закрыть" class="events-modal-close">×</a>
-                <img th:src="${photoSet.get(4)}">
-            </div>
-        </div>
-        <div id="open-modal5" class="events-modal-window">
-            <div>
-                <a th:href="@{/events#photo}" title="Закрыть" class="events-modal-close">×</a>
-                <img th:src="${photoSet.get(5)}">
-            </div>
-        </div>
+
+        <!-- СЕКЦИЯ ФОТО (КАРУСЕЛЬ) -->
         <div class="events-photo-field">
             <div class="events-photo-title">
                 <text>Фотографии с наших мероприятий</text>
             </div>
-            <div class="events-photo-carousel basic id=photo">
+            <div class="events-photo-carousel" id="photo">
+                <!-- Группа 1 (6 фото из базы) -->
                 <div class="events-photo-carousel-group">
-                        <a class="events-photo-card" href="#open-modal">
-                            <img th:src="${photoSet.get(0)}" style="cursor:pointer;">
-                        </a>
-                    <a class="events-photo-card" href="#open-modal1">
-                        <img th:src="${photoSet.get(1)}" style="cursor:pointer;">
-                    </a>
-                    <a class="events-photo-card" href="#open-modal2">
-                        <img th:src="${photoSet.get(2)}" style="cursor:pointer;">
+                    <a th:each="photo, iterStat : ${photoSet}"
+                       th:href="${iterStat.index == 0} ? '#open-modal' : '#open-modal' + ${iterStat.index}"
+                       class="events-photo-card">
+                        <img th:src="${photo.path}" style="cursor:pointer;">
                     </a>
                 </div>
-                <div aria-hidden class="events-photo-carousel-group">
-                    <a class="events-photo-card" href="#open-modal3">
-                        <img th:src="${photoSet.get(3)}" style="cursor:pointer;">
-                    </a>
-                    <a class="events-photo-card" href="#open-modal4">
-                        <img th:src="${photoSet.get(4)}" style="cursor:pointer;">
-                    </a>
-                    <a class="events-photo-card" href="#open-modal5">
-                        <img th:src="${photoSet.get(5)}" style="cursor:pointer;">
+                <!-- Группа 2 (Дубль для бесконечности) -->
+                <div aria-hidden="true" class="events-photo-carousel-group">
+                    <a th:each="photo, iterStat : ${photoSet}"
+                       th:href="${iterStat.index == 0} ? '#open-modal' : '#open-modal' + ${iterStat.index}"
+                       class="events-photo-card">
+                        <img th:src="${photo.path}" style="cursor:pointer;">
                     </a>
                 </div>
             </div>
         </div>
+
+        <!-- СЕКЦИЯ ВИДЕО -->
         <div class="events-video-field">
             <div class="events-video-title">
                 <text>Видео с наших мероприятий</text>
             </div>
-            <div class="events-video-carousel basic">
+            <div class="events-video-carousel">
                 <div class="events-video-carousel-group">
-                    <div class="events-video-card"></div>
-                    <div class="events-video-card"></div>
-                    <div class="events-video-card"></div>
-                </div>
-                <div aria-hidden class="events-video-carousel-group">
                     <div class="events-video-card"></div>
                     <div class="events-video-card"></div>
                     <div class="events-video-card"></div>
@@ -175,6 +171,7 @@
             </div>
         </div>
     </div>
+
 </div>
 <div th:replace="fragments/footer :: main-footer"></div>
 <script th:src="@{/js/hiding-elements.js}"></script>
