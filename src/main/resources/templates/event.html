@@ -35,17 +35,28 @@
     </div>
     <div class="background-2-event">
         <div th:each="photo, iterStat : ${event.getAlbum().getPhotos()}"
-                th:id="'open-modal' + ${iterStat.index}" class="event-modal-window">
-            <div>
+             th:id="'open-modal' + ${iterStat.index}" class="event-modal-window">
+            <div class="modal-content-wrapper">
+                <!-- Кнопка Закрыть -->
                 <a th:href="|/event/${event.id}#photos|" title="Закрыть" class="event-modal-close">×</a>
-                <img th:src="${photo.path}">
+
+                <!-- Стрелка НАЗАД (не показываем на самом первом фото) -->
+                <a th:if="${!iterStat.first}"
+                   th:href="'#open-modal' + ${iterStat.index - 1}"
+                   class="modal-nav-btn prev-btn">‹</a>
+
+                <!-- Само ФОТО -->
+                <img th:src="${photo.path}" class="modal-image">
+
+                <!-- Стрелка ВПЕРЕД (не показываем на самом последнем фото) -->
+                <a th:if="${!iterStat.last}"
+                   th:href="'#open-modal' + ${iterStat.index + 1}"
+                   class="modal-nav-btn next-btn">›</a>
             </div>
         </div>
         <div class="event-photo-field" id=photos>
             <div class="event-photo-title">
                 <text>Фото с мероприятия</text>
-                <div class="photo-card">
-                </div>
             </div>
             <div class="event-photo-album">
                 <a th:each="photo, iterStat : ${event.getAlbum().getPhotos()}"
@@ -56,20 +67,20 @@
             </div>
         </div>
         <div class="event-transition-field">
+            <!-- БЛОК НАЗАД (Кнопка ПЕРЕД текстом) -->
             <div class="event-transition-backward-forward-field">
-                <div class="event-transition-backward-title">
-                    <text>Анонсы</text>
-                </div>
-                <div class="event-transition-backward-btn">
-                    <a th:href="@{/events#events}"></a>
+                <div class="transition-wrapper">
+                    <a th:href="@{/events#events}" class="event-transition-backward-btn"></a>
+                    <div class="event-transition-backward-title">Анонсы</div>
                 </div>
             </div>
+
+            <!-- БЛОК ВПЕРЕД (Текст ПЕРЕД кнопкой) -->
             <div class="event-transition-backward-forward-field" th:if="${event.dateTime.isBefore(eventsSortedList.get(eventsSortedList.size() - 1).dateTime)}">
-                <div class="event-transition-forward-title">
-                    <text>Следующее мероприятие</text>
-                </div>
-                <div class="event-transition-forward-btn">
-                    <a th:href="|/event/${eventsSortedList.get(eventsSortedList.indexOf(event) + 1).id}|"></a>
+                <div class="transition-wrapper">
+                    <div class="event-transition-forward-title">Следующее мероприятие</div>
+                    <a th:href="|/event/${eventsSortedList.get(eventsSortedList.indexOf(event) + 1).id}|"
+                       class="event-transition-forward-btn"></a>
                 </div>
             </div>
         </div>

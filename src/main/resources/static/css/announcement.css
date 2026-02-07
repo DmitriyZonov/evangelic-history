@@ -1,18 +1,119 @@
 .announcement-text-field {
     display: flex;
-    position: relative;
-    width: 903px;
-    height: 71px;
     flex-direction: column;
     justify-content: center;
-    margin-left: 50%;
-    transform: translateX(-50%);
-    margin-top: 250px;
-    margin-bottom: 250px;
+    align-items: center; /* Центрируем содержимое современным способом */
+
+    width: 100%;
+    max-width: 903px;
+    min-height: 71px;
+    margin: 250px auto; /* margin: auto центрирует блок идеально без transform */
+
     color: #5A062A;
-    font-family: Novelist;
+    font-family: 'Novelist', serif;
     font-size: 64px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 64px; /* 100% */
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 1.1;
+}
+
+.event-transition-field {
+    display: flex !important;
+    justify-content: space-between !important; /* Принудительно расталкиваем по краям */
+    width: 100% !important;
+    max-width: 1200px !important;
+    margin: 0 auto 80px auto !important;
+}
+.event-transition-backward-forward-field {
+    flex: 0 1 auto !important;
+    min-width: 300px;
+}
+
+@media (max-width: 991.98px) {
+    /* 1. Схлопываем гигантский текст и отступы */
+    .announcement-text-field {
+        width: 100% !important;
+        max-width: 95% !important;
+        margin: 100px auto !important; /* Уменьшили с 250px */
+        height: auto !important;
+        padding: 0 10px !important;
+    }
+
+    .announcement-text-field text {
+        font-size: 32px !important; /* Уменьшили с 64px */
+        line-height: 1.2 !important;
+        text-align: center !important;
+        display: block !important;
+    }
+
+    .event-transition-field {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        width: 100% !important;
+
+        /* ПРИЖИМАЕМ К ПОДВАЛУ */
+        margin-bottom: 20px !important; /* Уменьшили отступ до минимума */
+
+        /* Остальные параметры для стыковки */
+        padding-top: 40px !important;
+        padding-bottom: 0 !important; /* Чтобы синие кнопки касались низа красного блока */
+    }
+
+    /* 2. ПОЛЯ С КНОПКАМИ (NAVY) */
+    .event-transition-backward-forward-field {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        width: 90% !important;
+        margin: 0 auto !important; /* Центрируем блоки */
+
+        /* Убираем внешний отступ снизу, чтобы блок коснулся края красного поля */
+        margin-bottom: 0 !important;
+    }
+
+    /* Дополнительно: убеждаемся, что между синими блоками есть зазор,
+       но последний прилипает к низу */
+    .event-transition-backward-forward-field:first-child {
+        margin-bottom: 20px !important; /* Расстояние между Анонсом и След. мероприятием */
+    }
+
+    /* 3. ОБЕРТКА (ROW) */
+    .transition-wrapper {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        width: 100% !important;
+        padding: 10px 15px !important; /* Внутренний отступ синего поля */
+        box-sizing: border-box;
+    }
+
+    /* АНОНСЫ: Иконка слева */
+    .event-transition-backward-forward-field:first-child .transition-wrapper {
+        justify-content: flex-start !important;
+        gap: 15px;
+    }
+
+    /* СЛЕД. МЕРОПРИЯТИЕ: Иконка справа */
+    .event-transition-backward-forward-field:last-child .transition-wrapper {
+        justify-content: flex-end !important;
+        margin-left: 0 !important;
+        gap: 15px;
+    }
+
+    /* 4. КНОПКИ И ТЕКСТ */
+    .event-transition-forward-btn,
+    .event-transition-backward-btn {
+        align-self: center !important;
+        flex-shrink: 0 !important;
+        position: static !important;
+        margin: 0 !important;
+    }
+
+    .event-transition-backward-title,
+    .event-transition-forward-title {
+        font-size: 24px !important;
+        width: auto !important;
+        text-align: left !important;
+    }
 }

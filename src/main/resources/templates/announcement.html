@@ -34,20 +34,20 @@
         </div>
     </div>
     <div class="event-transition-field">
+        <!-- БЛОК НАЗАД (Кнопка ПЕРЕД текстом) -->
         <div class="event-transition-backward-forward-field">
-            <div class="event-transition-backward-title">
-                <text>Анонсы</text>
-            </div>
-            <div class="event-transition-backward-btn">
-                <a th:href="@{/events#events}"></a>
+            <div class="transition-wrapper">
+                <a th:href="@{/events#events}" class="event-transition-backward-btn"></a>
+                <div class="event-transition-backward-title">Анонсы</div>
             </div>
         </div>
+
+        <!-- БЛОК ВПЕРЕД (Текст ПЕРЕД кнопкой) -->
         <div class="event-transition-backward-forward-field" th:if="${event.dateTime.isBefore(eventsSortedList.get(eventsSortedList.size() - 1).dateTime)}">
-            <div class="event-transition-forward-title">
-                <text>Следующее мероприятие</text>
-            </div>
-            <div class="event-transition-forward-btn">
-                <a th:href="|/event/${eventsSortedList.get(eventsSortedList.indexOf(event) + 1).id}|"></a>
+            <div class="transition-wrapper">
+                <div class="event-transition-forward-title">Следующее мероприятие</div>
+                <a th:href="|/event/${eventsSortedList.get(eventsSortedList.indexOf(event) + 1).id}|"
+                   class="event-transition-forward-btn"></a>
             </div>
         </div>
     </div>
