@@ -1,3 +1,6 @@
+/* ==========================================================
+   МЕНЮ (HEADER) — ОСНОВНЫЕ СТИЛИ
+   ========================================================== */
 .menu {
     background: #0F0F0C;
     width: 100% !important;
@@ -12,22 +15,53 @@
     box-sizing: border-box;
     z-index: 1000;
 }
-.menu_logo {
-    width: 109px;
-    height: 109px;
+
+/* ОБЕРТКА ЛОГОТИПА (КНОПКА-ССЫЛКА) */
+.logo-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    box-sizing: border-box;
+    height: 109px; /* Высота вровень с меню */
+    width: 109px;  /* Квадратная область */
     flex-shrink: 0;
-    background: url('../img/page_elements/logo/logo_footer.png') #0f0f0c 50% / cover no-repeat;
-    bottom: 1px;
     margin-right: 40px;
-    left: 12px;
-    z-index: 1;
+    /* Вместо border используем внутреннюю тень, чтобы размер не менялся ни на пиксель */
+    box-shadow: inset 0 0 0 1px transparent;
 }
+
+/* ЭФФЕКТЫ ЛОГОТИПА */
+.logo-link:hover {
+    /* Внутренняя белая рамка - она никогда не выйдет за границы */
+    box-shadow: inset 0 0 0 1px #FFFFFF;
+}
+
+.logo-link:active {
+    box-shadow: inset 0 0 0 1px #FFFFFF;
+    transform: translateY(2px); /* Анимация нажатия */
+}
+
+.menu_logo {
+    width: 109px; /* Возвращаем твой оригинальный размер */
+    height: 109px;
+    background: url('../img/page_elements/logo/logo_footer.png') #0f0f0c 50% / cover no-repeat;
+    z-index: 1;
+    /* Убираем все старые позиционирования, теперь всё центрирует .logo-link */
+    position: relative;
+    left: 0 !important;
+    bottom: 0 !important;
+}
+
+/* НАВИГАЦИЯ */
 .nav-wrapper {
     display: flex;
     align-items: center;
     width: 100%;
     justify-content: flex-start;
 }
+
 .group2 {
     display: flex;
     gap: 30px;
@@ -41,47 +75,45 @@
     margin-left: auto;
     flex-shrink: 0;
 }
+
+/* КНОПКИ МЕНЮ */
 .menu-button-about, .menu-button-history, .menu-button-biography, .menu-button-events {
     display: flex;
     height: 30px;
     flex-shrink: 0;
     color: #FFF;
-    font-family: Noah;
+    font-family: 'Noah', sans-serif;
     justify-content: center;
     align-items: center;
     font-size: 16px;
-    font-style: normal;
     font-weight: 700;
-    line-height: normal;
     text-transform: uppercase;
     z-index: 3;
     background: transparent;
+    transition: all 0.2s ease;
+    text-decoration: none !important;
 }
-.menu-button-about{
-    width: 60px;
-}
-.menu-button-history {
-    width: 84px;
-}
-.menu-button-biography {
-    width: 110px;
-}
-.menu-button-events {
-    width: 126px;
-}
-.menu-button-about:hover, .menu-button-history:hover, .menu-button-biography:hover, .menu-button-events:hover  {
+
+.menu-button-about { width: 60px; }
+.menu-button-history { width: 84px; }
+.menu-button-biography { width: 110px; }
+.menu-button-events { width: 126px; }
+
+.menu-button-about:hover, .menu-button-history:hover, .menu-button-biography:hover, .menu-button-events:hover {
     border: 1px solid #FFFFFF;
 }
+
 .menu-button-about:active, .menu-button-history:active, .menu-button-biography:active, .menu-button-events:active {
     border: 1px solid #FFFFFF;
     transform: translateY(2px);
 }
 
-/* Десктопная правка: скрываем бургер */
+/* ==========================================================
+   МОБИЛЬНАЯ ВЕРСИЯ (BURGER)
+   ========================================================== */
 .burger-menu { display: none; }
 
 @media (max-width: 991px) {
-    /* Кнопка бургера */
     .burger-menu {
         display: flex;
         flex-direction: column;
@@ -96,11 +128,10 @@
     }
     .burger-menu span { width: 100%; height: 3px; background: #FFF; transition: 0.3s; }
 
-    /* Выпадающее меню */
     .nav-wrapper {
-        display: none; /* Скрыто по умолчанию */
+        display: none;
         flex-direction: column;
-        position: fixed; /* На весь экран */
+        position: fixed;
         top: 109px;
         left: 0;
         width: 100%;
@@ -110,28 +141,15 @@
         padding-top: 20px;
     }
 
-    .nav-wrapper.active .to-main,
-    .nav-wrapper.active .group2 {
-        width: 100%;
-        margin: 0;
-    }
-
     .nav-wrapper.active { display: flex; }
 
-    /* Выстраиваем кнопки в колонку */
     .group2 {
         flex-direction: column;
-        position: static !important; /* Убираем absolute */
+        position: static !important;
         width: 100% !important;
         height: auto !important;
-        transform: none !important;
-        right: auto !important;
-        gap: 10px;
-    }
-
-    .to-main {
-        margin-right: 0;
-        text-align: center;
+        gap: 20px;
+        margin-left: 0;
     }
 
     .menu-button-about, .menu-button-history,
@@ -147,35 +165,12 @@
     .burger-menu.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
 }
 
-
-.a1:hover {
-    text-decoration: none;
-    color: #5A062A;
-}
-a {
-    position: relative;
-    z-index: 10;
-}
-a:hover{
-    text-decoration: none;
-    color: #FFF;
-}
-
-.group2 a,
-.to-main-btn,
-.menu-button-about,
-.menu-button-history,
-.menu-button-biography,
-.menu-button-events {
-    text-decoration: none !important;
-    font-family: 'Noah', sans-serif !important;
-}
-
-.group2 a:hover,
-.to-main-btn:hover {
-    text-decoration: none !important;
-}
-
+/* ССЫЛКИ И ЦВЕТА */
 .group2 a, .to-main-btn {
     color: #FFFFFF;
+    text-decoration: none !important;
 }
+
+.a1:hover { text-decoration: none; color: #5A062A; }
+a { position: relative; z-index: 10; text-decoration: none; }
+a:hover { color: #FFF; }
