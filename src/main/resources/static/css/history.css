@@ -666,25 +666,24 @@
         }
 
         /* ФИКС TYPE 1: Кнопка под текст */
-        .history-period-1st-type-main-group {
-            display: flex !important;
-            flex-direction: column !important;
-        }
+        .history-period-1st-type-main-group { display: flex !important; flex-direction: column !important; }
         .history-period-1st-type-text-field { order: 1 !important; }
         .history-period-1st-type-group1 { order: 2 !important; }
 
+        /* ФИКС TYPE 3: Фото между заголовком и текстом */
+        .history-period-3d-type-main { display: flex !important; flex-direction: column !important; }
+        .history-period-3d-type-main-tdp { order: 1 !important; } /* Контейнер с фото */
+        .history-period-3d-type-main-text-field { order: 2 !important; } /* Контейнер с текстом */
+
         /* ФИКС TYPE 4: Заголовок века НАВЕРХ */
-        .history-period-4th-type-main {
-            display: flex !important;
-            flex-direction: column !important;
-        }
+        .history-period-4th-type-main { display: flex !important; flex-direction: column !important; }
         .history-period-4th-type-main-td { order: 1 !important; }
         .history-period-4th-type-main-tp { order: 2 !important; }
 
         /* ЖЕСТКИЙ ФИКС ДЛЯ TYPE 2 И 3: Подтягиваем фото */
         .history-period-2nd-type-title, .history-period-2nd-type-title-century,
         .history-period-2nd-type-main-tdp, .history-period-2nd-type-line-2,
-        .history-period-3d-type-main-tdp, .history-period-3d-type-main-tdp-photo,
+        .history-period-3d-type-title-century, .history-period-3d-type-main-tdp,
         .history-period-3d-type-line-2 {
             margin-bottom: 0 !important;
             padding-bottom: 0 !important;
