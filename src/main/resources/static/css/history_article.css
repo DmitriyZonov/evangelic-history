@@ -103,7 +103,7 @@ wrapper {
     /* 1. ГЛОБАЛЬНЫЙ СБРОС (Изоляция от хедера) */
     .background-1-article,
     .background-2-history,
-    .wrapper *,
+    .wrapper > div:not([class*="header"]),
     [class^="article-"] {
         position: relative !important;
         left: 0 !important;
