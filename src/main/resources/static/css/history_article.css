@@ -134,14 +134,7 @@ wrapper {
 
     /* 3. ЗАГОЛОВОК ВЕКА (Перемещаем под фото и центрируем) */
     .article-title-text {
-        position: relative !important;
-        display: block !important;
-        padding: 20px 15px 10px 15px !important;
-        font-size: 42px !important;
-        text-align: center !important;
-        color: #BB1023 !important; /* Цвет изменен на красный для белого фона */
-        text-shadow: none !important;
-        font-weight: 900 !important;
+        display: none;
     }
 
     /* 4. СКРЫВАЕМ ДЕКОР */
