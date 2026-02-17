@@ -6,7 +6,7 @@
 <head>
   <th:block th:replace="fragments/header :: header-meta"></th:block>
 
-  <title data-th-text="${periodArticle.title}"></title>
+  <title data-th-text="${periodArticle.periodTitle}"></title>
   <link th:href="@{/css/history_article.css}" rel="stylesheet" />
 </head>
 <body>
@@ -15,13 +15,13 @@
   <div class="background-1-article">
     <div class="article-title-photo">
       <img th:src="${periodArticle.image}">
-      <div class="article-title-text" th:text="${periodArticle.period}"></div>
+      <div class="article-title-text" th:text="${periodArticle.centuryTitle}"></div>
       <div class="article-title-torn-edge"></div>
     </div>
   </div>
   <div class="background-2-history">
     <div class="article-title-field">
-      <div class="article-title" th:text="${periodArticle.title}"></div>
+      <div class="article-title" th:text="${periodArticle.periodTitle}"></div>
     </div>
     <div class="article-body" th:utext="${periodArticle.article}"></div>
   </div>

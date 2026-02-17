@@ -16,426 +16,116 @@
         <div class="history-title">
             <div class="history-title-line">
             </div>
-            <div class="history-title-title">
-                <text>История Евангельского движения в России</text>
-            </div>
-            <div class="history-title-under-title">
-                <text>Путешествие через ключевые этапы становления евангельского движения и его влияния на историю России.</text>
-            </div>
+            <div class="history-title-title" th:text="#{history.main.title}"></div>
+            <div class="history-title-under-title" th:text="#{history.main.under_title}"></div>
             <div class="history-title-photo-description">
                 <div class="history-title-photo-description-photo"></div>
-                <div class="history-title-photo-description-description">
-                    <p class="first-paragraph">Eвангельское движение в России имеет глубокие корни и развивалось в тесной связи с историей государства, его культурой и духовными исканиями. На протяжении веков верующие разных традиций оставляли заметный след в образовании, просветительстве, науке и общественной жизни. Эта страница помогает увидеть целостную картину: от ранних предпосылок и зарубежных влияний — до формирования самобытного евангельского движения, сыгравшего важную роль в истории страны.</p>
-                </div>
+                <div class="history-title-photo-description-description" th:utext="#{history.main.description}"></div>
             </div>
-            <div class="history-title-text-under-photo">
-                <text>Участники Всероссийского Съезда баптистов на фоне дома Е. И. Чертковой. В центре - председатель съезда В. Г. Павлов и В. А. Фетлер. Петербург, Васильевский остров. 1910 г.</text>
-            </div>
+            <div class="history-title-text-under-photo" th:utext="#{history.main.image_description}"></div>
         </div>
     </div>
     <div class="history-background-between"></div>
-        <div class="background-2-history">
-        <div class="history-period-1st-type">
-            <div class="history-period-1st-type-title-photo">
-                <div class="history-period-1st-type-title-photo-title">
-                    <text>XVI–XVIII вв.</text>
-                </div>
-                <div class="history-period-1st-type-title-photo-img">
-                    <img th:src="@{/img/page_elements/history/XVI-XVIII_centuries_photo.png}">
-                </div>
-            </div>
-            <div class="history-period-1st-type-photo-description">
-                <text>Иван Фёдоров за работой в первой русской печатне. Начало книгопечатания на Руси, 1564 год</text>
-            </div>
-            <div class="history-period-1st-type-main-group">
-                <div class="history-period-1st-type-group1">
-                    <div class="history-period-1st-type-line1"></div>
-                    <div class="history-period-1st-type-group1-title">
-                        <text>I. Подготовительный период</text>
-                    </div>
-                    <div class="history-period-1st-type-group1-text">
-                        <text>Этот период показывает, как протестанты XVI–XIX веков заложили духовные и культурные основы будущего евангельского движения, внося вклад в образование, печатное дело, науку и развитие России.</text>
-                    </div>
-                    <div class="history-period-1st-type-group1-line2"></div>
-                    <div class="history-period-1st-btn">
-                        <a class="biography-link" th:href="@{/history_article/1}" data-th-text="#{index.about}"></a>
-                    </div>
-                </div>
-                <div class="history-period-1st-type-text-field">
-                    <div class="history-period-1st-type-text">
-                        <p class="first-paragraph">Истоки евангельского движения в России уходят в XVI век, когда в страну приглашали протестантов — врачей, инженеров и печатников. Через них пришли идеи личной веры и доступной Библии. Печатное дело развивали Фёдоров, Миссенгейм и ранее Скорина. При Петре I протестанты внесли вклад в армию, науку и образование; особое значение имел Франц Лефорт.</p>
-                        <p class="history-p">XVIII–XIX веках лютеране, реформаты и меннониты способствовали развитию земледелия, промышленности и медицины. Среди выдающихся протестантов — Крузенштерн, Беллинсгаузен, Барклай-де-Толли, Даль, Грейг. Их труд и вера заложили духовные предпосылки будущего евангельского движения в России.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="history-background-between"></div>
-    <div class="background-2-history">
-        <div class="history-period-2nd-type">
-            <div class="history-period-2nd-type-title">
-                <text>Начало</text>
-            </div>
-            <div class="history-period-2nd-type-title-century">
-                <text>XIX в.</text>
-            </div>
-            <div class="history-period-2nd-type-main">
-                <div class="history-period-2nd-type-main-tdp">
-                    <div class="history-period-2nd-type-line1"></div>
-                    <div class="history-period-2nd-type-main-tdp-title">
-                        <text>II.Эпоха просвещения и предпосылки Евангельского движения.</text>
-                    </div>
-                    <div class="history-period-2nd-type-main-tdp-description">
-                        <text>Этот период показывает, как духовное просвещение, перевод Библии и первые миссионерские инициативы подготовили почву для зарождения евангельского движения в России.</text>
-                    </div>
-                    <div class="history-period-2nd-type-line-2"></div>
-                    <div class="history-period-2nd-type-title-photo-img">
-                        <img th:src="@{/img/page_elements/history/XIX_century_photo.png}">
-                    </div>
-                    <div class="history-period-2nd-type-main-tdp-text-under-photo">
-                        <text>Уникальное служение - книгоноши - простые люди, ставшие проводниками распространения Библии среди народа. </text>
-                    </div>
-                </div>
-                <div class="history-period-2nd-type-text-field">
-                    <div class="history-period-2nd-type-text">
-                        <p class="first-paragraph">Важной основой будущего евангельского движения стало основание Российского библейского общества в 1812 году. Под руководством князя Александра Голицына Общество перевело и распространило десятки тысяч экземпляров Священного Писания, включая первый русский Новый Завет (1821). Доступная Библия пробуждала личную веру и духовное чтение, что подготовило почву для роста евангельских идей.</p>
-                        <p class="history-p">В начале XIX века по приглашению Александра I в Забайкалье и Калмыкии работали миссии переводчиков Библии, создавшие первые очаги евангельского влияния среди бурят и калмыков. Их труд стал частью процесса духовного просвещения империи.</p>
-                        <p class="history-p">Во второй половине XIX века движение получило новый импульс среди Петербургской аристократии — вокруг В. А. Пашкова и его единомышленников, стремившихся к духовному обновлению общества.</p>
-                        <p class="history-p">Правовые реформы 1905 года легализовали свободу совести и открыли путь для легального существования и быстрого роста евангельских общин по всей стране.</p>
-                        <p class="history-p">Совокупность этих факторов показывает: евангельское движение в России XIX–начала XX века выросло не как чуждый элемент, а как самобытное явление, формировавшееся в русле отечественного просветительства, открытости к Библии и духовного поиска.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="history-period-2nd-btn">
-                <a class="biography-link" data-th-text="#{index.about}"></a>
-            </div>
-        </div>
-    </div>
-    <div class="history-background-between"></div>
-        <div class="background-2-history">
-            <div class="history-period-3d-type">
-                <div class="history-period-3d-type-title">
-                    <text>Вторая половина</text>
-                </div>
-                <div class="history-period-3d-type-title-century">
-                    <text>XIX в.</text>
-                </div>
-                <div class="history-period-3d-type-main">
-                    <div class="history-period-3d-type-main-text-field">
-                        <div class="history-period-3d-type-text">
-                            <p class="first-paragraph">Петербургское пробуждение второй половины XIX века стало поворотным моментом для русского евангельского движения. После мощного духовного подъёма, вдохновлённого служением Редстока, Пашкова и целого круга обращённых аристократов, по всей России начали возникать новые группы верующих, домашние собрания и инициативы социальной помощи.</p>
-                                <p class="history-p">Однако движение оставалось разрознённым и нуждалось в единой форме и координации. В начале XX века, особенно после указа 1905 года о свободе совести, евангельские общины получили возможность действовать открыто — строить молитвенные дома, регистрировать союзы, организовывать миссию и распространение духовной литературы.</p>
-                                <p class="history-p">Этот период стал этапом перехода: от вдохновляющего порыва петербургских салонов — к устойчивому всероссийскому движению.</p>
-                            <p class="history-p">На основании импульса, заданного пробуждением, евангельские христиане начали создавать союзы, учебные программы, воскресные школы, благотворительные проекты и издательские инициативы. Появились духовные лидеры, объединившие разные общины и давшие движению общенациональный голос.</p>
-                            <p class="history-p">Расширилось печатное служение: выходили журналы, гимнари, брошюры, укреплявшие веру и формировавшие богослужебную культуру. Социальная деятельность — посещение больниц, тюрем, помощь бедным — стала важной частью миссии.</p>
-                            <p class="history-p">Так русский евангельский протестантизм обрёл организационные формы, которые позволили ему развиваться, удерживать единство и оказывать влияние на духовную жизнь страны в последующие десятилетия.</p>
+    <div th:each="article : ${periodArticleList}">
+        <div class="history-background-between"></div>
+        <div th:block th:switch="${article.type}">
+            <div th:case="1" class="background-2-history">
+                <div class="history-period-1st-type">
+                    <div class="history-period-1st-type-title-photo">
+                        <div class="history-period-1st-type-title-photo-title" th:text="${article.centuryTitle}"></div>
+                        <div class="history-period-1st-type-title-photo-img">
+                            <img th:src="${article.titleImage}">
                         </div>
                     </div>
-                    <div class="history-period-3d-type-main-tdp">
-                        <div class="history-period-3d-type-line1"></div>
-                        <div class="history-period-3d-type-main-tdp-title">
-                            <text>III.Петербургское пробуждение (вторая половина XIX в.)</text>
+                    <div class="history-period-1st-type-photo-description" th:text="${article.titleImageDescription}"></div>
+                    <div class="history-period-1st-type-main-group">
+                        <div class="history-period-1st-type-group1">
+                            <div class="history-period-1st-type-line1"></div>
+                            <div class="history-period-1st-type-group1-title" th:text="${article.periodTitle}"></div>
+                            <div class="history-period-1st-type-group1-text" th:text="${article.periodDescription}"></div>
+                            <div class="history-period-1st-type-group1-line2"></div>
+                            <div class="history-period-1st-btn">
+                                <a class="biography-link" th:href="|/history_article/${article.id}|" data-th-text="#{index.about}"></a>
+                            </div>
                         </div>
-                        <div class="history-period-3d-type-main-tdp-description">
-                            <text>Этот период показывает, как духовное просвещение, перевод Библии и первые миссионерские инициативы подготовили почву для зарождения евангельского движения в России.</text>
-                        </div>
-                        <div class="history-period-3d-type-line-2"></div>
-                        <div class="history-period-3d-type-main-tdp-photo">
-                            <img th:src="@{/img/page_elements/history/2nd_half_XIX_century_photo.png}">
-                        </div>
-                        <div class="history-period-3d-type-main-tdp-text-under-photo">
-                            <text>Петербург. Россия. Барон М. М. Корф, лорд Редсток и полковник В. А. Пашков - основатели евангельского движения в России</text>
+                        <div class="history-period-1st-type-text-field">
+                            <div class="history-period-1st-type-text" th:utext="${article.shortArticle}"></div>
                         </div>
                     </div>
                 </div>
-                <div class="history-period-3d-btn">
-                    <a class="biography-link" data-th-text="#{index.about}"></a>
-                </div>
-        </div>
-    </div>
-    <div class="history-background-between"></div>
-    <div class="background-2-history">
-        <div class="history-period-4th-type">
-            <div class="history-period-4th-type-main">
-                <div class="history-period-4th-type-main-tp">
-                    <div class="history-period-4th-type-main-tp-photo">
-                        <img th:src="@{/img/page_elements/history/XIX-XX_centuries_photo.png}">
-                    </div>
-                    <div class="history-period-4th-type-main-tp-text-under-photo">
-                        <text>И. С. Проханов за работой по редактированию журнала “Христианин”</text>
-                    </div>
-                    <div class="history-period-4th-type-main-text-field">
-                        <div class="history-period-4th-type-text">
-                            <p class="first-paragraph">Иван Степанович Проханов (1869–1935) стал главным организатором русского евангельского движения начала XX века. Родился во Владикавказе, получил инженерное образование, пришёл к вере через личный духовный поиск.</p>
-                            <p class="history-p">После реформ 1905 года, давших свободу совести, евангельские общины нуждались в объединяющем лидере. Проханов смог собрать разрознённые группы и придать движению структуру. В 1909 году он основал Союз евангельских христиан — первую централизованную организацию, занимавшуюся миссией, обучением и социальным служением.</p>
-                            <p class="history-p">Он развивал издательскую работу, редактировал «Христианин» и «Утреннюю звезду», делая духовные тексты доступными для широкого круга людей.</p>
-                            <p class="history-p">Проханов написал более ста гимнов, формируя музыкальный язык российского евангельства.</p>
-                            <p class="history-p">Рядом с ним служили ключевые лидеры движения: М. М. Корф — пример верности, И. В. Каргель — богослов и автор «Изложения вероучения», В. А. Фетлер — один из самых энергичных миссионеров.</p>
-                            <p class="history-p">Проханов подчеркивал важность милосердия, просвещения и социального служения, видя в этом путь духовного обновления России.</p>
-                            <p class="history-p">Хотя он умер в эмиграции в 1935 году, его идеи и созданные структуры стали фундаментом для всех последующих евангельских конфессий России.</p>
+            </div>
+            <div th:case="2" class="background-2-history">
+                <div class="history-period-2nd-type">
+                    <div th:if="${article.partCenturyTitle != null}" class="history-period-2nd-type-title" th:text="${article.partCenturyTitle}"></div>
+                    <div class="history-period-2nd-type-title-century" th:text="${article.centuryTitle}"></div>
+                    <div class="history-period-2nd-type-main">
+                        <div class="history-period-2nd-type-main-tdp">
+                            <div class="history-period-2nd-type-line1"></div>
+                            <div class="history-period-2nd-type-main-tdp-title" th:text="${article.periodTitle}"></div>
+                            <div class="history-period-2nd-type-main-tdp-description" th:text="${article.periodDescription}"></div>
+                            <div class="history-period-2nd-type-line-2"></div>
+                            <div class="history-period-2nd-type-title-photo-img">
+                                <img th:src="${article.titleImage}">
+                            </div>
+                            <div class="history-period-2nd-type-main-tdp-text-under-photo" th:text="${article.titleImageDescription}"></div>
+                        </div>
+                        <div class="history-period-2nd-type-text-field">
+                            <div class="history-period-2nd-type-text" th:utext="${article.shortArticle}"></div>
                         </div>
                     </div>
-                </div>
-                <div class="history-period-4th-type-main-td">
-                    <div class="history-period-4th-type-main-td-title">
-                        <text>Конец&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Начало</text>
-                    </div>
-                    <div class="history-period-4th-type-main-td-title-century">
-                        <text>XIX-XX вв.</text>
-                    </div>
-                    <div class="history-period-4th-type-line1"></div>
-                    <div class="history-period-4th-type-main-description-title">
-                        <text>IV. Формирование организованного движения</text>
-                    </div>
-                    <div class="history-period-4th-type-main-description">
-                        <text>Этап становления организаций, которые объединили евангельских христиан, систематизировали их служение и задали направление развитию всего движения в XX веке.</text>
-                    </div>
-                    <div class="history-period-4th-type-line-2"></div>
-                </div>
-            </div>
-            <div class="history-period-4th-btn">
-                <a class="biography-link" data-th-text="#{index.about}"></a>
-            </div>
-        </div>
-    </div>
-    <div class="history-background-between"></div>
-    <div class="background-2-history">
-        <div class="history-period-1st-type">
-            <div class="history-period-1st-type-title-photo">
-                <div class="history-period-1st-type-title-photo-title">
-                    <text>1914-1918 гг.</text>
-                </div>
-                <div class="history-period-1st-type-title-photo-img">
-                    <img th:src="@{/img/page_elements/history/1914-1918_photo.png}">
-                </div>
-            </div>
-            <div class="history-period-1st-type-photo-description">
-                <text>В. А. Фетлер со своими гостями, «ночлежниками» из трущоб Петрограда, у ворот Дома Евангелия. 1914 г.</text>
-            </div>
-            <div class="history-period-1st-type-main-group">
-                <div class="history-period-1st-type-group1">
-                    <div class="history-period-1st-type-line1"></div>
-                    <div class="history-period-1st-type-group1-title">
-                        <text>V. Первая мировая война</text>
-                    </div>
-                    <div class="history-period-1st-type-group1-text">
-                        <text>Где вера становилась мужеством: евангельские христиане в окопах, тылу и спасении жизней.</text>
-                    </div>
-                    <div class="history-period-1st-type-group1-line2"></div>
-                    <div class="history-period-1st-btn">
-                        <a class="biography-link" data-th-text="#{index.about}"></a>
-                    </div>
-                </div>
-                <div class="history-period-1st-type-text-field">
-                    <div class="history-period-1st-type-text">
-                        <p class="first-paragraph">Во время Первой мировой войны евангельские христиане России, вместе со всем народом, встали на защиту Отечества. Их служение проявлялось не только на фронте, но и в активной благотворительности и духовной поддержке раненых и военнопленных.</p>
-                        <p class="history-p">Аристократки Ольга Перовская и Александра Пейкер превратили свой «Ольгин приют» в бесплатный лазарет Красного Креста на 75 коек. Здесь они ухаживали за ранеными, проводили ежедневные молитвы и пели гимны, укрепляя солдат в тяжелейших условиях войны.</p>
-                        <p class="history-p">Русские военнопленные в Германии получали духовную помощь благодаря служению Вильгельма Фетлера и Ивана Урлауба, которые передавали в лагеря Библии и евангельские брошюры. Многие пленные обрели веру и привезли её домой, основывая новые общины.</p>
-                        <p class="history-p">В Петрограде часть Дома Евангелия была превращена в лазарет и приют для раненых и беженцев. Верующие собирали пожертвования, ухаживали за ранеными и поддерживали их духовно, несмотря на давление властей и последующую высылку Фетлера.</p>
-                        <p class="history-p">Особую роль играл Павел Николай — основатель студенческого евангельского движения. Он служил молодёжи в условиях войны и революции, поддерживал студентов в Выборге, говорил о долге, мире и доверии Богу. Его слова укрепляли тех, кто находился между политическим давлением и военной угрозой.</p>
-                        <p class="history-p">Так евангельские общины в годы мировой войны стали центрами служения и милосердия: помогали раненым, поддерживали пленных, заботились о беженцах и сохраняли верность Богу и Родине в трагический период истории.</p>
+                    <div class="history-period-2nd-btn">
+                        <a class="biography-link" th:href="|/history_article/${article.id}|" data-th-text="#{index.about}"></a>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-    <div class="history-background-between"></div>
-    <div class="background-2-history">
-        <div class="history-period-2nd-type">
-            <div class="history-period-2nd-type-title-century">
-                <text>1917-1941 гг.</text>
-            </div>
-            <div class="history-period-2nd-type-main">
-                <div class="history-period-2nd-type-main-tdp">
-                    <div class="history-period-2nd-type-line1"></div>
-                    <div class="history-period-2nd-type-main-tdp-title">
-                        <text>VI. Революция, гонения и выживание. </text>
-                    </div>
-                    <div class="history-period-2nd-type-main-tdp-description">
-                        <text>История выживания и верности: от репрессий к единству народа в годы войны.</text>
-                    </div>
-                    <div class="history-period-2nd-type-line-2"></div>
-                    <div class="history-period-2nd-type-title-photo-img">
-                        <img th:src="@{/img/page_elements/history/1917-1941_photo.png}">
-                    </div>
-                    <div class="history-period-2nd-type-main-tdp-text-under-photo">
-                        <text>Дети участвуют в антирелигиозной демонстрации. 1920‑е</text>
-                    </div>
-                </div>
-                <div class="history-period-2nd-type-text-field">
-                    <div class="history-period-2nd-type-text">
-                        <p class="first-paragraph">После революции 1917 года была провозглашена свобода совести, и в 1920-е годы евангельские христиане развивали открытую миссию, проводили съезды и богослужения. Но уже к концу десятилетия начались ограничения: закрывались молитвенные дома, служителей арестовывали, религиозное обучение запрещалось.</p>
-                        <p class="history-p">В 1930-е годы развернулись массовые репрессии. Тысячи верующих прошли через тюрьмы и ссылки, общины вынужденно уходили в подполье. Большинство протестантских объединений потеряли структуры, но евангельские христиане смогли сохранить минимальную связь между церквями, собираясь по домам.</p>
-                        <p class="history-p">С началом Великой Отечественной войны политика резко изменилась. Гонения прекратились, антирелигиозная кампания была свернута, а власти допустили частичную легализацию общин.</p>
-                        <p class="history-p">Евангельские верующие ответили искренним патриотизмом: служили в армии и тылу, собирали пожертвования, молились за страну. Появились официальные обращения к верующим с призывом поддержать Родину.</p>
-                        <p class="history-p">Так возникла краткая «оттепель» — период, когда государство признало духовную роль религии, а церкви получили возможность выжить и укрепиться после лет преследований.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="history-period-2nd-btn">
-                <a class="biography-link" data-th-text="#{index.about}"></a>
-            </div>
-        </div>
-    </div>
-    <div class="history-background-between"></div>
-    <div class="background-2-history">
-        <div class="history-period-3d-type">
-            <div class="history-period-3d-type-title-century">
-                <text>1941-1945 гг.</text>
-            </div>
-            <div class="history-period-3d-type-main">
-                <div class="history-period-3d-type-main-text-field">
-                    <div class="history-period-3d-type-text">
-                        <p class="first-paragraph">После начала войны многие верующие были освобождены из лагерей и вернулись к служению. Руководители Союза евангельских христиан — Я. Жидков, А. Карев и другие — вновь объединили общины, поддержавшие дело защиты страны. Верующие по всей стране включились в помощь фронту: мужчины уходили на передовую, женщины шили обмундирование, собирали урожай и продукты для армии.</p>
-                        <p class="history-p">В 1943 году московская церковь объявила сбор средств на санитарный самолёт «Добрый самарянин». За несколько месяцев пожертвовали около 100 000 рублей — символ жертвенности верующих в тяжёлые годы войны. Позднее общины собирали помощь для освобождённых территорий и сирот погибших солдат.</p>
-                        <p class="history-p">Особенно ярко служение проявилось на фронте. Тысячи верующих воевали наравне с остальными, оставляя свидетельства веры и мужества.</p>
-                        <p class="history-p">Среди них — И.Мартыненко, прошедший всю войну и ставший служителем церкви; Иван Гнида, который обратился к Богу в окопах под Ленинградом; Герой Советского Союза И.И.Шаталин, совершивший 165 боевых вылетов; Д.С.Кияшко, отличившийся при форсировании Буга; В.Е.Логвиненко, будущий председатель ВСЕХБ; братья Мицкевичи.</p>
-                        <p class="history-p">Особое место занимает подвиг Антона Митрофановича Кецко — белорусского пресвитера, который во время оккупации спас 72 еврейских ребёнка, обеспечивая им укрытие и питание. За это он получил звание «Праведника народов мира».</p>
-                        <p class="history-p">Не менее значим подвиг Любови Гуторенко — партизанской медсестры, спасшей с поля боя более 120 бойцов, и Галины Чугуновой — наводчицы, прошедшей пешком до Берлина. Их жизнь соединила фронтовое служение Родине и глубокую христианскую веру.</p>
-                    </div>
-                </div>
-                <div class="history-period-3d-type-main-tdp">
-                    <div class="history-period-3d-type-line1"></div>
-                    <div class="history-period-3d-type-main-tdp-title">
-                        <text>VII. Великая Отечественная Война</text>
-                    </div>
-                    <div class="history-period-3d-type-main-tdp-description">
-                        <text>Вера, мужество и жертвенность, проявленные в годы войны, стали для евангельских христиан свидетельством любви к Родине и верности Христу даже в самых тяжёлых обстоятельствах.</text>
-                    </div>
-                    <div class="history-period-3d-type-line-2"></div>
-                    <div class="history-period-3d-type-main-tdp-photo">
-                        <img th:src="@{/img/page_elements/history/1941-1945_photo.png}">
-                    </div>
-                    <div class="history-period-3d-type-main-tdp-text-under-photo">
-                        <text>В.П.Федичкин (посередине), сын руководителя общины евангельских христиан в селе Елисеенки Смоленской области, во время воинской службы, Крым, Евпатория, 1940г. </text>
-                    </div>
-                </div>
-            </div>
-            <div class="history-period-3d-btn">
-                <a class="biography-link" data-th-text="#{index.about}"></a>
-            </div>
-        </div>
-    </div>
-    <div class="history-background-between"></div>
-    <div class="background-2-history">
-        <div class="history-period-4th-type">
-            <div class="history-period-4th-type-main">
-                <div class="history-period-4th-type-main-tp">
-                    <div class="history-period-4th-type-main-tp-photo">
-                        <img th:src="@{/img/page_elements/history/1945-1980_photo.png}">
-                    </div>
-                    <div class="history-period-4th-type-main-tp-text-under-photo">
-                        <text>Во время визита в СССР американский пианист Ван Клиберн посетил баптистскую церковь в Москве.</text>
-                    </div>
-                    <div class="history-period-4th-type-main-text-field">
-                        <div class="history-period-4th-type-text">
-                            <p class="first-paragraph">В 1944 году состоялся съезд, на котором был создан Всесоюзный совет евангельских христиан-баптистов (ВСЕХБ). Новая структура объединила довоенные союзы, пережившие репрессии, и стала легальной формой существования движения. В 1945 году к союзу присоединились пятидесятники, а позднее — дарбисты, трезвенники, часть молокан и меннониты. ВСЕХБ стал крупнейшим официальным объединением протестантов, обеспечив выживание общин под строгим государственным контролем.</p>
-                            <p class="history-p">С 1945 года начал выходить журнал «Братский вестник», который стал духовным центром братства, публикуя богословские материалы, новости общин и исторические очерки. Он поддерживал связи между верующими по всему СССР и формировал общую богословскую и музыкальную культуру.</p>
-                            <p class="history-p">В 1968 году открылись Заочные библейские курсы — первое легальное обучение служителей, существовавшее параллельно с подпольными инициативами адвентистов и части пятидесятников.</p>
-                            <p class="history-p">При Хрущёве (1958–1964) началась новая волна гонений: закрывались дома молитвы, запрещалось обучение детей, верующих судили как «тунеядцев». Многие общины ушли в подполье.</p>
-                            <p class="history-p">Несмотря на давление, движение росло: к 1970-м годам насчитывалось более 500 тысяч верующих. Жизнь общин оставалась активной: хоры, самиздат, взаимопомощь, молодёжные встречи.</p>
-                            <p class="history-p">В 1980-е годы Перестройка принесла смягчение политики, возврат храмов и начало богословского образования. Закон 1990 года «О свободе совести» открыл новый этап открытой церковной жизни.</p>
+            <div th:case="3" class="background-2-history">
+                <div class="history-period-3d-type">
+                    <div th:if="${article.partCenturyTitle != null}" class="history-period-3d-type-title" th:text="${article.partCenturyTitle}"></div>
+                    <div class="history-period-3d-type-title-century" th:text="${article.centuryTitle}"></div>
+                    <div class="history-period-3d-type-main">
+                        <div class="history-period-3d-type-main-text-field">
+                            <div class="history-period-3d-type-text" th:utext="${article.shortArticle}"></div>
+                        </div>
+                        <div class="history-period-3d-type-main-tdp">
+                            <div class="history-period-3d-type-line1"></div>
+                            <div class="history-period-3d-type-main-tdp-title" th:text="${article.periodTitle}"></div>
+                            <div class="history-period-3d-type-main-tdp-description" th:text="${article.periodDescription}"></div>
+                            <div class="history-period-3d-type-line-2"></div>
+                            <div class="history-period-3d-type-main-tdp-photo">
+                                <img th:src="${article.titleImage}">
+                            </div>
+                            <div class="history-period-3d-type-main-tdp-text-under-photo" th:text="${article.titleImageDescription}"></div>
                         </div>
                     </div>
-                </div>
-                <div class="history-period-4th-type-main-td">
-                    <div class="history-period-4th-type-main-td-title-century">
-                        <text>1945-1980-е</text>
-                    </div>
-                    <div class="history-period-4th-type-line1"></div>
-                    <div class="history-period-4th-type-main-description-title">
-                        <text>VIII. Послевоенное возрождение под контролем.</text>
-                    </div>
-                    <div class="history-period-4th-type-main-description">
-                        <text>Послевоенное объединение и жизнь под государственным надзором</text>
-                    </div>
-                    <div class="history-period-4th-type-line-2"></div>
-                </div>
-            </div>
-            <div class="history-period-4th-btn">
-                <a class="biography-link" data-th-text="#{index.about}"></a>
-            </div>
-        </div>
-    </div>
-    <div class="history-background-between"></div>
-    <div class="background-2-history">
-        <div class="history-period-1st-type">
-            <div class="history-period-1st-type-title-photo">
-                <div class="history-period-1st-type-title-photo-title">
-                    <text>1980-1990-е</text>
-                </div>
-                <div class="history-period-1st-type-title-photo-img">
-                    <img th:src="@{/img/page_elements/history/1980-1990_photo.png}">
-                </div>
-            </div>
-            <div class="history-period-1st-type-photo-description">
-                <text>Президиум ВСЕХБ 1985 год.</text>
-            </div>
-            <div class="history-period-1st-type-main-group">
-                <div class="history-period-1st-type-group1">
-                    <div class="history-period-1st-type-line1"></div>
-                    <div class="history-period-1st-type-group1-title">
-                        <text>IX. Перестройка и возрождение</text>
-                    </div>
-                    <div class="history-period-1st-type-group1-text">
-                        <text>Открытая дверь свободы: как евангельские церкви вышли из подполья и начали активное служение стране</text>
-                    </div>
-                    <div class="history-period-1st-type-group1-line2"></div>
-                    <div class="history-period-1st-btn">
-                        <a class="biography-link" data-th-text="#{index.about}"></a>
-                    </div>
-                </div>
-                <div class="history-period-1st-type-text-field">
-                    <div class="history-period-1st-type-text">
-                        <p class="first-paragraph">Перестройка 1980-х стала поворотным моментом для евангельских христиан. К 1988 году, на фоне празднования 1000-летия Крещения Руси, государство признало роль церкви и ослабило контроль: упростилась регистрация общин, начали возвращать храмы, верующим позволили открыто проповедовать.</p>
-                        <p class="history-p">С конца 1980-х появились первые семинарии и институты (Одесса, Белореченск, Минск), начался рост богословского образования. В 1990 году закон «О свободе совести» открыл эпоху легального, публичного существования евангельского движения.</p>
-                        <p class="history-p">Для общин начался новый этап: от выживания — к развитию. Церкви занялись евангелизацией, основанием новых общин, распространением духовной литературы. Быстро выросли служения милосердия: помощь нуждающимся, работа в тюрьмах, программы для нарко- и алкозависимых, детские христианские лагеря.</p>
-                        <p class="history-p">Евангельские христиане всё яснее осознавали своё место в духовной истории страны. Началось активное созидательное служение, межцерковное сотрудничество и вклад в духовное возрождение общества.</p>
+                    <div class="history-period-3d-btn">
+                        <a class="biography-link" th:href="|/history_article/${article.id}|" data-th-text="#{index.about}"></a>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-    <div class="history-background-between"></div>
-    <div class="background-2-history">
-        <div class="history-period-2nd-type">
-            <div class="history-period-2nd-type-title-century">
-                <text>1990-е -2020-е</text>
-            </div>
-            <div class="history-period-2nd-type-main">
-                <div class="history-period-2nd-type-main-tdp">
-                    <div class="history-period-2nd-type-line1"></div>
-                    <div class="history-period-2nd-type-main-tdp-title">
-                        <text>X. Современность</text>
+            <div th:case="4" class="background-2-history">
+                <div class="history-period-4th-type">
+                    <div class="history-period-4th-type-main">
+                        <div class="history-period-4th-type-main-tp">
+                            <div class="history-period-4th-type-main-tp-photo">
+                                <img th:src="${article.titleImage}">
+                            </div>
+                            <div class="history-period-4th-type-main-tp-text-under-photo" th:text="${article.titleImageDescription}"></div>
+                            <div class="history-period-4th-type-main-text-field">
+                                <div class="history-period-4th-type-text" th:utext="${article.shortArticle}"></div>
+                            </div>
+                        </div>
+                        <div class="history-period-4th-type-main-td">
+                            <div class="history-period-4th-type-main-td-title-century" th:text="${article.centuryTitle}"></div>
+                            <div class="history-period-4th-type-line1"></div>
+                            <div class="history-period-4th-type-main-description-title" th:text="${article.periodTitle}"></div>
+                            <div class="history-period-4th-type-main-description" th:text="${article.periodDescription}"></div>
+                            <div class="history-period-4th-type-line-2"></div>
+                        </div>
                     </div>
-                    <div class="history-period-2nd-type-main-tdp-description">
-                        <text>Современное осмысление и развитие Евангельские христиане изучают своё наследие и продолжают служить обществу, сохраняя верность вере и укрепляя духовную идентичность.</text>
-                    </div>
-                    <div class="history-period-2nd-type-line-2"></div>
-                    <div class="history-period-2nd-type-title-photo-img">
-                        <img th:src="@{/img/page_elements/history/1990-2000_photo.png}">
-                    </div>
-                    <div class="history-period-2nd-type-main-tdp-text-under-photo">
-                        <text>Ежегодное Единое богослужение Евангельских Христиан России, 26 октября 2025 г.</text>
-                    </div>
-                </div>
-                <div class="history-period-2nd-type-text-field">
-                    <div class="history-period-2nd-type-text">
-                        <p class="first-paragraph">Сегодня евангельские христиане активно осмысливают своё прошлое — исследуют историю, подвиги и служение предыдущих поколений. Это укрепляет духовную идентичность, формирует зрелое богословие и помогает строить служение, отвечающее вызовам современного общества.</p>
-                        <p class="history-p">В Калининградской области действуют ключевые объединения русского протестантизма:</p>
-                        <ul class="history-ul">
-                            <li>ЕХЦ «Слово жизни»</li>
-                            <li>Церковь ЕХБ «Церковь мира»</li>
-                            <li>«Еммануил» (ХВЕ)</li>
-                            <li>Адвентисты седьмого дня</li>
-                        </ul>
-                        <p class="history-p">На выставке представлены баннеры, знакомящие с историей партнёров проекта — евангельских общин региона. Изучение истории протестантов через архивы, судьбы людей и военные испытания разрушает стереотипы и учит уважению, толерантности и диалогу.</p>
-                        <p class="history-p">Евангельские христиане были и остаются полноправными участниками российской истории, внося значимый духовный и патриотический вклад в жизнь страны.</p>
+                    <div class="history-period-4th-btn">
+                        <a class="biography-link" th:href="|/history_article/${article.id}|" data-th-text="#{index.about}"></a>
                     </div>
                 </div>
-            </div>
-            <div class="history-period-2nd-btn">
-                <a class="biography-link" data-th-text="#{index.about}"></a>
             </div>
         </div>
     </div>

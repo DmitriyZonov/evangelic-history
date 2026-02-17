@@ -3,6 +3,7 @@ package org.example.evangelhistory.controllers;
 import org.example.evangelhistory.entities.Hero;
 import org.example.evangelhistory.services.EventService;
 import org.example.evangelhistory.services.HeroService;
+import org.example.evangelhistory.services.PeriodArticleService;
 import org.example.evangelhistory.services.PhotoStorageService;
 import org.example.evangelhistory.utils.GetDateForAnnouncement;
 import org.example.evangelhistory.utils.GetHeroesByCentury;
@@ -21,12 +22,14 @@ public class HomeController {
     private final HeroService heroService;
     private final EventService eventService;
     private final PhotoStorageService photoStorageService;
+    private final PeriodArticleService periodArticleService;
 
 
-    public HomeController (HeroService heroService, EventService eventService, PhotoStorageService photoStorageService) {
+    public HomeController (HeroService heroService, EventService eventService, PhotoStorageService photoStorageService, PeriodArticleService periodArticleService) {
         this.heroService = heroService;
         this.eventService = eventService;
         this.photoStorageService = photoStorageService;
+        this.periodArticleService = periodArticleService;
     }
 
     @GetMapping("/about")
@@ -41,7 +44,8 @@ public class HomeController {
         return "biographies";
     }
     @GetMapping("/history")
-    public String toHistoryPage() {
+    public String toHistoryPage(Model model) {
+        model.addAttribute("periodArticleList", periodArticleService.findAll());
         return "history";
     }
     @GetMapping("/events")

@@ -31,9 +31,12 @@
         <!-- Обертка для всех ссылок, которые должны скрываться -->
         <div class="nav-wrapper" id="navLinks">
             <div class="to-main" th:unless="${#httpServletRequest.requestURI == '/' or #httpServletRequest.requestURI == '/index'}">
+
                 <!-- Если это страница биографии (например, /biography/1), показываем "Назад" -->
-                <a th:if="${#httpServletRequest.requestURI.contains('/biography/')or #httpServletRequest.requestURI.contains('/history_article/')}"
+                <a th:if="${#httpServletRequest.requestURI.contains('/biography/')}"
                    th:href="@{/biographies}" class="back-btn" th:text="#{header.back}">Назад</a>
+                <a th:if="${#httpServletRequest.requestURI.contains('/history_article/')}"
+                   th:href="@{/history}" class="back-btn" th:text="#{header.back}">Назад</a>
 
                 <!-- В остальных случаях (кроме индекса) показываем "На главную" -->
                 <a th:unless="${#httpServletRequest.requestURI.contains('/biography/') or #httpServletRequest.requestURI.contains('/history_article/')}"
