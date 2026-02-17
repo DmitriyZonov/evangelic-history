@@ -18,17 +18,17 @@ public class WebConfig implements WebMvcConfigurer {
     }
 
     @Override
-    public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        // 1. Создаем стратегию хэширования содержимого (Fingerprinting)
+    public void addResourceHandlers(org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry registry) {
         org.springframework.web.servlet.resource.VersionResourceResolver versionResolver =
                 new org.springframework.web.servlet.resource.VersionResourceResolver()
                         .addVersionStrategy(new org.springframework.web.servlet.resource.ContentVersionStrategy(), "/**");
 
-        // 2. Регистрируем обработчик для всей статики
-        registry.addResourceHandler("/**")
-                .addResourceLocations("classpath:/static/")
-                .resourceChain(true) // Включаем цепочку ресурсов
-                .addResolver(versionResolver) // Сначала ищем версию (хэш)
-                .addResolver(new org.springframework.web.servlet.resource.PathResourceResolver()); // Затем ищем физический файл
+        // Явно прописываем папки, чтобы Spring не путался
+        registry.addResourceHandler("/css/**", "/js/**", "/img/**", "/uploads/**")
+                .addResourceLocations("classpath:/static/css/", "classpath:/static/js/", "classpath:/static/img/", "classpath:/static/uploads/")
+                .setCachePeriod(3600) // Кэш на час для надежности
+                .resourceChain(true)
+                .addResolver(versionResolver)
+                .addResolver(new org.springframework.web.servlet.resource.PathResourceResolver());
     }
 }
