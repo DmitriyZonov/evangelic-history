@@ -741,3 +741,147 @@
         .history-background-between { height: 10px !important; }
         .history-title { top: 10px !important; }
     }
+    @media screen and (min-width: 769px) and (max-width: 1280px) {
+        /* 1. ГЛОБАЛЬНЫЙ СБРОС И ИЗОЛЯЦИЯ ОТ HEADER */
+        .background-1-history *,
+        .background-2-history *,
+        [class^="history-"] {
+            position: relative !important;
+            left: 0 !important;
+            right: 0 !important;
+            top: 0 !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
+            transform: none !important;
+            width: 100% !important;
+            max-width: 100% !important;
+            min-width: 0 !important;
+            box-sizing: border-box !important;
+            display: block !important;
+            height: auto !important;
+        }
+
+        /* 2. УДАЛЕНИЕ СТАРЫХ ЛИНИЙ И ЦВЕТНЫХ ПОЛЕЙ */
+        [class*="line"], [class*="line1"], [class*="line2"], [class*="line-2"], .history-title-line {
+            display: none !important;
+        }
+
+        /* 3. ЧИСТКА ТОЛЬКО ДЛЯ ПЕРИОДОВ (2, 3, 4 ТИПЫ) */
+        .background-2-history [class*="-under-photo"],
+        .background-2-history [class*="-tdp-title"],
+        .background-2-history [class*="-tdp-description"],
+        .background-2-history [class*="-group1-title"],
+        .background-2-history [class*="-group1-text"],
+        .background-2-history [class*="-description-title"],
+        .background-2-history [class*="-description"],
+        .background-2-history [class*="-photo-description"] {
+            display: none !important;
+        }
+
+        /* 4. СПЕЦИФИЧЕСКИЙ ФИКС ДЛЯ ПЕРВОГО БЛОКА */
+        .history-title-text-under-photo { display: none !important; }
+
+        /* 5. РАЗДЕЛИТЕЛЬНАЯ ЛИНИЯ МЕЖДУ ПЕРИОДАМИ */
+        .background-2-history::before {
+            content: "";
+            display: block;
+            width: 96%;
+            height: 1px;
+            background: #B5A898;
+            margin: 40px auto 20px auto;
+            opacity: 0.5;
+        }
+
+        /* 6. КОРРЕКЦИЯ ПОРЯДКА И ОТСТУПОВ */
+        .background-1-history, .background-2-history {
+            padding: 0 20px !important; /* Чуть больше отступ от краев на планшете */
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;
+            box-sizing: border-box !important;
+        }
+
+        [class*="-type"], [class*="-main"], [class*="-group"],
+        [class*="-tdp"], [class*="-tp"], [class*="-td"], [class*="-text-field"] {
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;
+            text-align: center !important;
+            padding: 0 !important;
+            margin: 0 !important;
+        }
+
+        /* ПОРЯДОК: СОБЛЮДАЕМ ТВОЮ ЛОГИКУ */
+        .history-period-1st-type-main-group { display: flex !important; flex-direction: column !important; }
+        .history-period-1st-type-text-field { order: 1 !important; }
+        .history-period-1st-type-group1 { order: 2 !important; }
+
+        .history-period-3d-type-main { display: flex !important; flex-direction: column !important; }
+        .history-period-3d-type-main-tdp { order: 1 !important; }
+        .history-period-3d-type-main-text-field { order: 2 !important; }
+
+        .history-period-4th-type-main { display: flex !important; flex-direction: column !important; }
+        .history-period-4th-type-main-td { order: 1 !important; }
+        .history-period-4th-type-main-tp { order: 2 !important; }
+
+        /* ЖЕСТКИЙ ФИКС ДЛЯ TYPE 2 И 3: Подтягиваем фото */
+        .history-period-2nd-type-title, .history-period-2nd-type-title-century,
+        .history-period-2nd-type-main-tdp, .history-period-2nd-type-line-2,
+        .history-period-3d-type-title-century, .history-period-3d-type-main-tdp,
+        .history-period-3d-type-line-2 {
+            margin-bottom: 0 !important;
+            padding-bottom: 0 !important;
+            height: auto !important;
+            top: 0 !important;
+        }
+
+        [class*="-century"], [class*="-main-tdp"], [class*="-main-td"], [class*="-main-tp"] {
+            margin-bottom: 0 !important;
+            margin-top: 0 !important;
+            padding-bottom: 0 !important;
+            top: 0 !important;
+        }
+
+        /* 7. КРУПНЫЕ ЗАГОЛОВКИ (ВЕКА) - ДЛЯ ПЛАНШЕТА КРУПНЕЕ */
+        .history-title-title,
+        [class*="-century"],
+        .history-period-1st-type-title-photo-title {
+            font-size: 80px !important;
+            line-height: 1.1 !important;
+            margin: 20px auto !important;
+            font-weight: 900 !important;
+            color: #BB1023 !important;
+            width: 100% !important;
+        }
+
+        /* 8. КАРТИНКИ - МАКСИМАЛЬНАЯ ШИРИНА */
+        img, [class*="-photo"], [class*="-img"] {
+            width: 100% !important;
+            max-width: 1000px !important; /* Увеличили для планшета */
+            height: auto !important;
+            margin: 10px auto 20px auto !important;
+        }
+
+        /* 9. ТЕКСТ СТАТЕЙ - ДВЕ КОЛОНКИ */
+        [class*="-text"] {
+            columns: 2 !important; /* На планшете 2 колонки смотрятся лучше */
+            column-gap: 40px !important;
+            text-indent: 0 !important;
+            text-align: justify !important;
+            font-size: 22px !important;
+            line-height: 1.4 !important;
+            margin-bottom: 20px !important;
+            width: 100% !important;
+        }
+
+        /* 10. КНОПКИ */
+        [class*="-btn"] {
+            display: flex !important;
+            width: 220px !important;
+            margin: 10px auto 40px auto !important;
+        }
+
+        /* Схлопывание технических отступов */
+        .history-background-between { height: 30px !important; }
+        .history-title { top: 30px !important; }
+    }

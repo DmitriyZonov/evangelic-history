@@ -29,6 +29,7 @@ public class Event {
     private String description;
     private String titleImage;
     private String announceImage;
+    private String videoLink;
     @Column(nullable = false)
     private boolean isDone;
 
