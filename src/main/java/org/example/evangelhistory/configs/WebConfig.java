@@ -3,6 +3,7 @@ package org.example.evangelhistory.configs;
 import org.jetbrains.annotations.NotNull;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
@@ -10,6 +11,7 @@ import org.springframework.web.servlet.resource.ResourceUrlEncodingFilter;
 import org.springframework.web.servlet.resource.VersionResourceResolver;
 
 @Configuration
+@EnableWebMvc
 public class WebConfig implements WebMvcConfigurer {
 
     @Override
@@ -20,15 +22,21 @@ public class WebConfig implements WebMvcConfigurer {
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry.addResourceHandler("/**") // Любой запрос, начинающийся с /css/, /js/ и т.д.
-                .addResourceLocations("classpath:/static/") // Искать в корне папки static
+        registry.addResourceHandler("/css/**", "/js/**", "/img/**", "/fonts/**")
+                .addResourceLocations(
+                        "classpath:/static/css/",
+                        "classpath:/static/js/",
+                        "classpath:/static/img/",
+                        "classpath:/static/fonts/"
+                )
                 .setCachePeriod(3600)
                 .resourceChain(true)
                 .addResolver(new VersionResourceResolver()
                         .addContentVersionStrategy("/**"));
     }
+
     @Bean
-    public static ResourceUrlEncodingFilter resourceUrlEncodingFilter() {
+    public ResourceUrlEncodingFilter resourceUrlEncodingFilter() {
         return new ResourceUrlEncodingFilter();
     }
 }
