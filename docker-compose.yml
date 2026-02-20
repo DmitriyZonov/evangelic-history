@@ -9,14 +9,12 @@ services:
       - /var/www/evangelic-history/uploads:/app/uploads
     depends_on:
       - db
-    restart: always # Если база не успеет, Spring упадет, и Docker его тут же поднимет снова
+    restart: always
     environment:
       SPRING_PROFILES_ACTIVE: prod
-      SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/evangelical_history?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC
+      SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/evangelical_history?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
       SPRING_DATASOURCE_USERNAME: root
       SPRING_DATASOURCE_PASSWORD: ZoNoV_DM1
-    networks:
-      - app-network
 
   db:
     image: mysql:8.0
@@ -28,12 +26,6 @@ services:
       MYSQL_DATABASE: evangelical_history
     volumes:
       - db_data:/var/lib/mysql/
-    networks:
-      - app-network
 
 volumes:
   db_data:
-
-networks:
-  app-network:
-    driver: bridge
