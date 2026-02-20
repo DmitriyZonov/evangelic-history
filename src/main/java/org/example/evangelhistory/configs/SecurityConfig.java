@@ -21,6 +21,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     @Lazy
     UserService userService;
+
     @Bean
     public BCryptPasswordEncoder bCryptPasswordEncoder(){
         return new BCryptPasswordEncoder();
@@ -38,6 +39,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/registration").not().fullyAuthenticated()
                 .antMatchers("/static/**").permitAll()
                 .antMatchers("/resources/**").permitAll()
+                .antMatchers("/css/**", "/js/**", "/img/**", "/fonts/**").permitAll()
                 .antMatchers("/**").permitAll()
                 .anyRequest().authenticated().and()
                 .formLogin().loginPage("/login")
@@ -47,7 +49,16 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     public void configure(WebSecurity web) throws Exception {
-        web.ignoring().antMatchers("/favicon.ico", "/error");
+        web.ignoring().antMatchers(
+                "/css/**",
+                "/js/**",
+                "/img/**",
+                "/fonts/**",
+                "/static/**",
+                "/resources/**",
+                "/favicon.ico",
+                "/error"
+        );
     }
 
     @Autowired
