@@ -8,17 +8,15 @@ services:
     volumes:
       - /var/www/evangelic-history/uploads:/app/uploads
     depends_on:
-      db:
-        condition: service_healthy # Ждем, пока база скажет "я готова"
+      - db
+    restart: always # Если база не успеет, Spring упадет, и Docker его тут же поднимет снова
     environment:
       SPRING_PROFILES_ACTIVE: prod
-      # Используем имя сервиса 'db' как хост
       SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/evangelical_history?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC
       SPRING_DATASOURCE_USERNAME: root
       SPRING_DATASOURCE_PASSWORD: ZoNoV_DM1
     networks:
       - app-network
-    restart: on-failure # Перезагрузит приложение, если оно все же упадет
 
   db:
     image: mysql:8.0
@@ -32,11 +30,6 @@ services:
       - db_data:/var/lib/mysql/
     networks:
       - app-network
-    healthcheck:
-      test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost", "-u", "root", "-pZoNoV_DM1"]
-      interval: 10s
-      timeout: 5s
-      retries: 10
 
 volumes:
   db_data:
