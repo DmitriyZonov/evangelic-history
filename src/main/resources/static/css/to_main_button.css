@@ -1,0 +1,52 @@
+.to-main, .back {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    height: 40px;
+    flex-shrink: 0;
+    z-index: 2;
+}
+
+.to-main-btn, .back-btn {
+    display: flex;
+    width: 130px;
+    height: 30px;
+    flex-shrink: 0;
+    color: #FFF !important;
+    font-family: 'Noah', sans-serif !important;
+    text-decoration: none !important;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    background: transparent;
+    transition: 0.2s;
+    border: 1px solid transparent;
+}
+
+.to-main-btn:hover, .back-btn:hover {
+    border: 1px solid #FFFFFF;
+    text-decoration: none !important;
+    color: #FFF !important;
+}
+
+.to-main-btn:active, .back-btn:active {
+    border: 1px solid #FFFFFF;
+    transform: translateY(2px);
+}
+
+
+@media (max-width: 991px) {
+    .to-main, .back {
+        margin-left: 0;
+        margin-bottom: 20px;
+        width: 100%;
+    }
+
+    .to-main-btn, .back-btn {
+        width: 80%;
+        height: 45px;
+    }
+}

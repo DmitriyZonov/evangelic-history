@@ -20,16 +20,9 @@ public class WebConfig implements WebMvcConfigurer {
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry.addResourceHandler("/css/**", "/js/**", "/img/**", "/fonts/**")
-                .addResourceLocations("classpath:/static/css/", "classpath:/static/js/", "classpath:/static/img/", "classpath:/static/fonts/")
+        registry.addResourceHandler("/**") // Любой запрос, начинающийся с /css/, /js/ и т.д.
+                .addResourceLocations("classpath:/static/") // Искать в корне папки static
                 .setCachePeriod(3600)
-                .resourceChain(true)
-                .addResolver(new VersionResourceResolver()
-                        .addContentVersionStrategy("/**"));
-
-        // Для фавикона отдельно, так как он обычно в корне static
-        registry.addResourceHandler("/favicon.ico")
-                .addResourceLocations("classpath:/static/")
                 .resourceChain(true)
                 .addResolver(new VersionResourceResolver()
                         .addContentVersionStrategy("/**"));
