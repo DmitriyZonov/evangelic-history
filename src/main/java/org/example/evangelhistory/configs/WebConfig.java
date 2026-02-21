@@ -22,17 +22,27 @@ public class WebConfig implements WebMvcConfigurer {
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry.addResourceHandler("/css/**", "/js/**", "/img/**", "/fonts/**")
-                .addResourceLocations(
-                        "classpath:/static/css/",
-                        "classpath:/static/js/",
-                        "classpath:/static/img/",
-                        "classpath:/static/fonts/"
-                )
-                .setCachePeriod(3600)
+        registry.addResourceHandler("/css/**")
+                .addResourceLocations("classpath:/static/css/")
+                .setCachePeriod(604800)
                 .resourceChain(true)
-                .addResolver(new VersionResourceResolver()
-                        .addContentVersionStrategy("/**"));
+                .addResolver(new VersionResourceResolver().addContentVersionStrategy("/**"));
+
+        registry.addResourceHandler("/js/**")
+                .addResourceLocations("classpath:/static/js/")
+                .setCachePeriod(604800)
+                .resourceChain(true)
+                .addResolver(new VersionResourceResolver().addContentVersionStrategy("/**"));
+
+        registry.addResourceHandler("/img/**")
+                .addResourceLocations("classpath:/static/img/")
+                .setCachePeriod(604800)
+                .resourceChain(true);
+
+        registry.addResourceHandler("/fonts/**")
+                .addResourceLocations("classpath:/static/fonts/")
+                .setCachePeriod(604800)
+                .resourceChain(true);
     }
 
     @Bean
