@@ -147,22 +147,22 @@
                     <version>1.12.1</version>
                     <executions>
                         <execution>
+                            <id>install node and npm</id>
+                            <goals>
+                                <goal>install-node-and-npm</goal>
+                            </goals>
+                            <configuration>
+                                <nodeVersion>v20.20.0</nodeVersion>
+                                <npmVersion>10.8.2</npmVersion>
+                            </configuration>
+                        </execution>
+                        <execution>
                             <id>npm install</id>
                             <goals>
                                 <goal>npm</goal>
                             </goals>
                             <configuration>
                                 <arguments>install</arguments>
-                                <workingDirectory>${project.basedir}/src/main/frontend</workingDirectory>
-                            </configuration>
-                        </execution>
-                        <execution>
-                            <id>npm build</id>
-                            <goals>
-                                <goal>npm</goal>
-                            </goals>
-                            <configuration>
-                                <arguments>run build</arguments>
                                 <workingDirectory>${project.basedir}/src/main/frontend</workingDirectory>
                             </configuration>
                         </execution>
