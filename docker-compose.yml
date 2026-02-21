@@ -8,24 +8,35 @@ services:
     volumes:
       - /var/www/evangelic-history/uploads:/app/uploads
     depends_on:
-      - db
+      db:
+        condition: service_healthy
     restart: always
     environment:
       SPRING_PROFILES_ACTIVE: prod
       SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/evangelical_history?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
       SPRING_DATASOURCE_USERNAME: root
       SPRING_DATASOURCE_PASSWORD: ZoNoV_DM1
+    networks:
+      - appnet
 
   db:
     image: mysql:8.0
-    container_name: mysql_db
-    ports:
-      - "3306:3306"
+    restart: always
     environment:
       MYSQL_ROOT_PASSWORD: ZoNoV_DM1
       MYSQL_DATABASE: evangelical_history
     volumes:
-      - db_data:/var/lib/mysql/
+      - db_data:/var/lib/mysql
+    networks:
+      - appnet
+    healthcheck:
+      test: ["CMD", "mysqladmin" ,"-uroot","-pZoNoV_DM1","ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
 
 volumes:
   db_data:
+
+networks:
+  appnet:
