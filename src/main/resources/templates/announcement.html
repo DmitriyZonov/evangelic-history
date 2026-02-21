@@ -7,8 +7,8 @@
     <th:block th:replace="fragments/header :: header-meta"></th:block>
 
     <title data-th-text="${event.title}"></title>
-    <link th:href="@{/css/event.css}" rel="stylesheet" />
-    <link th:href="@{/css/announcement.css}" rel="stylesheet" />
+    <link th:href="@{${manifest['event.css']}}" rel="stylesheet" />
+    <link th:href="@{${manifest['announcement.css']}}" rel="stylesheet" />
 </head>
 <body>
 <div class="wrapper">

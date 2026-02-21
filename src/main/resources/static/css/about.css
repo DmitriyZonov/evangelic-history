@@ -379,7 +379,7 @@
 
 .rutube-icon { background-image: url("../img/page_elements/rutube_contacts_icon.svg");}
 .vk-icon { background-image: url("../img/page_elements/vk_contacts_icon.svg");
-    margin-bottom: 15px; !important;}
+    margin-bottom: 15px !important;}
 
 .rutube-icon:hover, .vk-icon:hover {
     transform: translateY(-5px);

@@ -35,9 +35,12 @@
         </div>
     </footer>
 
+    <!-- JS через CDN оставляем как есть -->
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-    <script th:src="@{/js/up-button.js}"></script>
+
+    <!-- Собственные JS подключаем через manifest -->
+    <script th:src="@{${manifest['up-button.js']}}"></script>
 
     <script type="text/javascript">
         (function(m,e,t,r,i,k,a){

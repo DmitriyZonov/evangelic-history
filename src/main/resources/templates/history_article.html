@@ -7,7 +7,7 @@
   <th:block th:replace="fragments/header :: header-meta"></th:block>
 
   <title data-th-text="${periodArticle.periodTitle}"></title>
-  <link th:href="@{/css/history_article.css}" rel="stylesheet" />
+  <link th:href="@{${manifest['history_article.css']}}" rel="stylesheet" />
 </head>
 <body>
 <div class="wrapper">

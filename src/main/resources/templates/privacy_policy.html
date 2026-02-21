@@ -6,7 +6,7 @@
 <head>
     <th:block th:replace="fragments/header :: header-meta"></th:block>
     <title data-th-text="#{title.privacy_policy}"></title>
-    <link th:href="@{/css/privacy_policy.css}" rel="stylesheet" />
+    <link th:href="@{${manifest['privacy_policy.css']}}" rel="stylesheet" />
 </head>
 <body>
 <div class="wrapper">

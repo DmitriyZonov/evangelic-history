@@ -7,7 +7,7 @@
   <th:block th:replace="fragments/header :: header-meta"></th:block>
 
   <title data-th-text="#{title.about_us}"></title>
-  <link th:href="@{/css/about.css}" rel="stylesheet" />
+  <link th:href="@{${manifest['about.css']}}" rel="stylesheet" />
 
 </head>
 <body>

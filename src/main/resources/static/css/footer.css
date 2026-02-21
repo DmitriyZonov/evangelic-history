@@ -51,7 +51,7 @@
     justify-content: flex-end;
     gap: 5px 20px;
     max-width: 650px;
-    height: auto; !important;
+    height: auto !important;
 }
 
 .footer-button-main-page, .footer-button-about, .footer-button-history,
