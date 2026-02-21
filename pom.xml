@@ -144,27 +144,17 @@
                 <plugin>
                     <groupId>com.github.eirslett</groupId>
                     <artifactId>frontend-maven-plugin</artifactId>
-                    <version>1.13.1</version>
+                    <version>1.12.1</version>
                     <executions>
+                        <!-- Если хочешь, чтобы npm install работал через системный Node -->
                         <execution>
                             <id>npm install</id>
                             <goals>
                                 <goal>npm</goal>
                             </goals>
-                            <phase>generate-resources</phase>
                             <configuration>
                                 <arguments>install</arguments>
-                            </configuration>
-                        </execution>
-
-                        <execution>
-                            <id>npm build</id>
-                            <goals>
-                                <goal>npm</goal>
-                            </goals>
-                            <phase>generate-resources</phase>
-                            <configuration>
-                                <arguments>run build</arguments>
+                                <npmInheritsProxyConfigFromMaven>true</npmInheritsProxyConfigFromMaven>
                             </configuration>
                         </execution>
                     </executions>
