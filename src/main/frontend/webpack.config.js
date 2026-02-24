@@ -20,7 +20,8 @@ module.exports = {
         privacy_policy: '../resources/static/css/privacy_policy.css',
     },
     output: {
-        path: path.resolve(__dirname, '../resources/static/dist'),
+        // Теперь сборка идёт прямо в папку nginx
+        path: path.resolve(__dirname, '../../../../../var/www/evangelic-history/dist'),
         filename: '[name].[contenthash].js',
         clean: true,
         publicPath: '/dist/',
@@ -29,7 +30,7 @@ module.exports = {
         rules: [
             {
                 test: /\.css$/i,
-                use: [MiniCssExtractPlugin.loader, 'css-loader'], // отдельные CSS с хэшами
+                use: [MiniCssExtractPlugin.loader, 'css-loader'],
             },
         ],
     },
