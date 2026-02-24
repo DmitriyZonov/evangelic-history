@@ -437,35 +437,56 @@
 }
 
 /* --- ВИДЕО-КАРУСЕЛЬ (ГИБКАЯ СИСТЕМА) --- */
+.events-video-field {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 40px 10px;
+    box-sizing: border-box;
+}
+
+/* ЗАГОЛОВОК (ДЕФОЛТ) */
+.events-video-title {
+    margin-bottom: 25px;
+    text-align: start;
+}
+
 .events-video-carousel {
     width: 100%;
-    display: block; /* Меняем на block для правильного потока групп */
-    overflow: visible;
+    overflow: hidden;
 }
 
 .events-video-carousel-group {
     display: flex;
-    flex-wrap: wrap; /* МАГИЯ: если видео > 3, они перейдут на новую строку */
     gap: 20px;
-    width: 100%;
-    justify-content: flex-start; /* Прижимаем к левому краю */
+    padding-bottom: 20px;
+    overflow-x: auto;
+    justify-content: center;
+}
+
+/* Если видео больше 3-х, переключаем на левый край для корректного скролла */
+.events-video-carousel-group:has(.events-video-card:nth-child(3)) {
+    justify-content: flex-start;
 }
 
 .events-video-card {
-    /* РАССЧЕТ: (1278px - 40px зазоров) / 3 = 412px */
-    /* flex-grow: 0 (не растет), flex-shrink: 0 (не сжимается), ширина 412px */
-    flex: 0 0 412px;
-    height: 347px;
-    background: #5A062A url("../img/page_elements/stub_photo_carousel.png") no-repeat center / cover;
+    flex: 0 0 412px !important;
+    width: 412px !important;
+    height: 347px !important;
+    background: #000 !important;
     border-radius: 15px;
-    cursor: pointer;
     position: relative;
+    overflow: hidden;
 }
 
-/* Убираем пустой дубликат на десктопе, он нужен только для анимации фото */
-.events-video-carousel-group[aria-hidden="true"] {
-    display: none;
+.video-embed-container,
+.video-embed-container iframe {
+    width: 100% !important;
+    height: 100% !important;
+    border: none;
+    display: block;
 }
+
 
 /* --- МОДАЛЬНЫЕ ОКНА (ЦЕНТРОВКА) --- */
 .events-modal-window {
@@ -857,23 +878,48 @@
         height: 240px !important;
         flex-shrink: 0 !important;
         border-radius: 12px !important;
+
     }
 
     /* --- 5. ВИДЕО-КАРУСЕЛЬ --- */
+    events-video-field {
+        padding: 20px 0;
+    }
+
+    /* ИСПРАВЛЯЕМ ШРИФТ ЗАГОЛОВКА */
+    .events-video-title {
+        margin-bottom: 15px;
+        text-align: center; /* На мобилке заголовок обычно лучше смотрится слева */
+    }
+
     .events-video-carousel-group {
-        display: flex !important;
-        flex-wrap: nowrap !important;
-        overflow-x: auto !important;
+        /* ОБЯЗАТЕЛЬНО слева, иначе скролл сломается */
+        justify-content: flex-start !important;
         gap: 15px !important;
-        padding: 0 20px 20px 20px !important;
-        -webkit-overflow-scrolling: touch !important; /* Инерционный скролл как в App Store */
+        padding: 0 15px 20px 15px !important;
+        scrollbar-width: none;
+    }
+
+    .events-video-card:first-child,
+    .events-video-card:last-child {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+
+    .events-video-carousel-group::-webkit-scrollbar {
+        display: none;
     }
 
     .events-video-card {
         flex: 0 0 280px !important;
+        width: 280px !important;
         height: 220px !important;
-        border-radius: 12px !important;
     }
+
+    .events-video-carousel-group:has(.events-video-card:only-child) {
+        justify-content: center !important;
+    }
+
 
     /* --- 5. МОДАЛЬНЫЕ ОКНА (АДАПТАЦИЯ ПОД ТАЧ) --- */
 
@@ -919,5 +965,4 @@
     .next-btn {
         right: 15px !important;
     }
-
 }

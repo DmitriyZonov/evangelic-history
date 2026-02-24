@@ -5,10 +5,7 @@ import org.example.evangelhistory.services.EventService;
 import org.example.evangelhistory.services.HeroService;
 import org.example.evangelhistory.services.PeriodArticleService;
 import org.example.evangelhistory.services.PhotoStorageService;
-import org.example.evangelhistory.utils.GetDateForAnnouncement;
-import org.example.evangelhistory.utils.GetHeroesByCentury;
-import org.example.evangelhistory.utils.GetHeroesWithVideo;
-import org.example.evangelhistory.utils.GetSixRandomPhoto;
+import org.example.evangelhistory.utils.*;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -51,10 +48,12 @@ public class HomeController {
     @GetMapping("/events")
     public String toEventsPage(Model model) {
         GetSixRandomPhoto getSixRandomPhotoPaths = new GetSixRandomPhoto(photoStorageService.getSetOfAllPhotos());
+        GetSixEventVideos getSixEventVideos = new GetSixEventVideos(eventService.getAllVideos());
 
         model.addAttribute("eventList", eventService.getSortedListOfEvents());
         model.addAttribute("dateFormatter", new GetDateForAnnouncement());
         model.addAttribute("photoSet", new ArrayList<>(getSixRandomPhotoPaths.getRandomPhoto()));
+        model.addAttribute("videoSet", getSixEventVideos.get());
         return "events";
     }
     @GetMapping("/index")

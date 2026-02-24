@@ -6,10 +6,7 @@ import org.jetbrains.annotations.NotNull;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @Service
@@ -25,6 +22,16 @@ public class EventService {
         List<Event> allEvents = repo.findAll();
         allEvents.sort(Comparator.comparing(Event::getDateTime));
         return allEvents;
+    }
+    public Set<String> getAllVideos() {
+        Set<String> videos = new HashSet<>();
+        List<Event> events = repo.findAll();
+        for (Event event : events) {
+            if (event.getVideoLink() != null) {
+                videos.add(event.getVideoLink());
+            }
+        }
+        return videos;
     }
     public Event findById(@NotNull Long id) {
         Optional<Event> eventFromDB = repo.findById(id);

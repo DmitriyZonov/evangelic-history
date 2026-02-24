@@ -162,11 +162,14 @@
             <div class="events-video-title">
                 <text>Видео с наших мероприятий</text>
             </div>
+
             <div class="events-video-carousel">
                 <div class="events-video-carousel-group">
-                    <div class="events-video-card"></div>
-                    <div class="events-video-card"></div>
-                    <div class="events-video-card"></div>
+                    <div th:each="video : ${videoSet}" class="events-video-card">
+                        <div class="video-embed-container">
+                            <iframe th:src="${video}" allowfullscreen></iframe>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
