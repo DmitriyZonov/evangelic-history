@@ -30,7 +30,7 @@
     <div class="background-2-history">
         <div class="event-title-text-field">
             <div class="event-title" th:text="${event.descriptionTitle}"></div>
-            <iframe class="event-video" width="720" height="405" th:src="${event.videoLink}" style="border: none;" allow="clipboard-write; autoplay" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+            <iframe th:if="${event.videoLink != null}" class="event-video" width="720" height="405" th:src="${event.videoLink}" style="border: none;" allow="clipboard-write; autoplay" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
             <div class="event-description" th:utext="${event.description}"></div>
         </div>
     </div>
